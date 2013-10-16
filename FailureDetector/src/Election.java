@@ -6,6 +6,7 @@ public class Election {
 
     // TODO: Perhaps keep some state variables here
     // TODO: Think about multicast/unicast for send and receive
+    // TODO: Need to be constantly listening for new election requests incoming asynchronously
 
     public Election () {
         if ( main.bDebug ) {
