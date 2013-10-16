@@ -27,7 +27,6 @@ public class failureBase {
 			while ( keepGoing() ) {
 				main();
 			}
-			return;
 		}
 	}
 	

@@ -15,7 +15,6 @@ public class failureClient extends failureBase {
 		protected DatagramSocket socket;
 		protected int sequenceNumber = 0;
 		protected failureClient outer;
-		protected UUID uuid = UUID.randomUUID();
 
 		public innerThread(failureClient base) throws Exception {
 			super(base);
@@ -26,8 +25,8 @@ public class failureClient extends failureBase {
 		
 		public void main () {
 			ByteBuffer bb = ByteBuffer.allocate(main.datagramSize);
-			bb.putLong(uuid.getMostSignificantBits());
-			bb.putLong(uuid.getLeastSignificantBits());
+			bb.putLong(main.getSelf().getMostSignificantBits());
+			bb.putLong(main.getSelf().getLeastSignificantBits());
 			bb.putInt(sequenceNumber);
 
 			byte[] b = bb.array();
@@ -47,7 +46,7 @@ public class failureClient extends failureBase {
 			
 			if ( main.bDebug ) {
 				System.out.print("\nHeart Beat Packet Sent");
-		        System.out.printf("\n\tSent UUID: %s", uuid.toString());
+		        System.out.printf("\n\tSent UUID: %s", main.getSelf().toString());
 		        System.out.printf("\n\tSent Sequence Number: %d", sequenceNumber);
 			}
 	        

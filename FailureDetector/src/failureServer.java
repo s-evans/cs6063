@@ -1,36 +1,13 @@
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.nio.ByteBuffer;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.UUID;
 
 
 public class failureServer extends failureBase {
 	protected int port;
-	public HashMap<UUID, Record> myMap = new HashMap<UUID, Record>();
-	
-	public class Record {
-		protected int sequenceNumber;
-		protected Date time;
-		
-		public Record (int sequenceNumber) {
-			this.sequenceNumber = sequenceNumber;
-			time = new Date();  	
-		}
-		
-		public int getSequenceNumber () {
-			return sequenceNumber;
-		}
-
-		public Date getTime () {
-			return time;
-		}
-	}
 		
 	public class innerThread extends failureBase.innerThread {
 		protected DatagramSocket socket;
@@ -85,14 +62,14 @@ public class failureServer extends failureBase {
 			Record r = new Record(sequenceNumber);
 	
 			try {
-				main.mutex.acquire();
+				main.listMutex.acquire();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 
-			outer.myMap.put(uuid, r);
+			main.processList.put(uuid, r);
 			
-			main.mutex.release();
+			main.listMutex.release();
 		}
 	}
 
