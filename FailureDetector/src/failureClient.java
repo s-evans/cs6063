@@ -13,7 +13,6 @@ public class failureClient extends failureBase {
 		
 	public class innerThread extends failureBase.innerThread {
 		protected DatagramSocket socket;
-		protected int sequenceNumber = 0;
 		protected failureClient outer;
 
 		public innerThread(failureClient base) throws Exception {
@@ -24,14 +23,16 @@ public class failureClient extends failureBase {
 		}
 		
 		public void main () {
-			ByteBuffer bb = ByteBuffer.allocate(main.datagramSize);
-			bb.putLong(main.getSelf().getMostSignificantBits());
-			bb.putLong(main.getSelf().getLeastSignificantBits());
-			bb.putInt(sequenceNumber);
+            // Create a message
+            MsgBase msg = MsgBase.Factory(MsgBase.Type.HeartBeat);
 
-			byte[] b = bb.array();
-			DatagramPacket p = new DatagramPacket(b, b.length);
+            // Convert to array
+            byte[] b = msg.toByteBuffer().array();
 
+            // Make a packet
+            DatagramPacket p = new DatagramPacket(b, b.length);
+
+            // Send
 	        try {
 	        	p.setAddress(InetAddress.getByName("255.255.255.255"));
 		        p.setPort(outer.getPort());
@@ -43,21 +44,19 @@ public class failureClient extends failureBase {
 				System.out.print("\nFailed to send");
 				e.printStackTrace();
 			}
-			
+
+            // Debug
 			if ( main.bDebug ) {
 				System.out.print("\nHeart Beat Packet Sent");
 		        System.out.printf("\n\tSent UUID: %s", main.getSelf().toString());
-		        System.out.printf("\n\tSent Sequence Number: %d", sequenceNumber);
 			}
 	        
 			// Sleep
 			try {
 				Thread.sleep(outer.getPeriod() * 1000);
 			} catch (Exception e) {
+                // Ignore
 			}
-			
-			// Increment counter
-			sequenceNumber++;
 		}
 	}
 

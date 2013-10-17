@@ -50,7 +50,9 @@ public class failureDetector extends failureBase {
                     if ( uuid == main.getLeader() ) {
                         // Initiate a leader election, likely on a new thread
                         System.err.printf("\n\tFailed process was the leader");
-                        new Election();
+
+                        // Initiate an election
+                        main.sendMsg(MsgBase.Type.Election);
                     }
 		        }
 		    }

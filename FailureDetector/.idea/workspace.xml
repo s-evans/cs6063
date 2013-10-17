@@ -4,13 +4,20 @@
     <list default="true" id="0a4c3144-807e-4fde-82a8-9f1f29109212" name="Default" comment="" />
     <ignored path="FailureDetector.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/main.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381886982840" ignored="false" />
-    <file path="/failureDetector.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381886728456" ignored="false" />
-    <file path="/a.dummy" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381887804541" ignored="false" />
+    <file path="/main.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381976640978" ignored="false" />
+    <file path="/failureDetector.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381976879296" ignored="false" />
+    <file path="/a.dummy" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381978435141" ignored="false" />
     <file path="/fragment.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381884329429" ignored="false" />
-    <file path="/failureClient.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381886884695" ignored="false" />
-    <file path="/failureServer.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381885081988" ignored="false" />
+    <file path="/failureClient.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381977032825" ignored="false" />
+    <file path="/failureServer.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381981076115" ignored="false" />
     <file path="/Election.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381889509002" ignored="false" />
+    <file path="/MsgBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381979584148" ignored="false" />
+    <file path="/MsgCoordinator.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381975586503" ignored="false" />
+    <file path="/MsgElection.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381978775619" ignored="false" />
+    <file path="/MsgHeartBeat.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381974004689" ignored="false" />
+    <file path="/MsgOk.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381978482351" ignored="false" />
+    <file path="/failureBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381977095816" ignored="false" />
+    <file path="/*.regexp" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381981343769" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,13 +86,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="MsgOk.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MsgOk.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="32" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="66" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0">
+            <state line="38" column="49" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1293#1307#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="failureServer.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/failureServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="67" selection-start="2137" selection-end="2137" vertical-scroll-proportion="1.1496437">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LossyDatagramSocket.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="33" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MsgBase.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MsgBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,16 +140,7 @@
       <file leaf-file-name="failureClient.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/failureClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="54" selection-start="1345" selection-end="1345" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="failureServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/failureServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="12" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0">
+            <state line="25" column="38" selection-start="673" selection-end="673" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,31 +148,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="failureDetector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/failureDetector.java">
+      <file leaf-file-name="MsgElection.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MsgElection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="29" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.0">
+            <state line="61" column="127" selection-start="1994" selection-end="1994" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Election.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Election.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="96" selection-start="668" selection-end="668" vertical-scroll-proportion="0.8015267">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="failureBase.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/failureBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="23" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -151,20 +170,25 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/record.java" />
-        <option value="$PROJECT_DIR$/src/Record.java" />
-        <option value="$PROJECT_DIR$/src/failureServer.java" />
-        <option value="$PROJECT_DIR$/src/failureBase.java" />
-        <option value="$PROJECT_DIR$/src/failureClient.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/src/failureDetector.java" />
         <option value="$PROJECT_DIR$/src/Election.java" />
+        <option value="$PROJECT_DIR$/src/Record.java" />
+        <option value="$PROJECT_DIR$/src/MsgHeartBeat.java" />
+        <option value="$PROJECT_DIR$/src/MsgCoordinator.java" />
+        <option value="$PROJECT_DIR$/src/failureDetector.java" />
+        <option value="$PROJECT_DIR$/src/failureBase.java" />
+        <option value="$PROJECT_DIR$/src/MsgOk.java" />
+        <option value="$PROJECT_DIR$/src/MsgElection.java" />
+        <option value="$PROJECT_DIR$/src/failureClient.java" />
+        <option value="$PROJECT_DIR$/src/MsgBase.java" />
+        <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="$PROJECT_DIR$/src/failureServer.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
+    <option name="x" value="64" />
     <option name="y" value="-4" />
-    <option name="width" value="1368" />
+    <option name="width" value="1297" />
     <option name="height" value="773" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -261,7 +285,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,24 +334,18 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.intentionPowerPack" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RunManager" selected="Application.main">
     <configuration default="false" name="main" type="Application" factoryName="Application" temporary="true">
@@ -361,19 +378,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -399,6 +403,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -492,25 +509,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-4" width="1297" height="773" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2448" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6704" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6704" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19055244" sideWeight="0.7552" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979983" sideWeight="0.6704" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -582,16 +600,18 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Record.java">
+    <entry file="file://$PROJECT_DIR$/src/failureServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="18" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="46" column="12" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
+    <entry file="file://$PROJECT_DIR$/src/failureDetector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="0.07633588">
+        <state line="52" column="29" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -603,45 +623,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureServer.java">
+    <entry file="file://$PROJECT_DIR$/.classpath">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="12" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="0" column="0" selection-start="0" selection-end="38" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureClient.java">
+    <entry file="file://$PROJECT_DIR$/src/failureBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="54" selection-start="1345" selection-end="1345" vertical-scroll-proportion="0.0">
+        <state line="10" column="8" selection-start="235" selection-end="235" vertical-scroll-proportion="0.33632287">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/failureDetector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="29" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.0">
+        <state line="41" column="93" selection-start="1208" selection-end="1208" vertical-scroll-proportion="1.2780269">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="4" selection-start="128" selection-end="128" vertical-scroll-proportion="0.2690583">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MsgCoordinator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="21" selection-start="121" selection-end="121" vertical-scroll-proportion="0.13452914">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MsgHeartBeat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="28" selection-start="173" selection-end="173" vertical-scroll-proportion="0.2690583">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MsgElection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="127" selection-start="1994" selection-end="1994" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MsgBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MsgOk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="32" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="66" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0">
+        <state line="38" column="49" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1293#1307#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Election.java">
+    <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="96" selection-start="668" selection-end="668" vertical-scroll-proportion="0.8015267">
+        <state line="9" column="33" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/failureClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="38" selection-start="673" selection-end="673" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/failureServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="67" selection-start="2137" selection-end="2137" vertical-scroll-proportion="1.1496437">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

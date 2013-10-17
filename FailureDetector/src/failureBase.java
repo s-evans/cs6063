@@ -1,9 +1,9 @@
 
-public class failureBase {
+abstract class failureBase {
 	protected boolean running = false;
 	protected Thread myThread;
 	
-	protected class innerThread extends Thread {
+	abstract class innerThread extends Thread {
 		protected failureBase outer;
 		
 		public innerThread(failureBase base) {
@@ -14,14 +14,7 @@ public class failureBase {
 			return outer.isRunning();
 		}
 		
-		protected void main () {
-			// NOTE: Template method. To be overridden in subclass.
-			System.out.print("\noverride me");
-			try {
-				Thread.sleep(1000);
-			} catch (Exception e) {
-			}
-		}
+		abstract void main ();
 
 		public void run () {
 			while ( keepGoing() ) {
@@ -30,8 +23,7 @@ public class failureBase {
 		}
 	}
 	
-	public failureBase () {
-		myThread = new innerThread(this);
+	protected failureBase () {
 	}
 	
 	public void startRunning () {

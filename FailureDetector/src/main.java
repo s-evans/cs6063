@@ -1,3 +1,7 @@
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.concurrent.Semaphore;
 import java.util.UUID;
@@ -22,8 +26,8 @@ public class main {
 
     // TODO: modify period and timeout defaults to meet requirements (3 seconds from failure to new leader election)
 	// Parameters
-    public static int period = 5;
-	public static int timeout = 2;
+    public static int period = 2;
+	public static int timeout = 1;
 	public static int destPort = 9000;
 	public static int servPort = 9000;
 	public static int lossPct = 0;
@@ -57,7 +61,7 @@ public class main {
 	private static void stopRunning () {
 		threadsRunning = false;
 	}
-	
+
 	private static void startRunning () throws Exception {
 		server = new failureServer(servPort);
 		client = new failureClient(destPort, period);
@@ -73,7 +77,7 @@ public class main {
 	private static boolean isRunning () {
 		return threadsRunning;
 	}
-		
+
 	private static void waitForThreads () {
 		while ( isRunning() && client.isRunning() && 
 				server.isRunning() && detector.isRunning() ) {
@@ -207,8 +211,41 @@ public class main {
 		return;
 	}
 
+    public static void sendMsg (MsgBase.Type msgType) {
+        try {
+            // Create a socket
+            LossyDatagramSocket socket = new LossyDatagramSocket(main.lossPct);
+            socket.setBroadcast(true);
+
+            // Create a message
+            MsgBase msg = MsgBase.Factory(msgType);
+
+            // Convert to array
+            byte[] b = msg.toByteBuffer().array();
+
+            // Make a packet
+            DatagramPacket p = new DatagramPacket(b, b.length);
+
+            // Send
+            try {
+                p.setAddress(InetAddress.getByName("255.255.255.255"));
+                p.setPort(main.destPort);
+                socket.send(p);
+            } catch (UnknownHostException e1) {
+                System.out.print("\nFailed to resolve host");
+                e1.printStackTrace();
+            } catch (IOException e) {
+                System.out.print("\nFailed to send");
+                e.printStackTrace();
+            }
+
+        } catch ( Exception e ) {
+            System.out.printf("\nFailed to send message");
+        }
+    }
+
 	public static void main(String[] args) throws Exception {
-		System.out.print("iDetect V1.0 (c) 2013");
+		System.out.print("iLead V1.0 (c) 2013");
 		System.out.printf("\nUUID = %s", main.getSelf());
 
 		try {
@@ -219,8 +256,8 @@ public class main {
 		
 		startRunning();
 
-        new Election();
-		
+        sendMsg(MsgBase.Type.Election);
+
 		waitForThreads();
 	}
 

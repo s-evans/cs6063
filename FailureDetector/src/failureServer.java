@@ -1,10 +1,10 @@
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.Inet4Address;
 import java.net.MulticastSocket;
 import java.nio.ByteBuffer;
 import java.util.UUID;
-
 
 public class failureServer extends failureBase {
 	protected int port;
@@ -16,7 +16,8 @@ public class failureServer extends failureBase {
 		public innerThread(failureServer base) throws Exception {
 			super(base);
 			outer = base;
-			socket = new MulticastSocket(outer.getPort()); 
+
+			socket = new MulticastSocket(outer.getPort());
 			
 			if ( main.bDebug ) {
 				System.out.printf("\nServer using port: %d", outer.getPort());
@@ -24,11 +25,13 @@ public class failureServer extends failureBase {
 		}
 	
 		protected void main () {
+            // Create packet
 			ByteBuffer bb = ByteBuffer.allocate(main.datagramSize);
 			DatagramPacket p = new DatagramPacket(bb.array(), bb.array().length);
 
+            // Debug
 			if ( main.bDebug ) {
-				System.out.print("\nBlocking read...");
+                System.out.print("\nBlocking read...");
 			}
 			
 			// Blocking read on the socket
@@ -38,38 +41,39 @@ public class failureServer extends failureBase {
 				e.printStackTrace();
 				return;
 			}
-			
+
+            // Debug
 			if ( main.bDebug ) {
 				System.out.print("\nGot packet");
 			}
-			
-			// Validate the datagram length
-			if ( bb.array().length != main.datagramSize ) {
-				System.out.print("\nDatagram length validation failed");
-				return;
-			}
-			
-			// Get the data from the packet
-			UUID uuid = new UUID(bb.getLong(), bb.getLong());
-			int sequenceNumber = bb.getInt();
 
-			if ( main.bDebug ) {
-				System.out.printf("\n\tRecvd UUID: %s", uuid.toString());
-				System.out.printf("\n\tRecvd Sequence Number: %d", sequenceNumber);
-			}
-			
+            // Create an object based on the message
+            MsgBase msg = MsgBase.Factory(bb);
+
+            // Debug
+            if ( main.bDebug ) {
+                System.out.printf("\n\tRecvd UUID = %s", msg.getUuid().toString());
+                System.out.printf("\n\tRecvd type = %d", msg.getType());
+            }
+
 			// Update process list with current time, uuid, and sequence number
-			Record r = new Record(sequenceNumber);
-	
+			Record r = new Record();
+
+            // Lock the mutex
 			try {
 				main.listMutex.acquire();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 
-			main.processList.put(uuid, r);
-			
+            // Add/replace entry in the process list
+			main.processList.put(msg.getUuid(), r);
+
+            // Let go of the mutex
 			main.listMutex.release();
+
+            // Handle the message
+            msg.Handle();
 		}
 	}
 
