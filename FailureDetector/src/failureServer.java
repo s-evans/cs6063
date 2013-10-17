@@ -53,7 +53,7 @@ public class failureServer extends failureBase {
             // Debug
             if ( main.bDebug ) {
                 System.out.printf("\n\tRecvd UUID = %s", msg.getUuid().toString());
-                System.out.printf("\n\tRecvd type = %d", msg.getType());
+                System.out.printf("\n\tRecvd type = %d", msg.getType().ordinal());
             }
 
 			// Update process list with current time, uuid, and sequence number
