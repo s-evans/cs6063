@@ -3,12 +3,15 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.concurrent.Semaphore;
 import java.util.UUID;
 
 
 public class main {
     // State
+    private static ElectionStateBase electionState = new ElectionStateNoLeader();
 	private static boolean threadsRunning = false;
 
     // Failure detector objects
@@ -24,7 +27,9 @@ public class main {
 	private static boolean bLossy = false;
 	public static boolean bDebug = false;
 
-    // TODO: modify period and timeout defaults to meet requirements (3 seconds from failure to new leader election)
+    // TODO: Timeout and period parameters need to be in subseconds (perhaps 500ms and 1000ms?).
+    // TODO: the current values lead to ~3 sec avg detection time. Meaning ~3 sec avg leader election time will be impossible.
+
 	// Parameters
     public static int period = 2;
 	public static int timeout = 1;
@@ -32,11 +37,11 @@ public class main {
 	public static int servPort = 9000;
 	public static int lossPct = 0;
 
-    // Currently elected leader
-    protected static UUID leader;
-
     // This is the UUID of this process
     protected static final UUID uuid = UUID.randomUUID();
+
+    // Currently elected leader
+    protected static UUID leader = uuid;
 
     // Constant values
     public static final int datagramSize = 16 + 4;
@@ -44,6 +49,37 @@ public class main {
     // Process list
 	public static Semaphore listMutex = new Semaphore(1);
     public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
+
+    // Whether or not the current process is highest in the process list
+    public static boolean isHighest() {
+        // Lock the mutex
+        try {
+            main.listMutex.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Iterate over the list searching for a higher uuid
+        boolean highest = true;
+        Iterator<Map.Entry<UUID, Record>> it = main.processList.entrySet().iterator();
+        while ( it.hasNext() ) {
+            // Get UUID from the list iterator
+            Map.Entry<UUID, Record> entry = it.next();
+            UUID curListUuid = entry.getKey();
+
+            // If list uuid > our uuid
+            if ( curListUuid.compareTo(main.getSelf()) == 1 ) {
+                // We're not the highest
+                highest = false;
+                break;
+            }
+        }
+
+        // Let go of the mutex
+        main.listMutex.release();
+
+        return highest;
+    }
 
     public static UUID getLeader() {
         return leader;
@@ -244,6 +280,18 @@ public class main {
         }
     }
 
+    public static ElectionStateBase getElectionState () {
+        return electionState;
+    }
+
+    public static void setElectionState ( ElectionStateBase state ) {
+        // Set the state
+        main.electionState = state;
+
+        // Let the state run its thing
+        main.electionState.Handle(new EventInit());
+    }
+
 	public static void main(String[] args) throws Exception {
 		System.out.print("iLead V1.0 (c) 2013");
 		System.out.printf("\nUUID = %s", main.getSelf());
@@ -256,7 +304,7 @@ public class main {
 		
 		startRunning();
 
-        sendMsg(MsgBase.Type.Election);
+        setElectionState(new ElectionStateNoLeader());
 
 		waitForThreads();
 	}

@@ -5,7 +5,7 @@ public class MsgCoordinator extends MsgBase {
     }
 
     public void Handle() {
-        // Set the leader to the specified process id
-        main.setLeader(uuid);
+        // Pass this off to the state machine
+        main.getElectionState().Handle(new EventCoordinatorMsg(uuid));
     }
 }

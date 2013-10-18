@@ -6,6 +6,7 @@ public class MsgOk extends MsgBase {
     }
 
     public void Handle() {
-        // TODO: Spawn a thread to wait for coordinator message on a timeout. If timeout expires, send another election message.
+        // Pass this off to the state machine
+        main.getElectionState().Handle(new EventOkMsgRecvd(uuid));
     }
 }

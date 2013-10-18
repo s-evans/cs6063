@@ -4,20 +4,30 @@
     <list default="true" id="0a4c3144-807e-4fde-82a8-9f1f29109212" name="Default" comment="" />
     <ignored path="FailureDetector.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/main.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381976640978" ignored="false" />
-    <file path="/failureDetector.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381976879296" ignored="false" />
+    <file path="/main.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382067260800" ignored="false" />
+    <file path="/failureDetector.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063447703" ignored="false" />
     <file path="/a.dummy" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381981936780" ignored="false" />
     <file path="/fragment.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381884329429" ignored="false" />
     <file path="/failureClient.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381977032825" ignored="false" />
     <file path="/failureServer.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381981958789" ignored="false" />
     <file path="/Election.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381889509002" ignored="false" />
     <file path="/MsgBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381979584148" ignored="false" />
-    <file path="/MsgCoordinator.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381975586503" ignored="false" />
-    <file path="/MsgElection.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381978775619" ignored="false" />
+    <file path="/MsgCoordinator.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063707240" ignored="false" />
+    <file path="/MsgElection.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063803898" ignored="false" />
     <file path="/MsgHeartBeat.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381974004689" ignored="false" />
-    <file path="/MsgOk.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381978482351" ignored="false" />
+    <file path="/MsgOk.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063936952" ignored="false" />
     <file path="/failureBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381977095816" ignored="false" />
-    <file path="/*.regexp" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381981343769" ignored="false" />
+    <file path="/*.regexp" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382067604455" ignored="false" />
+    <file path="/ElectionStateBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382067486882" ignored="false" />
+    <file path="/ElectionStateNoLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382060794086" ignored="false" />
+    <file path="/EventInit.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382057535584" ignored="false" />
+    <file path="/EventElectionMsgRecvd.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063876833" ignored="false" />
+    <file path="/ElectionStateOkSent.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382066039535" ignored="false" />
+    <file path="/ElectionStateElectionRecvd.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382066164785" ignored="false" />
+    <file path="/ElectionStateHaveLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382064183311" ignored="false" />
+    <file path="/ElectionStateOkRecvd.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382062036607" ignored="false" />
+    <file path="/ElectionStateElectionSent.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382064990047" ignored="false" />
+    <file path="/EventCoordinatorMsg.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063684325" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +50,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -77,6 +86,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -86,46 +96,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ElectionStateOkRecvd.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/State/ElectionStateOkRecvd.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="42" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="49" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.0">
+            <state line="306" column="54" selection-start="8203" selection-end="8203" vertical-scroll-proportion="0.7875">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MsgCoordinator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Msg/MsgCoordinator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="42" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="failureClient.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/failureClient.java">
+      <file leaf-file-name="MsgElection.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Msg/MsgElection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="38" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0">
+            <state line="6" column="30" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LossyDatagramSocket.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
+      <file leaf-file-name="MsgHeartBeat.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Msg/MsgHeartBeat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="33" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
+            <state line="2" column="13" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="failureServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/failureServer.java">
+      <file leaf-file-name="MsgOk.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Msg/MsgOk.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="61" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0">
+            <state line="10" column="29" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MsgBase.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/MsgBase.java">
+      <file leaf-file-name="ElectionStateBase.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/State/ElectionStateBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="10" selection-start="250" selection-end="252" vertical-scroll-proportion="0.36817104">
+            <state line="37" column="1" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventCoordinatorMsg.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Event/EventCoordinatorMsg.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="13" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventElectionMsgRecvd.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Event/EventElectionMsgRecvd.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="11" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -141,26 +189,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/record.java" />
-        <option value="$PROJECT_DIR$/src/Election.java" />
-        <option value="$PROJECT_DIR$/src/Record.java" />
-        <option value="$PROJECT_DIR$/src/MsgHeartBeat.java" />
-        <option value="$PROJECT_DIR$/src/MsgCoordinator.java" />
+        <option value="$PROJECT_DIR$/src/ElectionStateBase.java" />
+        <option value="$PROJECT_DIR$/src/State/ElectionStateNoLeader.java" />
         <option value="$PROJECT_DIR$/src/failureDetector.java" />
-        <option value="$PROJECT_DIR$/src/failureBase.java" />
-        <option value="$PROJECT_DIR$/src/MsgOk.java" />
-        <option value="$PROJECT_DIR$/src/MsgElection.java" />
-        <option value="$PROJECT_DIR$/src/failureClient.java" />
-        <option value="$PROJECT_DIR$/src/MsgBase.java" />
+        <option value="$PROJECT_DIR$/src/Event/EventCoordinatorMsg.java" />
+        <option value="$PROJECT_DIR$/src/Msg/MsgCoordinator.java" />
+        <option value="$PROJECT_DIR$/src/Msg/MsgElection.java" />
+        <option value="$PROJECT_DIR$/src/Event/EventElectionMsgRecvd.java" />
+        <option value="$PROJECT_DIR$/src/Msg/MsgOk.java" />
+        <option value="$PROJECT_DIR$/src/Event/EventOkMsgRecvd.java" />
+        <option value="$PROJECT_DIR$/src/State/ElectionStateOkRecvd.java" />
+        <option value="$PROJECT_DIR$/src/State/ElectionStateElectionSent.java" />
+        <option value="$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java" />
+        <option value="$PROJECT_DIR$/src/State/ElectionStateElectionRecvd.java" />
+        <option value="$PROJECT_DIR$/src/State/ElectionStateOkSent.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/src/failureServer.java" />
+        <option value="$PROJECT_DIR$/src/State/ElectionStateBase.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
+    <option name="x" value="64" />
     <option name="y" value="-4" />
-    <option name="width" value="1368" />
+    <option name="width" value="1297" />
     <option name="height" value="773" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -257,6 +308,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -299,25 +352,80 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="State" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Msg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Event" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RunManager" selected="Application.main">
     <configuration default="false" name="main" type="Application" factoryName="Application" temporary="true">
@@ -350,19 +458,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -388,6 +483,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -480,30 +588,50 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-4" width="1297" height="773" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2448" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19015151" sideWeight="0.7552" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21697357" sideWeight="0.7552" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979983" sideWeight="0.6704" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979983" sideWeight="0.6704" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -572,113 +700,112 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main.java">
+    <entry file="file://$PROJECT_DIR$/src/Event/EventOkMsgRecvd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="16" selection-start="153" selection-end="153" vertical-scroll-proportion="0.2690583">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="458" selection-end="458" vertical-scroll-proportion="0.6300448">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/State/ElectionStateNoLeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="13" selection-start="14" selection-end="14" vertical-scroll-proportion="0.03529412">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/State/ElectionStateOkSent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="13" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/State/ElectionStateElectionSent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="57" selection-start="574" selection-end="574" vertical-scroll-proportion="0.5381166">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Msg/MsgBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#Factory#0;class#MsgBase#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/State/ElectionStateOkRecvd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="42" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureServer.java">
+    <entry file="file://$PROJECT_DIR$/src/Msg/MsgCoordinator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="67" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0">
+        <state line="7" column="42" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
+    <entry file="file://$PROJECT_DIR$/src/Msg/MsgElection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="33" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
+        <state line="6" column="30" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureClient.java">
+    <entry file="file://$PROJECT_DIR$/src/Msg/MsgHeartBeat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="38" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
+        <state line="2" column="13" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureServer.java">
+    <entry file="file://$PROJECT_DIR$/src/Msg/MsgOk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="12" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0">
+        <state line="10" column="29" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureDetector.java">
+    <entry file="file://$PROJECT_DIR$/src/State/ElectionStateBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="29" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.0">
+        <state line="37" column="1" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureBase.java">
+    <entry file="file://$PROJECT_DIR$/src/Event/EventCoordinatorMsg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="23" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
+        <state line="2" column="13" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.classpath">
+    <entry file="file://$PROJECT_DIR$/src/Event/EventElectionMsgRecvd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="38" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="8" selection-start="235" selection-end="235" vertical-scroll-proportion="0.33632287">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureDetector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="93" selection-start="1208" selection-end="1208" vertical-scroll-proportion="1.2780269">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="128" selection-end="128" vertical-scroll-proportion="0.2690583">
+        <state line="13" column="11" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="49" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="33" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="38" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="61" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MsgBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="10" selection-start="250" selection-end="252" vertical-scroll-proportion="0.36817104">
-          <folding />
+        <state line="306" column="54" selection-start="8203" selection-end="8203" vertical-scroll-proportion="0.7875">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -738,7 +865,8 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.20000002" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -746,7 +874,7 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

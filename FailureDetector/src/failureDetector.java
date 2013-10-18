@@ -52,7 +52,7 @@ public class failureDetector extends failureBase {
                         System.err.printf("\n\tFailed process was the leader");
 
                         // Initiate an election
-                        main.sendMsg(MsgBase.Type.Election);
+                        main.getElectionState().Handle(new EventLeaderDeath());
                     }
 		        }
 		    }
