@@ -9,8 +9,6 @@ public class main {
     // State
     private static ElectionStateBase electionState = new ElectionStateNoLeader();
 
-    // TODO: Validate state machine code. Getting two coordinators sometimes due to simultaneous death detection and in flight messages. Any way to address?
-
     // Server thread
 	private static ServerThread server;
 
@@ -56,7 +54,7 @@ public class main {
     }
 
     // Set a timeout event to occur
-    public static void setElectionMsgTimeout () {
+    public static void setElectionMsgTimeout (int multi) {
         // Cancel the currently scheduled timeout task
         curTask.cancel();
 
@@ -64,7 +62,7 @@ public class main {
         curTask = new ElectionTimeoutTask();
 
         // Schedule the task
-        timer.schedule(curTask, timeout);
+        timer.schedule(curTask, multi * timeout);
     }
 
     // Set a process death task to occur

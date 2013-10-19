@@ -6,7 +6,7 @@ public class ElectionStateElectionSent extends ElectionStateBase {
         main.sendMsg(MsgBase.Type.Election);
 
         // Set up a timeout event to occur
-        main.setElectionMsgTimeout();
+        main.setElectionMsgTimeout(1);
     }
 
     public void Handle ( EventNoMsgTimeout evt ) {
