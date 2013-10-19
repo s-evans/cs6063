@@ -3,15 +3,19 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.*;
-import java.util.concurrent.Semaphore;
 
 
 public class main {
     // State
     private static ElectionStateBase electionState = new ElectionStateNoLeader();
 
+    // TODO: Validate state machine code. Getting two coordinators sometimes due to simultaneous death detection and in flight messages. Any way to address?
+
     // Server thread
 	private static ServerThread server;
+
+    // Multicast client socket
+    private static LossyDatagramSocket socket;
 
     // Duplicate parameter detection
 	private static boolean bPeriod = false;
@@ -21,12 +25,9 @@ public class main {
 	private static boolean bLossy = false;
 	public static boolean bDebug = false;
 
-    // TODO: Test unneccessary election during 10PCT packet loss requirement
-    // TODO: Test leader election following failure requirement
-
 	// Program parameters
-    public static int period = 1000;
-	public static int timeout = 500;
+    public static int period = 500;
+	public static int timeout = 1250;
 	public static int destPort = 9000;
 	public static int servPort = 9000;
 	public static int lossPct = 0;
@@ -46,7 +47,6 @@ public class main {
     public static final int datagramSize = 16 + 4;
 
     // Process list
-	public static Semaphore listMutex = new Semaphore(1);
     public static HashMap<UUID, DeathTask> processList = new HashMap<UUID, DeathTask>();
 
     public static void debugPrint (String str) {
@@ -64,7 +64,7 @@ public class main {
         curTask = new ElectionTimeoutTask();
 
         // Schedule the task
-        timer.schedule(curTask, 2000);
+        timer.schedule(curTask, timeout);
     }
 
     // Set a process death task to occur
@@ -73,15 +73,14 @@ public class main {
         timer.schedule(dt, period + timeout);
     }
 
+    // Schedules a msg task to occur immediately
+    public static void msgRecvd (MsgTask mt) {
+        // Schedule the task
+        timer.schedule(mt, 0);
+    }
+
     // Whether or not the current process is highest in the process list
     public static boolean isHighest() {
-        // Lock the mutex
-        try {
-            main.listMutex.acquire();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         // Iterate over the list searching for a higher uuid
         boolean highest = true;
         Iterator<Map.Entry<UUID, DeathTask>> it = main.processList.entrySet().iterator();
@@ -114,27 +113,14 @@ public class main {
             }
         }
 
-        // Let go of the mutex
-        main.listMutex.release();
-
         main.debugPrint("\nAm I Highest? " + highest);
 
         return highest;
     }
 
     public static void remove (UUID uuid) {
-        // Lock the mutex
-        try {
-            main.listMutex.acquire();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         // Remove the process from the list
         main.processList.remove(uuid);
-
-        // Let go of the mutex
-        main.listMutex.release();
     }
 
     // Accessor
@@ -154,11 +140,18 @@ public class main {
     }
 
 	private static void startRunning () throws Exception {
+        // Create a socket
+        socket = new LossyDatagramSocket(main.lossPct);
+        socket.setBroadcast(true);
+
         // Create thread object
 		server = new ServerThread(servPort);
 
         // Start a recurring heartbeat task
         timer.scheduleAtFixedRate(heartBeatTask, 0, period);
+
+        // Reset the state machine
+        timer.schedule(new InitTask(), 0);
 
         // Start the server thread
         server.start();
@@ -291,10 +284,6 @@ public class main {
         main.debugPrint("\nSending Message Type " + msgType.ordinal());
 
         try {
-            // Create a socket
-            LossyDatagramSocket socket = new LossyDatagramSocket(main.lossPct);
-            socket.setBroadcast(true);
-
             // Create a message
             MsgBase msg = MsgBase.Factory(msgType);
 
@@ -341,15 +330,9 @@ public class main {
 		System.out.print("iLead V1.0 (c) 2013");
 		System.out.printf("\nUUID = %s", main.getSelf());
 
-		try {
-			parseArgs(args);
-		} catch ( Exception e ) {
-			return;
-		}
-		
-		startRunning();
+	    parseArgs(args);
 
-        setElectionState(new ElectionStateNoLeader());
+		startRunning();
 	}
 
 }

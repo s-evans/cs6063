@@ -42,39 +42,10 @@ public class ServerThread extends Thread {
         // Create an object based on the message
         MsgBase msg = MsgBase.Factory(bb);
 
-        // Debug
-        main.debugPrint("\n\tRecvd UUID = " + msg.getUuid().toString());
-        main.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
+        // Create a timer task
+        MsgTask mt = new MsgTask(msg);
 
-        // Lock the mutex
-        try {
-            main.listMutex.acquire();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Get this process's entry in the process list
-        DeathTask dt = main.processList.get(msg.getUuid());
-
-        // Check if it exists
-        if ( dt != null ) {
-            // Cancel the current death timeout event
-            dt.cancel();
-        }
-
-        // Create a new death timeout task
-        dt = new DeathTask(msg.getUuid());
-
-        // Add/replace entry
-        main.processList.put(msg.getUuid(), dt);
-
-        // Schedule the new death timeout event
-        main.setProcessDeathTimeout(dt);
-
-        // Let go of the mutex
-        main.listMutex.release();
-
-        // Handle the message
-        msg.Handle();
+        // Schedule the task to run immediately
+        main.msgRecvd(mt);
     }
 }

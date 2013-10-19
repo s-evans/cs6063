@@ -8,6 +8,13 @@ abstract class ElectionStateBase {
 
     // Subclasses all must handle a new coordinator. No special handling.
     public final void Handle ( EventCoordinatorMsg evt ) {
+        // Validate uuid against our own
+        if ( evt.getUuid().compareTo(main.getSelf()) == 0 ) {
+            // Ignore our own coordinator message
+            return;
+        }
+
+        // Set state
         main.setElectionState(new ElectionStateHaveLeader(evt.getUuid()));
     }
 
