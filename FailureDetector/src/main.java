@@ -21,6 +21,9 @@ public class main {
 	private static boolean bLossy = false;
 	public static boolean bDebug = false;
 
+    // TODO: Test unneccessary election during 10PCT packet loss requirement
+    // TODO: Test leader election following failure requirement
+
 	// Program parameters
     public static int period = 1000;
 	public static int timeout = 500;

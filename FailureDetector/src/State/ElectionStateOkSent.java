@@ -8,6 +8,8 @@ public class ElectionStateOkSent extends ElectionStateBase {
 
         // Check out our status
         if ( main.isHighest() ) {
+            // TODO: Handle case where we aren't delivering to ourselves
+
             // Send coordinator message
             main.sendMsg(MsgBase.Type.Coordinator);
         } else {

@@ -13,6 +13,8 @@ public class ElectionStateElectionSent extends ElectionStateBase {
         main.debugPrint("\nHandling EventNoMsgTimeout");
 
         if ( main.isHighest() ) {
+            // TODO: Handle case where we aren't delivering to ourselves
+
             // Send coordinator message
             main.sendMsg(MsgBase.Type.Coordinator);
         } else {

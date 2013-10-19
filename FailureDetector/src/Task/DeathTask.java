@@ -9,6 +9,12 @@ public class DeathTask extends TimerTask {
     }
 
     public void run () {
+        // Check edge case
+        if ( uuid.compareTo(main.getSelf()) == 0 ) {
+            // Ignore
+            return;
+        }
+
         // Announce
         System.err.printf("\nFailure detected;");
         System.err.printf("\n\tUUID: %s; ", uuid.toString());
