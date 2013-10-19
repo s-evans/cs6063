@@ -6,6 +6,8 @@ import java.net.MulticastSocket;
 import java.nio.ByteBuffer;
 import java.util.UUID;
 
+// TODO: Refactor to thread subclass, rename, and remove parent class
+
 public class failureServer extends failureBase {
 	protected int port;
 		
@@ -48,9 +50,6 @@ public class failureServer extends failureBase {
             main.debugPrint("\n\tRecvd UUID = " + msg.getUuid().toString());
             main.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
 
-			// Update process list with current time, uuid, and sequence number
-			Record r = new Record();
-
             // Lock the mutex
 			try {
 				main.listMutex.acquire();
@@ -59,7 +58,21 @@ public class failureServer extends failureBase {
 			}
 
             // Add/replace entry in the process list
-			main.processList.put(msg.getUuid(), r);
+            DeathTask dt = main.processList.get(msg.getUuid());
+
+            if ( dt != null ) {
+                // Cancel the current event
+                dt.cancel();
+            }
+
+            // Create a new task
+            dt = new DeathTask(msg.getUuid());
+
+            // Add/replace entry
+            main.processList.put(msg.getUuid(), dt);
+
+            // Schedule a new event
+            main.setProcessDeathTimeout(dt);
 
             // Let go of the mutex
 			main.listMutex.release();

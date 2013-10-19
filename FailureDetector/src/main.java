@@ -12,7 +12,6 @@ public class main {
 
     // Failure detector objects
 	private static failureServer server;
-	private static failureDetector detector;
 
     // Duplicate parameter detection
 	private static boolean bPeriod = false;
@@ -22,7 +21,6 @@ public class main {
 	private static boolean bLossy = false;
 	public static boolean bDebug = false;
 
-    // TODO: Refactor failure detection timeout using timers?
     // TODO: Timeout and period parameters need to be in subseconds (perhaps 500ms and 1000ms?).
     // TODO: the current values lead to ~3 sec avg detection time. Meaning ~3 sec avg leader election time will be impossible.
 
@@ -49,7 +47,7 @@ public class main {
 
     // Process list
 	public static Semaphore listMutex = new Semaphore(1);
-    public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
+    public static HashMap<UUID, DeathTask> processList = new HashMap<UUID, DeathTask>();
 
     public static void debugPrint (String str) {
         if ( bDebug ) {
@@ -69,6 +67,12 @@ public class main {
         timer.schedule(curTask, 2000);
     }
 
+    // Set a process death task to occur
+    public static void setProcessDeathTimeout (DeathTask dt) {
+        // Schedule the task
+        timer.schedule(dt, (period + timeout) * 1000);
+    }
+
     // Whether or not the current process is highest in the process list
     public static boolean isHighest() {
         // Lock the mutex
@@ -80,10 +84,10 @@ public class main {
 
         // Iterate over the list searching for a higher uuid
         boolean highest = true;
-        Iterator<Map.Entry<UUID, Record>> it = main.processList.entrySet().iterator();
+        Iterator<Map.Entry<UUID, DeathTask>> it = main.processList.entrySet().iterator();
         while ( it.hasNext() ) {
             // Get UUID from the list iterator
-            Map.Entry<UUID, Record> entry = it.next();
+            Map.Entry<UUID, DeathTask> entry = it.next();
             UUID curListUuid = entry.getKey();
 
             // Do comparison
@@ -118,6 +122,21 @@ public class main {
         return highest;
     }
 
+    public static void remove (UUID uuid) {
+        // Lock the mutex
+        try {
+            main.listMutex.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Remove the process from the list
+        main.processList.remove(uuid);
+
+        // Let go of the mutex
+        main.listMutex.release();
+    }
+
     // Accessor
     public static UUID getLeader() {
         return leader;
@@ -136,11 +155,11 @@ public class main {
 
 	private static void startRunning () throws Exception {
 		server = new failureServer(servPort);
-		detector = new failureDetector(period, timeout);
+		// detector = new failureDetector(period, timeout);
 
         timer.scheduleAtFixedRate(heartBeatTask, 0, period * 1000);
         server.startRunning();
-		detector.startRunning();
+        //  detector.startRunning();
 	}
 
 	private static void parseArgs(String[] args) throws Exception {
