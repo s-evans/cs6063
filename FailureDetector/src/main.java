@@ -10,8 +10,8 @@ public class main {
     // State
     private static ElectionStateBase electionState = new ElectionStateNoLeader();
 
-    // Failure detector objects
-	private static failureServer server;
+    // Server thread
+	private static ServerThread server;
 
     // Duplicate parameter detection
 	private static boolean bPeriod = false;
@@ -21,17 +21,14 @@ public class main {
 	private static boolean bLossy = false;
 	public static boolean bDebug = false;
 
-    // TODO: Timeout and period parameters need to be in subseconds (perhaps 500ms and 1000ms?).
-    // TODO: the current values lead to ~3 sec avg detection time. Meaning ~3 sec avg leader election time will be impossible.
-
-	// Parameters
-    public static int period = 2;
-	public static int timeout = 1;
+	// Program parameters
+    public static int period = 1000;
+	public static int timeout = 500;
 	public static int destPort = 9000;
 	public static int servPort = 9000;
 	public static int lossPct = 0;
 
-    // This is the UUID of this process
+    // UUID of this process
     protected static final UUID uuid = UUID.randomUUID();
 
     // Currently elected leader
@@ -70,7 +67,7 @@ public class main {
     // Set a process death task to occur
     public static void setProcessDeathTimeout (DeathTask dt) {
         // Schedule the task
-        timer.schedule(dt, (period + timeout) * 1000);
+        timer.schedule(dt, period + timeout);
     }
 
     // Whether or not the current process is highest in the process list
@@ -154,12 +151,14 @@ public class main {
     }
 
 	private static void startRunning () throws Exception {
-		server = new failureServer(servPort);
-		// detector = new failureDetector(period, timeout);
+        // Create thread object
+		server = new ServerThread(servPort);
 
-        timer.scheduleAtFixedRate(heartBeatTask, 0, period * 1000);
-        server.startRunning();
-        //  detector.startRunning();
+        // Start a recurring heartbeat task
+        timer.scheduleAtFixedRate(heartBeatTask, 0, period);
+
+        // Start the server thread
+        server.start();
 	}
 
 	private static void parseArgs(String[] args) throws Exception {
@@ -170,8 +169,8 @@ public class main {
 				System.out.print("\n\t-h = print this help message;");
 				System.out.print("\n\t-D = debug;");
 				System.out.print("\n\t-l = lossy;");
-				System.out.print("\n\t-p = period (seconds);");
-				System.out.print("\n\t-t = timeout (seconds);");
+				System.out.print("\n\t-p = period (milliseconds);");
+				System.out.print("\n\t-t = timeout (milliseconds);");
 				System.out.print("\n\t-d = destination port; default = 9000;");
 				System.out.print("\n\t-s = server port; default = 9001;");
 				throw new Exception();

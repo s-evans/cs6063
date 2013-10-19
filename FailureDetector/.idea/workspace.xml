@@ -4,12 +4,12 @@
     <list default="true" id="0a4c3144-807e-4fde-82a8-9f1f29109212" name="Default" comment="" />
     <ignored path="FailureDetector.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/main.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382145451458" ignored="false" />
+    <file path="/main.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382145909957" ignored="false" />
     <file path="/failureDetector.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382143299536" ignored="false" />
     <file path="/a.dummy" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381981936780" ignored="false" />
     <file path="/fragment.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381884329429" ignored="false" />
     <file path="/failureClient.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382142075749" ignored="false" />
-    <file path="/failureServer.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382145342910" ignored="false" />
+    <file path="/failureServer.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382145701046" ignored="false" />
     <file path="/Election.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381889509002" ignored="false" />
     <file path="/MsgBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381979584148" ignored="false" />
     <file path="/MsgCoordinator.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063707240" ignored="false" />
@@ -17,7 +17,7 @@
     <file path="/MsgHeartBeat.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381974004689" ignored="false" />
     <file path="/MsgOk.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063936952" ignored="false" />
     <file path="/failureBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382144444728" ignored="false" />
-    <file path="/*.regexp" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382145458762" ignored="false" />
+    <file path="/*.regexp" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382146560584" ignored="false" />
     <file path="/ElectionStateBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382142388933" ignored="false" />
     <file path="/ElectionStateNoLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382060794086" ignored="false" />
     <file path="/EventInit.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382057535584" ignored="false" />
@@ -33,6 +33,7 @@
     <file path="/LossyDatagramSocket.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382142220912" ignored="false" />
     <file path="/HeartBeatTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382142795514" ignored="false" />
     <file path="/DeathTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382144183710" ignored="false" />
+    <file path="/ServerThread.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382146012388" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +102,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="54" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0">
+            <state line="17" column="16" selection-start="454" selection-end="454" vertical-scroll-proportion="0.37176472">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1671#1688#0" expanded="true" />
+                <element signature="e#1435#1452#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,7 +135,7 @@
       <file leaf-file-name="DeathTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="15" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+            <state line="24" column="27" selection-start="714" selection-end="714" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,17 +155,30 @@
       <file leaf-file-name="ElectionTimeoutTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Task/ElectionTimeoutTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="16" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
+            <state line="9" column="51" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="failureServer.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/failureServer.java">
+      <file leaf-file-name="ServerThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ServerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="69" selection-start="276" selection-end="276" vertical-scroll-proportion="0.07058824">
-              <folding />
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MsgBase.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Msg/MsgBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#Factory#0;class#MsgBase#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,16 +186,7 @@
       <file leaf-file-name="LossyDatagramSocket.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="46" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="failureBase.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/failureBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="8" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -197,7 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java" />
         <option value="$PROJECT_DIR$/src/State/ElectionStateNoLeader.java" />
         <option value="$PROJECT_DIR$/src/State/ElectionStateOkRecvd.java" />
         <option value="$PROJECT_DIR$/src/State/ElectionStateOkSent.java" />
@@ -209,9 +213,10 @@
         <option value="$PROJECT_DIR$/src/failureDetector.java" />
         <option value="$PROJECT_DIR$/src/DeathTask.java" />
         <option value="$PROJECT_DIR$/src/Task/ElectionTimeoutTask.java" />
-        <option value="$PROJECT_DIR$/src/Task/DeathTask.java" />
         <option value="$PROJECT_DIR$/src/failureBase.java" />
         <option value="$PROJECT_DIR$/src/failureServer.java" />
+        <option value="$PROJECT_DIR$/src/ServerThread.java" />
+        <option value="$PROJECT_DIR$/src/Task/DeathTask.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
       </list>
     </option>
@@ -346,78 +351,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="State" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Msg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Event" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -768,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="46" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Msg/MsgCoordinator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="13" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
@@ -791,15 +717,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Task/ElectionTimeoutTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
+        <state line="9" column="51" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureBase.java">
+    <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="8" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="24" column="27" selection-start="714" selection-end="714" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -810,29 +738,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
+    <entry file="file://$PROJECT_DIR$/src/ServerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="15" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Msg/MsgBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#Factory#0;class#MsgBase#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="54" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0">
+        <state line="17" column="16" selection-start="454" selection-end="454" vertical-scroll-proportion="0.37176472">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1671#1688#0" expanded="true" />
+            <element signature="e#1435#1452#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/failureServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="69" selection-start="276" selection-end="276" vertical-scroll-proportion="0.07058824">
-          <folding />
         </state>
       </provider>
     </entry>

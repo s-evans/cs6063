@@ -14,7 +14,7 @@ public class DeathTask extends TimerTask {
         System.err.printf("\n\tUUID: %s; ", uuid.toString());
 
         // Remove process from list
-        main.remove(uuid); // avoids a ConcurrentModificationException
+        main.remove(uuid);
 
         // Check if the failed client is the leader
         if ( uuid.compareTo(main.getLeader()) == 0 ) {
