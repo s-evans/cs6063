@@ -2,21 +2,16 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.Semaphore;
-import java.util.UUID;
 
 
 public class main {
     // State
     private static ElectionStateBase electionState = new ElectionStateNoLeader();
-	private static boolean threadsRunning = false;
 
     // Failure detector objects
 	private static failureServer server;
-	private static failureClient client;
 	private static failureDetector detector;
 
     // Duplicate parameter detection
@@ -27,6 +22,7 @@ public class main {
 	private static boolean bLossy = false;
 	public static boolean bDebug = false;
 
+    // TODO: Refactor failure detection timeout using timers?
     // TODO: Timeout and period parameters need to be in subseconds (perhaps 500ms and 1000ms?).
     // TODO: the current values lead to ~3 sec avg detection time. Meaning ~3 sec avg leader election time will be impossible.
 
@@ -43,12 +39,35 @@ public class main {
     // Currently elected leader
     protected static UUID leader = uuid;
 
-    // Constant values
+    // Timer objects
+    protected static Timer timer = new Timer();
+    protected static TimerTask curTask = new ElectionTimeoutTask();
+    protected static TimerTask heartBeatTask = new HeartBeatTask();
+
+    // Size of datagrams
     public static final int datagramSize = 16 + 4;
 
     // Process list
 	public static Semaphore listMutex = new Semaphore(1);
     public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
+
+    public static void debugPrint (String str) {
+        if ( bDebug ) {
+            System.out.print(str);
+        }
+    }
+
+    // Set a timeout event to occur
+    public static void setElectionMsgTimeout () {
+        // Cancel the currently scheduled timeout task
+        curTask.cancel();
+
+        // Create a new task
+        curTask = new ElectionTimeoutTask();
+
+        // Schedule the task
+        timer.schedule(curTask, 2000);
+    }
 
     // Whether or not the current process is highest in the process list
     public static boolean isHighest() {
@@ -67,8 +86,24 @@ public class main {
             Map.Entry<UUID, Record> entry = it.next();
             UUID curListUuid = entry.getKey();
 
+            // Do comparison
+            int val = curListUuid.compareTo(main.getSelf());
+
+            String str;
+            if ( val == 0 ) {
+                str = "=";
+            } else if ( val == 1 ) {
+                str = ">";
+            } else if ( val == -1 ) {
+                str = "<";
+            } else {
+                str = "?";
+            }
+
+            main.debugPrint("\n\t" + curListUuid.toString() + str.toString() + main.getSelf().toString());
+
             // If list uuid > our uuid
-            if ( curListUuid.compareTo(main.getSelf()) == 1 ) {
+            if ( val == 1 ) {
                 // We're not the highest
                 highest = false;
                 break;
@@ -78,53 +113,37 @@ public class main {
         // Let go of the mutex
         main.listMutex.release();
 
+        main.debugPrint("\nAm I Highest? " + highest);
+
         return highest;
     }
 
+    // Accessor
     public static UUID getLeader() {
         return leader;
     }
 
+    // Accessor
     public static void setLeader(UUID newLeader) {
         System.out.printf("\nNew leader established: %s", newLeader.toString());
         leader = newLeader;
     }
 
+    // Accessor
     public static UUID getSelf () {
         return uuid;
     }
 
-	private static void stopRunning () {
-		threadsRunning = false;
-	}
-
 	private static void startRunning () throws Exception {
 		server = new failureServer(servPort);
-		client = new failureClient(destPort, period);
 		detector = new failureDetector(period, timeout);
-		
-		client.startRunning();
-		server.startRunning();
+
+        timer.scheduleAtFixedRate(heartBeatTask, 0, period * 1000);
+        server.startRunning();
 		detector.startRunning();
-
-		threadsRunning = true;
-	}
-	
-	private static boolean isRunning () {
-		return threadsRunning;
 	}
 
-	private static void waitForThreads () {
-		while ( isRunning() && client.isRunning() && 
-				server.isRunning() && detector.isRunning() ) {
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-			}
-		}
-	}
-	
-	private static void parseArgs(String[] args) throws Exception {		
+	private static void parseArgs(String[] args) throws Exception {
 		// Iterate over arguments
 		for ( int i = 0 ; i < args.length ; i++ ) {
 			if ( args[i].equals("-h") ) {
@@ -248,6 +267,8 @@ public class main {
 	}
 
     public static void sendMsg (MsgBase.Type msgType) {
+        main.debugPrint("\nSending Message Type " + msgType.ordinal());
+
         try {
             // Create a socket
             LossyDatagramSocket socket = new LossyDatagramSocket(main.lossPct);
@@ -280,10 +301,12 @@ public class main {
         }
     }
 
+    // Accessor
     public static ElectionStateBase getElectionState () {
         return electionState;
     }
 
+    // Accessor
     public static void setElectionState ( ElectionStateBase state ) {
         // Set the state
         main.electionState = state;
@@ -292,6 +315,7 @@ public class main {
         main.electionState.Handle(new EventInit());
     }
 
+    // Application entry point
 	public static void main(String[] args) throws Exception {
 		System.out.print("iLead V1.0 (c) 2013");
 		System.out.printf("\nUUID = %s", main.getSelf());
@@ -305,8 +329,6 @@ public class main {
 		startRunning();
 
         setElectionState(new ElectionStateNoLeader());
-
-		waitForThreads();
 	}
 
 }

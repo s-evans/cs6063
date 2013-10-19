@@ -19,9 +19,7 @@ public class failureServer extends failureBase {
 
 			socket = new MulticastSocket(outer.getPort());
 			
-			if ( main.bDebug ) {
-				System.out.printf("\nServer using port: %d", outer.getPort());
-			}
+            main.debugPrint("\nServer using port " + outer.getPort());
 		}
 	
 		protected void main () {
@@ -30,10 +28,8 @@ public class failureServer extends failureBase {
 			DatagramPacket p = new DatagramPacket(bb.array(), bb.array().length);
 
             // Debug
-			if ( main.bDebug ) {
-                System.out.print("\nBlocking read...");
-			}
-			
+            main.debugPrint("\nBlocking read...");
+
 			// Blocking read on the socket
 			try {
 				socket.receive(p);
@@ -43,18 +39,14 @@ public class failureServer extends failureBase {
 			}
 
             // Debug
-			if ( main.bDebug ) {
-				System.out.print("\nGot packet");
-			}
+            main.debugPrint("\nGot packet");
 
             // Create an object based on the message
             MsgBase msg = MsgBase.Factory(bb);
 
             // Debug
-            if ( main.bDebug ) {
-                System.out.printf("\n\tRecvd UUID = %s", msg.getUuid().toString());
-                System.out.printf("\n\tRecvd type = %d", msg.getType().ordinal());
-            }
+            main.debugPrint("\n\tRecvd UUID = " + msg.getUuid().toString());
+            main.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
 
 			// Update process list with current time, uuid, and sequence number
 			Record r = new Record();

@@ -8,17 +8,26 @@ public class ElectionStateHaveLeader extends ElectionStateBase {
     }
 
     public void Handle ( EventInit evt ) {
+        main.debugPrint("\nState = ElectionStateHaveLeader");
+
         // Set the new leader
         main.setLeader(uuid);
     }
 
     public void Handle ( EventLeaderDeath evt ) {
+        main.debugPrint("\nHandling EventLeaderDeath");
+
         // Set state
         main.setElectionState(new ElectionStateNoLeader());
     }
 
     public void Handle ( EventElectionMsgRecvd evt ) {
-        // Set state
-        main.setElectionState(new ElectionStateNoLeader());
+        main.debugPrint("\nHandling EventElectionMsgRecvd");
+
+        // Validate UUID of the message
+        if ( evt.getUuid().compareTo(main.getSelf()) == -1 ) {
+            // Set state
+            main.setElectionState(new ElectionStateOkSent());
+        }
     }
 }

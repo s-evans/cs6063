@@ -13,27 +13,27 @@ abstract class ElectionStateBase {
 
     // All events are ignored by default unless overridden in subclasses
     public void Handle ( EventLeaderDeath evt ) {
-        System.out.print("\nIgnoring Leader Death Event");
+        main.debugPrint("\nIgnoring Leader Death Event");
     }
 
     public void Handle ( EventNoMsgTimeout evt ) {
-        System.out.print("\nIgnoring Msg Timeout Event");
+        main.debugPrint("\nIgnoring Msg Timeout Event");
     }
 
     public void Handle ( EventElectionMsgRecvd evt ) {
-        System.out.print("\nIgnoring Election Msg Recvd Event");
+        main.debugPrint("\nIgnoring Election Msg Recvd Event");
     }
 
     public void Handle ( EventElectionMsgSent evt ) {
-        System.out.print("\nIgnoring Election Msg Sent Event");
+        main.debugPrint("\nIgnoring Election Msg Sent Event");
     }
 
     public void Handle ( EventOkMsgRecvd evt ) {
-        System.out.print("\nIgnoring Ok Msg Recvd Event");
+        main.debugPrint("\nIgnoring Ok Msg Recvd Event");
     }
 
     public void Handle ( EventOkMsgSent evt ) {
-        System.out.print("\nIgnoring Ok Msg Sent Event");
+        main.debugPrint("\nIgnoring Ok Msg Sent Event");
     }
 
 }

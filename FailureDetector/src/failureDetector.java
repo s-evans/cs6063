@@ -31,13 +31,12 @@ public class failureDetector extends failureBase {
 		    	Entry<UUID, Record> entry = it.next();
 		    	UUID uuid = entry.getKey();
 		    	Record r = entry.getValue();
-		    	
-		    	if ( main.bDebug ) {
-			        System.out.printf("\nInspecting record");
-			        System.out.printf("\n\tUUID: %s", uuid.toString());
-			        System.out.printf("\n\tDate: %s", r.getTime().toString());
-		    	}
-		    	
+
+                // Debug
+                main.debugPrint("\nInspecting record");
+                main.debugPrint("\n\tUUID: " + uuid.toString());
+                main.debugPrint("\n\tDate: " + r.getTime().toString());
+
 		    	// Check for timed out processes
 		        if ( now.getTime() - r.getTime().getTime() > (timeout + period) * 1000 ) {
 		        	System.err.printf("\nFailure detected;");
@@ -47,7 +46,7 @@ public class failureDetector extends failureBase {
 		        	it.remove(); // avoids a ConcurrentModificationException
 
                     // Check if the failed client is the leader
-                    if ( uuid == main.getLeader() ) {
+                    if ( uuid.compareTo(main.getLeader()) == 0 ) {
                         // Initiate a leader election, likely on a new thread
                         System.err.printf("\n\tFailed process was the leader");
 
