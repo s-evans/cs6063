@@ -27,17 +27,8 @@ public class DeathTask extends TimerTask {
             // Initiate a leader election, likely on a new thread
             System.err.printf("\n\tFailed process was the leader");
 
-            // Check process list
-            if ( main.isHighest() ) {
-                // Send coordinator message
-                main.sendMsg(MsgBase.Type.Coordinator);
-
-                // Set state
-                 main.setElectionState(new ElectionStateHaveLeader(main.getSelf()));
-            } else {
-                // Initiate an election
-                main.getElectionState().Handle(new EventLeaderDeath());
-            }
+            // Initiate an election
+            main.getElectionState().Handle(new EventLeaderDeath());
         }
     }
 }

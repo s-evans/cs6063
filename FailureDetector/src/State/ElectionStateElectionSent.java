@@ -24,6 +24,16 @@ public class ElectionStateElectionSent extends ElectionStateBase {
         }
     }
 
+    public void Handle ( EventElectionMsgRecvd evt ) {
+        main.debugPrint("\nHandling EventElectionMsgRecvd");
+
+        // Validate UUID of the message
+        if ( evt.getUuid().compareTo(main.getSelf()) == -1 ) {
+            // Set state
+            main.setElectionState(new ElectionStateOkSent());
+        }
+    }
+
     public void Handle ( EventOkMsgRecvd evt ) {
         main.debugPrint("\nHandling EventOkMsgRecvd");
 
