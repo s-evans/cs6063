@@ -6,6 +6,6 @@ public class MsgCoordinator extends MsgBase {
 
     public void Handle() {
         // Pass this off to the state machine
-        main.getElectionState().Handle(new EventCoordinatorMsg(uuid));
+        iLead.getElectionState().Handle(new EventCoordinatorMsg(uuid));
     }
 }

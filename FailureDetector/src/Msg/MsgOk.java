@@ -7,6 +7,6 @@ public class MsgOk extends MsgBase {
 
     public void Handle() {
         // Pass this off to the state machine
-        main.getElectionState().Handle(new EventOkMsgRecvd(uuid));
+        iLead.getElectionState().Handle(new EventOkMsgRecvd(uuid));
     }
 }

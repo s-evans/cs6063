@@ -1,9 +1,9 @@
 
 public class ElectionStateNoLeader extends ElectionStateBase {
     public void Handle ( EventInit evt ) {
-        main.debugPrint("\nState = ElectionStateNoLeader");
+        iLead.debugPrint("\nState = ElectionStateNoLeader");
 
         // Change state
-        main.setElectionState(new ElectionStateElectionSent());
+        iLead.setElectionState(new ElectionStateElectionSent());
     }
 }

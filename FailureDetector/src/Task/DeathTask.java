@@ -10,7 +10,7 @@ public class DeathTask extends TimerTask {
 
     public void run () {
         // Check edge case
-        if ( uuid.compareTo(main.getSelf()) == 0 ) {
+        if ( uuid.compareTo(iLead.getSelf()) == 0 ) {
             // Ignore
             return;
         }
@@ -20,15 +20,15 @@ public class DeathTask extends TimerTask {
         System.err.printf("\n\tUUID: %s; ", uuid.toString());
 
         // Remove process from list
-        main.remove(uuid);
+        iLead.remove(uuid);
 
         // Check if the failed client is the leader
-        if ( uuid.compareTo(main.getLeader()) == 0 ) {
+        if ( uuid.compareTo(iLead.getLeader()) == 0 ) {
             // Initiate a leader election, likely on a new thread
             System.err.printf("\n\tFailed process was the leader");
 
             // Initiate an election
-            main.getElectionState().Handle(new EventLeaderDeath());
+            iLead.getElectionState().Handle(new EventLeaderDeath());
         }
     }
 }

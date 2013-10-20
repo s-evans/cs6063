@@ -11,7 +11,7 @@ public class LossyDatagramSocket extends DatagramSocket {
 		super();
 		this.lossPct = lossPct;
 		
-        main.debugPrint("\nUsing loss PCT: " + lossPct);
+        iLead.debugPrint("\nUsing loss PCT: " + lossPct);
 	}
 
 	public void send(DatagramPacket p) throws IOException {
@@ -20,11 +20,11 @@ public class LossyDatagramSocket extends DatagramSocket {
 		int num = rand.nextInt(100);
 
         // Debug
-        main.debugPrint("\nRolled: " + num);
+        iLead.debugPrint("\nRolled: " + num);
 
 		// Drop the packet randomly
 		if ( num < lossPct ) {
-		    main.debugPrint("\nSuprise! Dropped packet.");
+		    iLead.debugPrint("\nSuprise! Dropped packet.");
 			return;
 		}
 		
