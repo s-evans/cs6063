@@ -10,7 +10,7 @@ public class ServerThread extends Thread {
     public ServerThread(int port) throws Exception {
         socket = new MulticastSocket(port);
 
-        main.debugPrint("\nServer using port " + port);
+        iLead.debugPrint("\nServer using port " + port);
     }
 
     public void run () {
@@ -22,11 +22,11 @@ public class ServerThread extends Thread {
 
     protected void main () {
         // Create packet
-        ByteBuffer bb = ByteBuffer.allocate(main.datagramSize);
+        ByteBuffer bb = ByteBuffer.allocate(iLead.datagramSize);
         DatagramPacket p = new DatagramPacket(bb.array(), bb.array().length);
 
         // Debug
-        main.debugPrint("\nBlocking read...");
+        iLead.debugPrint("\nBlocking read...");
 
         // Blocking read on the socket
         try {
@@ -37,7 +37,7 @@ public class ServerThread extends Thread {
         }
 
         // Debug
-        main.debugPrint("\nGot packet");
+        iLead.debugPrint("\nGot packet");
 
         // Create an object based on the message
         MsgBase msg = MsgBase.Factory(bb);
@@ -46,6 +46,6 @@ public class ServerThread extends Thread {
         MsgTask mt = new MsgTask(msg);
 
         // Schedule the task to run immediately
-        main.msgRecvd(mt);
+        iLead.msgRecvd(mt);
     }
 }

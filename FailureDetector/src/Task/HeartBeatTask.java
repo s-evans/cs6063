@@ -3,10 +3,10 @@ import java.util.TimerTask;
 public class HeartBeatTask extends TimerTask {
     public void run() {
         // Send heart beat message
-        main.sendMsg(MsgBase.Type.HeartBeat);
+        iLead.sendMsg(MsgBase.Type.HeartBeat);
 
         // Debug
-        main.debugPrint("\nHeart Beat Packet Sent");
-        main.debugPrint("\n\tSent UUID: " + main.getSelf().toString());
+        iLead.debugPrint("\nHeart Beat Packet Sent");
+        iLead.debugPrint("\n\tSent UUID: " + iLead.getSelf().toString());
     }
 }

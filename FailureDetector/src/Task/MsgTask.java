@@ -9,11 +9,11 @@ public class MsgTask extends TimerTask {
 
     public void run() {
         // Debug
-        main.debugPrint("\n\tRecvd UUID = " + msg.getUuid().toString());
-        main.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
+        iLead.debugPrint("\n\tRecvd UUID = " + msg.getUuid().toString());
+        iLead.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
 
         // Get this process's entry in the process list
-        DeathTask dt = main.processList.get(msg.getUuid());
+        DeathTask dt = iLead.processList.get(msg.getUuid());
 
         // Check if it exists
         if ( dt != null ) {
@@ -25,10 +25,10 @@ public class MsgTask extends TimerTask {
         dt = new DeathTask(msg.getUuid());
 
         // Add/replace entry
-        main.processList.put(msg.getUuid(), dt);
+        iLead.processList.put(msg.getUuid(), dt);
 
         // Schedule the new death timeout event
-        main.setProcessDeathTimeout(dt);
+        iLead.setProcessDeathTimeout(dt);
 
         // Handle the message
         msg.Handle();

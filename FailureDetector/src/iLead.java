@@ -5,7 +5,7 @@ import java.net.UnknownHostException;
 import java.util.*;
 
 
-public class main {
+public class iLead {
     // State
     private static ElectionStateBase electionState = new ElectionStateNoLeader();
 
@@ -81,14 +81,14 @@ public class main {
     public static boolean isHighest() {
         // Iterate over the list searching for a higher uuid
         boolean highest = true;
-        Iterator<Map.Entry<UUID, DeathTask>> it = main.processList.entrySet().iterator();
+        Iterator<Map.Entry<UUID, DeathTask>> it = iLead.processList.entrySet().iterator();
         while ( it.hasNext() ) {
             // Get UUID from the list iterator
             Map.Entry<UUID, DeathTask> entry = it.next();
             UUID curListUuid = entry.getKey();
 
             // Do comparison
-            int val = curListUuid.compareTo(main.getSelf());
+            int val = curListUuid.compareTo(iLead.getSelf());
 
             String str;
             if ( val == 0 ) {
@@ -101,7 +101,7 @@ public class main {
                 str = "?";
             }
 
-            main.debugPrint("\n\t" + curListUuid.toString() + str.toString() + main.getSelf().toString());
+            iLead.debugPrint("\n\t" + curListUuid.toString() + str.toString() + iLead.getSelf().toString());
 
             // If list uuid > our uuid
             if ( val == 1 ) {
@@ -111,14 +111,14 @@ public class main {
             }
         }
 
-        main.debugPrint("\nAm I Highest? " + highest);
+        iLead.debugPrint("\nAm I Highest? " + highest);
 
         return highest;
     }
 
     public static void remove (UUID uuid) {
         // Remove the process from the list
-        main.processList.remove(uuid);
+        iLead.processList.remove(uuid);
     }
 
     // Accessor
@@ -139,7 +139,7 @@ public class main {
 
 	private static void startRunning () throws Exception {
         // Create a socket
-        socket = new LossyDatagramSocket(main.lossPct);
+        socket = new LossyDatagramSocket(iLead.lossPct);
         socket.setBroadcast(true);
 
         // Create thread object
@@ -279,7 +279,7 @@ public class main {
 	}
 
     public static void sendMsg (MsgBase.Type msgType) {
-        main.debugPrint("\nSending Message Type " + msgType.ordinal());
+        iLead.debugPrint("\nSending Message Type " + msgType.ordinal());
 
         try {
             // Create a message
@@ -294,7 +294,7 @@ public class main {
             // Send
             try {
                 p.setAddress(InetAddress.getByName("255.255.255.255"));
-                p.setPort(main.destPort);
+                p.setPort(iLead.destPort);
                 socket.send(p);
             } catch (UnknownHostException e1) {
                 System.out.print("\nFailed to resolve host");
@@ -317,16 +317,16 @@ public class main {
     // Accessor
     public static void setElectionState ( ElectionStateBase state ) {
         // Set the state
-        main.electionState = state;
+        iLead.electionState = state;
 
         // Let the state run its thing
-        main.electionState.Handle(new EventInit());
+        iLead.electionState.Handle(new EventInit());
     }
 
     // Application entry point
 	public static void main(String[] args) throws Exception {
 		System.out.print("iLead V1.0 (c) 2013");
-		System.out.printf("\nUUID = %s", main.getSelf());
+		System.out.printf("\nUUID = %s", iLead.getSelf());
 
 	    parseArgs(args);
 

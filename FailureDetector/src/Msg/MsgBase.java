@@ -35,7 +35,7 @@ abstract class MsgBase {
     // Create a message object from a byte buffer
     public static MsgBase Factory( ByteBuffer bb ) {
         // Validate the datagram length
-        if ( bb.array().length != main.datagramSize ) {
+        if ( bb.array().length != iLead.datagramSize ) {
             System.out.print("\nDatagram length validation failed");
             throw new RuntimeException();
         }
@@ -59,12 +59,12 @@ abstract class MsgBase {
     // Default constructor
     protected MsgBase () {
         this.type = Type.Unknown;
-        this.uuid = main.getSelf();
+        this.uuid = iLead.getSelf();
     }
 
     // Create a byte buffer from a message object
     public ByteBuffer toByteBuffer () {
-        ByteBuffer bb = ByteBuffer.allocate(main.datagramSize);
+        ByteBuffer bb = ByteBuffer.allocate(iLead.datagramSize);
         bb.putLong(uuid.getMostSignificantBits());
         bb.putLong(uuid.getLeastSignificantBits());
         bb.putInt(type.ordinal());
