@@ -18,6 +18,14 @@ public class MsgTask extends TimerTask {
 
         // If exists
         if ( rcd != null ) {
+
+            // Check runId of the process against that in the process list
+            if ( msg.getRunId() > rcd.runId ) {
+                // TODO: Handle new run
+            } else if ( msg.getRunId() < rcd.runId ) {
+                // TODO: Handle duplicate process
+            }
+
             // Cancel the death task
             rcd.deathTask.cancel();
         }
@@ -31,11 +39,6 @@ public class MsgTask extends TimerTask {
 
         // Schedule the new death timeout event
         iLead.setProcessDeathTimeout(dt);
-
-        // TODO: Check runId of the process against that in the process list; On increment, that's a new run; On decrement, that's a duplicate; If runId is as expected, handle the message as normal;
-        // TODO: Add DuplicateDetectedTask class, where we send a duplicate msg to the client. DuplicateMsg should contain UUID and RunId of the duplicate process; This will keep all messages the same size, while also not disturbing the legit process;
-        // TODO: Add ProcRestartTask class, where we print something about restart, and check if it's the leader that restarted, and if so start a new election
-        // TODO: Add DuplicateMsg, where we handle the duplicate message by checking the UUID and RunId against our own, and killing ourselves if it matches
 
         // Handle the message
         msg.Handle();

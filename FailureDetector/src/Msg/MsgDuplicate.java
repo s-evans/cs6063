@@ -14,10 +14,9 @@ public class MsgDuplicate extends MsgBase {
     }
 
     public void Handle() {
-        // if ( uuid == iLead.getSelf() && runId == iLead.getInstanceNum() )  {
+        if ( uuid == iLead.getSelf() && runId == iLead.getInstanceNum() )  {
             // TODO: Print something
             // TODO: Kill self. May be complicated by multi threading?
-
-        // }
+        }
     }
 }
