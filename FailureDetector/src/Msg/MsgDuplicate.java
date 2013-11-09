@@ -1,16 +1,10 @@
 import java.util.UUID;
 
 public class MsgDuplicate extends MsgBase {
-    private int runId;
+    public int runId;
 
-    public MsgDuplicate (UUID uuid, int runId) {
+    public MsgDuplicate () {
         this.type = Type.Duplicate;
-        this.runId = runId;
-        this.uuid = uuid;
-    }
-
-    public int getRunId() {
-        return runId;
     }
 
     public void Handle() {

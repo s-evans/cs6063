@@ -51,7 +51,8 @@ public class iLead {
     protected static TimerTask heartBeatTask = new HeartBeatTask();
 
     // Size of datagrams
-    public static final int datagramSize = 16 + 4;
+    // UUID + Type + Run ID
+    public static final int datagramSize = 16 + 4 + 4;
 
     // Process list
     public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();

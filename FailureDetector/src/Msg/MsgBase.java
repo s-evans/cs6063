@@ -28,7 +28,7 @@ abstract class MsgBase {
                 return new MsgCoordinator();
 
             case Duplicate:
-                // NOTE: This will not work for duplicate messages because the contructor requires a different UUID and RunID than our own
+                return new MsgDuplicate();
 
             default:
                 throw new RuntimeException("Invalid msg type");
@@ -47,10 +47,12 @@ abstract class MsgBase {
         // Get data from the packet
         UUID uuid = new UUID(bb.getLong(), bb.getLong());
         Type msgType = Type.values()[bb.getInt()];
+        int runId = bb.getInt();
 
         // Create / modify object
         MsgBase msg = Factory(msgType);
         msg.uuid = uuid;
+        msg.runId = runId;
 
         // Give it away now
         return msg;
@@ -65,7 +67,7 @@ abstract class MsgBase {
     protected MsgBase () {
         this.type = Type.Unknown;
         this.uuid = iLead.getSelf();
-        this.runId = iLead.getInstanceNumber();
+        this.runId = iLead.getInstanceNum();
     }
 
     // Create a byte buffer from a message object
@@ -74,6 +76,7 @@ abstract class MsgBase {
         bb.putLong(uuid.getMostSignificantBits());
         bb.putLong(uuid.getLeastSignificantBits());
         bb.putInt(type.ordinal());
+        bb.putInt(runId);
         return bb;
     }
 
