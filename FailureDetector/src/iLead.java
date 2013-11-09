@@ -1,7 +1,10 @@
-import java.io.IOException;
+import java.io.*;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.nio.ByteBuffer;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 
@@ -30,8 +33,14 @@ public class iLead {
 	public static int servPort = 9000;
 	public static int lossPct = 0;
 
+    // Startup config file name
+    protected static final String STARTUP_FILE_NAME = "startup";
+
     // UUID of this process
-    protected static final UUID uuid = UUID.randomUUID();
+    protected static UUID uuid = UUID.randomUUID();
+
+    // Instance number of this process
+    protected static int instanceNum = 0;
 
     // Currently elected leader
     protected static UUID leader = uuid;
@@ -135,6 +144,33 @@ public class iLead {
     // Accessor
     public static UUID getSelf () {
         return uuid;
+    }
+
+    // Retrieve this iLead process instance number
+    public static int getInstanceNum() {
+        return instanceNum;
+    }
+
+    //Attempt to read the startup file and throw exception if it does not exist
+    private static void readStartupFile() throws IOException {
+        Path initPath = Paths.get(STARTUP_FILE_NAME);
+        Scanner fileParser = new Scanner(initPath);
+        String firstLine = fileParser.nextLine();
+        String[] initInfo = firstLine.split(",");
+        iLead.uuid = UUID.fromString(initInfo[0]);
+        iLead.instanceNum = Integer.parseInt(initInfo[1]) + 1;
+        fileParser.close();
+    }
+
+    //Attempt to recreate the startup file with a known uuid and instance number
+    private static void writeStartupFile(UUID id, int instanceNum) throws IOException {
+        File initFile = new File(STARTUP_FILE_NAME);
+        initFile.delete();
+        FileWriter startupFile = new FileWriter(STARTUP_FILE_NAME);
+        startupFile.write(id.toString());
+        startupFile.write(",");
+        startupFile.write(Integer.toString(instanceNum));
+        startupFile.close();
     }
 
 	private static void startRunning () throws Exception {
@@ -330,11 +366,24 @@ public class iLead {
     // Application entry point
 	public static void main(String[] args) throws Exception {
 		System.out.print("iLead V1.0 (c) 2013");
+
+        //Attempt to read the UUID and instance number from the startup file in the current directory
+        try {
+            readStartupFile();
+        } catch (IOException e) {
+            debugPrint("Unable to locate " + STARTUP_FILE_NAME);
+        }
+
+        writeStartupFile(iLead.uuid, iLead.instanceNum);
+
 		System.out.printf("\nUUID = %s", iLead.getSelf());
+        System.out.println("Instance Number = " + iLead.instanceNum);
 
 	    parseArgs(args);
 
 		startRunning();
 	}
+
+
 
 }
