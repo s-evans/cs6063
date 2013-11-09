@@ -45,7 +45,7 @@ public class iLead {
     public static final int datagramSize = 16 + 4;
 
     // Process list
-    public static HashMap<UUID, DeathTask> processList = new HashMap<UUID, DeathTask>();
+    public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
 
     public static void debugPrint (String str) {
         if ( bDebug ) {
@@ -81,10 +81,10 @@ public class iLead {
     public static boolean isHighest() {
         // Iterate over the list searching for a higher uuid
         boolean highest = true;
-        Iterator<Map.Entry<UUID, DeathTask>> it = iLead.processList.entrySet().iterator();
+        Iterator<Map.Entry<UUID, Record>> it = iLead.processList.entrySet().iterator();
         while ( it.hasNext() ) {
             // Get UUID from the list iterator
-            Map.Entry<UUID, DeathTask> entry = it.next();
+            Map.Entry<UUID, Record> entry = it.next();
             UUID curListUuid = entry.getKey();
 
             // Do comparison
@@ -278,6 +278,27 @@ public class iLead {
 		return;
 	}
 
+    public static void sendMsg (MsgBase msg) {
+        // Convert to array
+        byte[] b = msg.toByteBuffer().array();
+
+        // Make a packet
+        DatagramPacket p = new DatagramPacket(b, b.length);
+
+        // Send
+        try {
+            p.setAddress(InetAddress.getByName("255.255.255.255"));
+            p.setPort(iLead.destPort);
+            socket.send(p);
+        } catch (UnknownHostException e1) {
+            System.out.print("\nFailed to resolve host");
+            e1.printStackTrace();
+        } catch (IOException e) {
+            System.out.print("\nFailed to send");
+            e.printStackTrace();
+        }
+    }
+
     public static void sendMsg (MsgBase.Type msgType) {
         iLead.debugPrint("\nSending Message Type " + msgType.ordinal());
 
@@ -285,25 +306,8 @@ public class iLead {
             // Create a message
             MsgBase msg = MsgBase.Factory(msgType);
 
-            // Convert to array
-            byte[] b = msg.toByteBuffer().array();
-
-            // Make a packet
-            DatagramPacket p = new DatagramPacket(b, b.length);
-
-            // Send
-            try {
-                p.setAddress(InetAddress.getByName("255.255.255.255"));
-                p.setPort(iLead.destPort);
-                socket.send(p);
-            } catch (UnknownHostException e1) {
-                System.out.print("\nFailed to resolve host");
-                e1.printStackTrace();
-            } catch (IOException e) {
-                System.out.print("\nFailed to send");
-                e.printStackTrace();
-            }
-
+            // Send it
+            sendMsg(msg);
         } catch ( Exception e ) {
             System.out.printf("\nFailed to send message");
         }

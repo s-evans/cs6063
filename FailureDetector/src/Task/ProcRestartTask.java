@@ -1,10 +1,10 @@
 import java.util.TimerTask;
 import java.util.UUID;
 
-public class DeathTask extends TimerTask {
+public class ProcRestartTask extends TimerTask {
     private UUID uuid;
 
-    public DeathTask (UUID uuid) {
+    public ProcRestartTask (UUID uuid) {
         this.uuid = uuid;
     }
 
@@ -16,18 +16,13 @@ public class DeathTask extends TimerTask {
         }
 
         // Announce
-        System.err.printf("\nFailure detected;");
+        System.err.printf("\nRestart detected;");
         System.err.printf("\n\tUUID: %s; ", uuid.toString());
-
-        // TODO: Add a similar class, ProcRestartTask, that doesn't remove from list, and prints something different
-
-        // Remove process from list
-        iLead.remove(uuid);
 
         // Check if the failed client is the leader
         if ( uuid.compareTo(iLead.getLeader()) == 0 ) {
             // Initiate a leader election, likely on a new thread
-            System.err.printf("\n\tFailed process was the leader");
+            System.err.printf("\n\tRestarted process was the leader");
 
             // Initiate an election
             iLead.getElectionState().Handle(new EventLeaderDeath());

@@ -8,7 +8,8 @@ abstract class MsgBase {
         HeartBeat,
         Election,
         Ok,
-        Coordinator
+        Coordinator,
+        Duplicate
     }
 
     // Create a generic message object based on type
@@ -25,6 +26,9 @@ abstract class MsgBase {
 
             case Coordinator:
                 return new MsgCoordinator();
+
+            case Duplicate:
+                // NOTE: This will not work for duplicate messages because the contructor requires a different UUID and RunID than our own
 
             default:
                 throw new RuntimeException("Invalid msg type");
@@ -55,11 +59,13 @@ abstract class MsgBase {
     // Data fields
     protected Type type;
     protected UUID uuid;
+    protected int runId;
 
     // Default constructor
     protected MsgBase () {
         this.type = Type.Unknown;
         this.uuid = iLead.getSelf();
+        this.runId = iLead.getInstanceNumber();
     }
 
     // Create a byte buffer from a message object
@@ -78,6 +84,10 @@ abstract class MsgBase {
 
     public Type getType () {
         return type;
+    }
+
+    public int getRunId() {
+        return runId;
     }
 
     // Handle the message

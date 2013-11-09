@@ -11,24 +11,31 @@ public class MsgTask extends TimerTask {
         // Debug
         iLead.debugPrint("\n\tRecvd UUID = " + msg.getUuid().toString());
         iLead.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
+        iLead.debugPrint("\n\tRecvd runId = " + msg.getRunId());
 
         // Get this process's entry in the process list
-        DeathTask dt = iLead.processList.get(msg.getUuid());
+        Record rcd = iLead.processList.get(msg.getUuid());
 
-        // Check if it exists
-        if ( dt != null ) {
-            // Cancel the current death timeout event
-            dt.cancel();
+        // If exists
+        if ( rcd != null ) {
+            // Cancel the death task
+            rcd.deathTask.cancel();
         }
 
         // Create a new death timeout task
-        dt = new DeathTask(msg.getUuid());
+        DeathTask dt = new DeathTask(msg.getUuid());
 
         // Add/replace entry
-        iLead.processList.put(msg.getUuid(), dt);
+        Record newRcd = new Record(msg.getRunId(), dt);
+        iLead.processList.put(msg.getUuid(), newRcd);
 
         // Schedule the new death timeout event
         iLead.setProcessDeathTimeout(dt);
+
+        // TODO: Check runId of the process against that in the process list; On increment, that's a new run; On decrement, that's a duplicate; If runId is as expected, handle the message as normal;
+        // TODO: Add DuplicateDetectedTask class, where we send a duplicate msg to the client. DuplicateMsg should contain UUID and RunId of the duplicate process; This will keep all messages the same size, while also not disturbing the legit process;
+        // TODO: Add ProcRestartTask class, where we print something about restart, and check if it's the leader that restarted, and if so start a new election
+        // TODO: Add DuplicateMsg, where we handle the duplicate message by checking the UUID and RunId against our own, and killing ourselves if it matches
 
         // Handle the message
         msg.Handle();
