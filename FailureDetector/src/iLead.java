@@ -204,6 +204,7 @@ public class iLead {
 				System.out.print("\n\t-t = timeout (milliseconds);");
 				System.out.print("\n\t-d = destination port; default = 9000;");
 				System.out.print("\n\t-s = server port; default = 9001;");
+                System.out.print("\n\t-i = identifier (16bytes); default = random");
 				throw new Exception();
 			}
 			
@@ -307,6 +308,16 @@ public class iLead {
 				bLossy = true;
 				continue;
  			}
+
+            if ( args[i].equals("-i") ) {
+                i++;
+                try {
+                    uuid = UUID.fromString(args[i]);
+                } catch (IllegalArgumentException e) {
+                    System.err.println("Please enter a valid UUID");
+                }
+                continue;
+            }
 			
 			System.err.print("\nInvalid parameter detected: " + args[i]);
 			throw new Exception();
@@ -368,6 +379,8 @@ public class iLead {
 	public static void main(String[] args) throws Exception {
 		System.out.print("iLead V1.0 (c) 2013");
 
+        parseArgs(args);
+
         //Attempt to read the UUID and instance number from the startup file in the current directory
         try {
             readStartupFile();
@@ -377,10 +390,8 @@ public class iLead {
 
         writeStartupFile(iLead.uuid, iLead.instanceNum);
 
-		System.out.printf("\nUUID = %s", iLead.getSelf());
-        System.out.println("Instance Number = " + iLead.instanceNum);
-
-	    parseArgs(args);
+        System.out.printf("\nUUID = %s", iLead.getSelf());
+        System.out.println(" Instance Number = " + iLead.instanceNum);
 
 		startRunning();
 	}

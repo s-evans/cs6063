@@ -21,6 +21,7 @@ public class MsgTask extends TimerTask {
 
             // Check runId of the process against that in the process list
             if ( msg.getRunId() > rcd.runId ) {
+                System.out.println(msg.getUuid().toString() + " has restarted");
                 // TODO: Handle new run
                 // TODO: Create ProcRestartTask and schedule immediately
             } else if ( msg.getRunId() < rcd.runId ) {
