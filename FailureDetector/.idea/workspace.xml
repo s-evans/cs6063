@@ -7,15 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a4c3144-807e-4fde-82a8-9f1f29109212" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" afterPath="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/MsgTask.java" afterPath="$PROJECT_DIR$/src/Task/MsgTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ServerThread.java" afterPath="$PROJECT_DIR$/src/ServerThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iLead.java" afterPath="$PROJECT_DIR$/src/iLead.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FailureDetector.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/main.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382214206639" ignored="false" />
     <file path="/failureDetector.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382143299536" ignored="false" />
-    <file path="/a.dummy" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382214518260" ignored="false" />
+    <file path="/a.dummy" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384313467623" ignored="false" />
     <file path="/fragment.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381884329429" ignored="false" />
     <file path="/failureClient.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382142075749" ignored="false" />
     <file path="/failureServer.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382145701046" ignored="false" />
@@ -42,13 +43,13 @@
     <file path="/LossyDatagramSocket.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382142220912" ignored="false" />
     <file path="/HeartBeatTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382142795514" ignored="false" />
     <file path="/DeathTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382208050510" ignored="false" />
-    <file path="/ServerThread.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382190471770" ignored="false" />
-    <file path="/Dummy.txt" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384306811507" ignored="false" />
-    <file path="/MsgTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384218996595" ignored="false" />
+    <file path="/ServerThread.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384313084988" ignored="false" />
+    <file path="/Dummy.txt" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384311209333" ignored="false" />
+    <file path="/MsgTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384312644038" ignored="false" />
     <file path="/RmTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382192709774" ignored="false" />
     <file path="/InitTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382194089737" ignored="false" />
-    <file path="/iLead.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384306915666" ignored="false" />
-    <file path="/MsgDuplicate.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384041260983" ignored="false" />
+    <file path="/iLead.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384313233244" ignored="false" />
+    <file path="/MsgDuplicate.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384313259452" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,16 +121,16 @@
       <file leaf-file-name="iLead.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/iLead.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="316" column="65" selection-start="8975" selection-end="8975" vertical-scroll-proportion="0.907781">
+            <state line="332" column="31" selection-start="9276" selection-end="9276" vertical-scroll-proportion="4.709259">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UUID.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/UUID.java">
+      <file leaf-file-name="Timer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/Timer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="190" column="23" selection-start="5842" selection-end="5842" vertical-scroll-proportion="0.0">
+            <state line="454" column="16" selection-start="20556" selection-end="20556" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,7 +139,7 @@
       <file leaf-file-name="MsgDuplicate.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Msg/MsgDuplicate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="34" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
+            <state line="13" column="32" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -147,25 +148,25 @@
       <file leaf-file-name="MsgBase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Msg/MsgBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="35" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
+            <state line="44" column="124" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Record.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Record.java">
+      <file leaf-file-name="ProcRestartTask.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Task/ProcRestartTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="17" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+            <state line="20" column="59" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeathTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
+      <file leaf-file-name="ServerThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ServerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+            <state line="24" column="28" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,16 +175,7 @@
       <file leaf-file-name="MsgTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Task/MsgTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="34" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgHeartBeat.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Msg/MsgHeartBeat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0">
+            <state line="22" column="47" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -198,10 +190,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimerTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/TimerTask.java">
+      <file leaf-file-name="MsgHeartBeat.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Msg/MsgHeartBeat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="19" selection-start="3162" selection-end="3162" vertical-scroll-proportion="0.0">
+            <state line="4" column="13" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -227,7 +219,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/failureBase.java" />
         <option value="$PROJECT_DIR$/src/failureServer.java" />
-        <option value="$PROJECT_DIR$/src/ServerThread.java" />
         <option value="$PROJECT_DIR$/src/State/ElectionStateBase.java" />
         <option value="$PROJECT_DIR$/src/Task/RmTask.java" />
         <option value="$PROJECT_DIR$/src/Task/InitTask.java" />
@@ -237,10 +228,11 @@
         <option value="$PROJECT_DIR$/src/State/ElectionStateOkRecvd.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" />
         <option value="$PROJECT_DIR$/src/Msg/MsgBase.java" />
-        <option value="$PROJECT_DIR$/src/Task/MsgTask.java" />
+        <option value="$PROJECT_DIR$/src/ServerThread.java" />
         <option value="$PROJECT_DIR$/src/iLead.java" />
+        <option value="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" />
+        <option value="$PROJECT_DIR$/src/Task/MsgTask.java" />
       </list>
     </option>
   </component>
@@ -347,7 +339,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -418,7 +410,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -433,12 +425,12 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Application.iLead">
     <configuration default="false" name="iLead" type="Application" factoryName="Application" temporary="true">
@@ -472,6 +464,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -498,19 +503,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -641,17 +633,18 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23339012" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20783645" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298639" sideWeight="0.7552" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21969697" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21969697" sideWeight="0.7666099" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -662,7 +655,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979983" sideWeight="0.7552" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2353896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -733,25 +725,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/io/OutputStreamWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="16" selection-start="6642" selection-end="6642" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Msg/MsgCoordinator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="13" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="33" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/nio/file/Paths.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="13" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" />
@@ -760,20 +733,6 @@
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/io/Writer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="124" column="29" selection-start="2993" selection-end="2993" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/ProcRestartTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Msg/MsgDuplicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="34" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Record.java">
@@ -786,6 +745,62 @@
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/TimerTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="115" column="19" selection-start="3162" selection-end="3162" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/UUID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="190" column="23" selection-start="5842" selection-end="5842" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="31" selection-start="487" selection-end="510" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="674" column="29" selection-start="25309" selection-end="25309" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="28" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="454" column="16" selection-start="20556" selection-end="20556" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Msg/MsgDuplicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="32" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Task/ProcRestartTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="59" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Task/MsgTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="47" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -804,37 +819,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/MsgTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="34" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Msg/MsgBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="35" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/UUID.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="190" column="23" selection-start="5842" selection-end="5842" vertical-scroll-proportion="0.0">
+        <state line="44" column="124" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iLead.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="316" column="65" selection-start="8975" selection-end="8975" vertical-scroll-proportion="0.907781">
+        <state line="332" column="31" selection-start="9276" selection-end="9276" vertical-scroll-proportion="4.709259">
           <folding />
         </state>
       </provider>

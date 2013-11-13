@@ -326,6 +326,17 @@ public class iLead {
 		return;
 	}
 
+    public static void stopRunning() {
+        // Close the socket
+        socket.close();
+
+        // Stop the timer tasks
+        timer.cancel();
+
+        // Stop the server
+        server.setStopped();
+    }
+
     public static void sendMsg (MsgBase msg) {
         // Convert to array
         byte[] b = msg.toByteBuffer().array();

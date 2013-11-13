@@ -21,12 +21,14 @@ public class MsgTask extends TimerTask {
 
             // Check runId of the process against that in the process list
             if ( msg.getRunId() > rcd.runId ) {
-                System.out.println(msg.getUuid().toString() + " has restarted");
+                ProcRestartTask restartTask = new ProcRestartTask(msg.getUuid());
+                restartTask.run();
                 // TODO: Handle new run
                 // TODO: Create ProcRestartTask and schedule immediately
             } else if ( msg.getRunId() < rcd.runId ) {
                 // TODO: Handle duplicate process
                 // TODO: Create new MsgDuplicate, send it, and return so that the rest of this logic is cut out
+                MsgDuplicate msgDuplicate = new MsgDuplicate();
             }
 
             // Cancel the death task

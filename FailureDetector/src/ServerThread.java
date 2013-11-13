@@ -6,6 +6,7 @@ import java.nio.ByteBuffer;
 
 public class ServerThread extends Thread {
     protected DatagramSocket socket;
+    boolean stopped = false;
 
     public ServerThread(int port) throws Exception {
         socket = new MulticastSocket(port);
@@ -15,9 +16,13 @@ public class ServerThread extends Thread {
 
     public void run () {
         // Run forever
-        while ( true ) {
+        while ( !stopped ) {
             main();
         }
+    }
+
+    public void setStopped() {
+        this.stopped = true;
     }
 
     protected void main () {
