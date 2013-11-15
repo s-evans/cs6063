@@ -22,7 +22,10 @@ public class DeathTask extends TimerTask {
         // TODO: Add a similar class, ProcRestartTask, that doesn't remove from list, and prints something different
 
         // Remove process from list
-        iLead.remove(uuid);
+        // iLead.remove(uuid);
+
+        // update the failed record to the failed state
+        iLead.updateAliveStatus(uuid, false);
 
         // Check if the failed client is the leader
         if ( uuid.compareTo(iLead.getLeader()) == 0 ) {

@@ -97,6 +97,11 @@ public class iLead {
             Map.Entry<UUID, Record> entry = it.next();
             UUID curListUuid = entry.getKey();
 
+            // check is the process is alive
+            if ( !entry.getValue().alive ) {
+                continue;
+            }
+
             // Do comparison
             int val = curListUuid.compareTo(iLead.getSelf());
 
@@ -129,6 +134,12 @@ public class iLead {
     public static void remove (UUID uuid) {
         // Remove the process from the list
         iLead.processList.remove(uuid);
+    }
+
+    public static void updateAliveStatus (UUID uuid, boolean alive) {
+        Record currRcd = iLead.processList.get(uuid);
+        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, alive);
+        iLead.processList.put(uuid, newRcd);
     }
 
     // Accessor
