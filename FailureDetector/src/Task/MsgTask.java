@@ -17,7 +17,7 @@ public class MsgTask extends TimerTask {
         Record rcd = iLead.processList.get(msg.getUuid());
 
         // If exists
-        if ( rcd != null && rcd.alive ) {
+        if ( rcd != null ) {
 
             // Check runId of the process against that in the process list
             if ( msg.getRunId() > rcd.runId ) {
@@ -25,11 +25,12 @@ public class MsgTask extends TimerTask {
                 restartTask.run();
                 // TODO: Handle new run
                 // TODO: Create ProcRestartTask and schedule immediately
-            } else if ( msg.getRunId() <= rcd.runId ) {
+            } else if ( msg.getRunId() < rcd.runId ) {
                 // TODO: Handle duplicate process
                 // TODO: Create new MsgDuplicate, send it, and return so that the rest of this logic is cut out
                 MsgDuplicate msgDuplicate = new MsgDuplicate();
                 iLead.sendMsg(msgDuplicate);
+                return;
             }
 
             // Cancel the death task
