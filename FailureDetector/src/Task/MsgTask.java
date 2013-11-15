@@ -13,6 +13,11 @@ public class MsgTask extends TimerTask {
         iLead.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
         iLead.debugPrint("\n\tRecvd runId = " + msg.getRunId());
 
+        if (msg.getUuid() == iLead.getSelf() && msg.getRunId() == iLead.getInstanceNum()) {
+            iLead.debugPrint("\n\tReceived msg from self, not tracking...");
+            return;
+        }
+
         // Get this process's entry in the process list
         Record rcd = iLead.processList.get(msg.getUuid());
 
@@ -29,8 +34,7 @@ public class MsgTask extends TimerTask {
                 // TODO: Handle duplicate process
                 // TODO: Create new MsgDuplicate, send it, and return so that the rest of this logic is cut out
                 System.out.println("Sending duplicate msg");
-                MsgDuplicate msgDuplicate = new MsgDuplicate();
-                iLead.sendMsg(msgDuplicate);
+                iLead.sendMsg(MsgBase.Type.Duplicate);
                 return;
             }
 

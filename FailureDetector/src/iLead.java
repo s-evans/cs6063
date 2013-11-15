@@ -25,6 +25,7 @@ public class iLead {
 	private static boolean bServPort = false;
 	private static boolean bLossy = false;
 	public static boolean bDebug = false;
+    private static boolean idOverride = false;
 
 	// Program parameters
     public static int period = 500;
@@ -324,6 +325,7 @@ public class iLead {
                 i++;
                 try {
                     uuid = UUID.fromString(args[i]);
+                    idOverride = true;
                 } catch (IllegalArgumentException e) {
                     System.err.println("Please enter a valid UUID");
                 }
@@ -404,10 +406,12 @@ public class iLead {
         parseArgs(args);
 
         //Attempt to read the UUID and instance number from the startup file in the current directory
-        try {
-            readStartupFile();
-        } catch (IOException e) {
-            debugPrint("Unable to locate " + STARTUP_FILE_NAME);
+        if ( !idOverride ) {
+            try {
+                readStartupFile();
+            } catch (IOException e) {
+                debugPrint("Unable to locate " + STARTUP_FILE_NAME);
+            }
         }
 
         writeStartupFile(iLead.uuid, iLead.instanceNum);
