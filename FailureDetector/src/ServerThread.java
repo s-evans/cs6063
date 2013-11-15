@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 
 public class ServerThread extends Thread {
     protected DatagramSocket socket;
-    boolean stopped = false;
+    protected volatile boolean stopped = false;
 
     public ServerThread(int port) throws Exception {
         socket = new MulticastSocket(port);

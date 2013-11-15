@@ -28,6 +28,7 @@ public class MsgTask extends TimerTask {
             } else if ( msg.getRunId() < rcd.runId ) {
                 // TODO: Handle duplicate process
                 // TODO: Create new MsgDuplicate, send it, and return so that the rest of this logic is cut out
+                System.out.println("Sending duplicate msg");
                 MsgDuplicate msgDuplicate = new MsgDuplicate();
                 iLead.sendMsg(msgDuplicate);
                 return;
