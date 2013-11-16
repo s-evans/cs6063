@@ -48,11 +48,13 @@ abstract class MsgBase {
         UUID uuid = new UUID(bb.getLong(), bb.getLong());
         Type msgType = Type.values()[bb.getInt()];
         int runId = bb.getInt();
+        int ssid = bb.getInt();
 
         // Create / modify object
         MsgBase msg = Factory(msgType);
         msg.uuid = uuid;
         msg.runId = runId;
+        msg.ssid = ssid;
 
         // Give it away now
         return msg;
@@ -62,12 +64,14 @@ abstract class MsgBase {
     protected Type type;
     protected UUID uuid;
     protected int runId;
+    protected int ssid;
 
     // Default constructor
     protected MsgBase () {
         this.type = Type.Unknown;
         this.uuid = iLead.getSelf();
         this.runId = iLead.getInstanceNum();
+        this.ssid = iLead.getSsid();
     }
 
     // Create a byte buffer from a message object
@@ -77,6 +81,7 @@ abstract class MsgBase {
         bb.putLong(uuid.getLeastSignificantBits());
         bb.putInt(type.ordinal());
         bb.putInt(runId);
+        bb.putInt(ssid);
         return bb;
     }
 
@@ -91,6 +96,10 @@ abstract class MsgBase {
 
     public int getRunId() {
         return runId;
+    }
+
+    public int getSsid() {
+        return ssid;
     }
 
     // Handle the message

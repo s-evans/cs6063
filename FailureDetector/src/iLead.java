@@ -43,6 +43,9 @@ public class iLead {
     // Instance number of this process
     protected static int instanceNum = 0;
 
+    // SSID of this process
+    protected static int ssid = new Random().nextInt();
+
     // Currently elected leader
     protected static UUID leader = uuid;
 
@@ -52,8 +55,8 @@ public class iLead {
     protected static TimerTask heartBeatTask = new HeartBeatTask();
 
     // Size of datagrams
-    // UUID + Type + Run ID
-    public static final int datagramSize = 16 + 4 + 4;
+    // UUID + Type + Run ID + SSID
+    public static final int datagramSize = 16 + 4 + 4 + 4;
 
     // Process list
     public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
@@ -139,7 +142,7 @@ public class iLead {
 
     public static void updateAliveStatus (UUID uuid, boolean alive) {
         Record currRcd = iLead.processList.get(uuid);
-        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, alive);
+        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, currRcd.ssid, alive);
         iLead.processList.put(uuid, newRcd);
     }
 
@@ -159,9 +162,23 @@ public class iLead {
         return uuid;
     }
 
+    // Compare a msg against ourselves
+    public static boolean isSelf(UUID uuid, int runId, int ssid) {
+        if (getSelf().compareTo(uuid) == 0 && runId == getInstanceNum() && ssid == getSsid()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // Retrieve this iLead process instance number
     public static int getInstanceNum() {
         return instanceNum;
+    }
+
+    // Retrieve the ssid of this process
+    public static int getSsid() {
+        return ssid;
     }
 
     //Attempt to read the startup file and throw exception if it does not exist
@@ -172,17 +189,20 @@ public class iLead {
         String[] initInfo = firstLine.split(",");
         iLead.uuid = UUID.fromString(initInfo[0]);
         iLead.instanceNum = Integer.parseInt(initInfo[1]) + 1;
+        iLead.ssid = Integer.parseInt(initInfo[2]);
         fileParser.close();
     }
 
     //Attempt to recreate the startup file with a known uuid and instance number
-    private static void writeStartupFile(UUID id, int instanceNum) throws IOException {
+    private static void writeStartupFile(UUID id, int instanceNum, int ssid) throws IOException {
         File initFile = new File(STARTUP_FILE_NAME);
         initFile.delete();
         FileWriter startupFile = new FileWriter(STARTUP_FILE_NAME);
         startupFile.write(id.toString());
         startupFile.write(",");
         startupFile.write(Integer.toString(instanceNum));
+        startupFile.write(",");
+        startupFile.write(Integer.toString(ssid));
         startupFile.close();
     }
 
@@ -414,10 +434,11 @@ public class iLead {
             }
         }
 
-        writeStartupFile(iLead.uuid, iLead.instanceNum);
+        writeStartupFile(iLead.uuid, iLead.instanceNum, iLead.ssid);
 
         System.out.printf("\nUUID = %s", iLead.getSelf());
         System.out.println(" Instance Number = " + iLead.instanceNum);
+        System.out.println(" SSID: " + iLead.ssid);
 
 		startRunning();
 	}

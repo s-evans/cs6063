@@ -1,14 +1,13 @@
 import java.util.UUID;
 
 public class MsgDuplicate extends MsgBase {
-    public int runId;
 
     public MsgDuplicate () {
         this.type = Type.Duplicate;
     }
 
     public void Handle() {
-        if ( uuid == iLead.getSelf() )  {
+        if ( iLead.getSelf().compareTo(uuid) == 0 )  {
             // TODO: Print something
             System.out.println("Cannot join group, process with uuid: " + uuid.toString() + " already exists");
             iLead.stopRunning();
