@@ -10,6 +10,14 @@ public class MsgTask extends TimerTask {
 
     public void run() {
 
+        // In grace period allowing duplicate message to be handled
+        // allows real duplicate process to fail
+        if(msg.type == MsgBase.Type.Duplicate && !iLead.hasJoinedGroup) {
+           msg.Handle();
+           return;
+        }  else if (!iLead.hasJoinedGroup) {
+           return;
+        }
 
         if (iLead.isSelf(msg.getUuid(), msg.getRunId(), msg.getSsid())) {
             //System.out.println("\n\tReceived msg from self, not tracking...");
@@ -17,14 +25,14 @@ public class MsgTask extends TimerTask {
         }
 
         // Debug
-        System.out.println("\n\tRecvd UUID = " + msg.getUuid().toString());
-        System.out.println("\n\tRecvd type = " + msg.getType().ordinal());
-        System.out.println("\n\tRecvd runId = " + msg.getRunId());
-        System.out.println("\n\tRecvd ssid = " + msg.getSsid());
-        System.out.println("Current List: ");
-        for (UUID uuid : iLead.processList.keySet()) {
-            System.out.println(uuid.toString());
-        }
+//        System.out.println("\n\tRecvd UUID = " + msg.getUuid().toString());
+//        System.out.println("\n\tRecvd type = " + msg.getType().ordinal());
+//        System.out.println("\n\tRecvd runId = " + msg.getRunId());
+//        System.out.println("\n\tRecvd ssid = " + msg.getSsid());
+//        System.out.println("Current List: ");
+//        for (UUID uuid : iLead.processList.keySet()) {
+//            System.out.println(uuid.toString());
+//        }
 
         // Get this process's entry in the process list
         Record rcd = iLead.processList.get(msg.getUuid());

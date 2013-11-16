@@ -26,6 +26,7 @@ public class iLead {
 	private static boolean bLossy = false;
 	public static boolean bDebug = false;
     private static boolean idOverride = false;
+    public static boolean hasJoinedGroup = false;
 
 	// Program parameters
     public static int period = 500;
@@ -216,6 +217,9 @@ public class iLead {
 
         // Start a recurring heartbeat task
         timer.scheduleAtFixedRate(heartBeatTask, 0, period);
+
+        // Grace period for looking for duplicate message
+        timer.schedule(new GroupJoinTask(), 2000);
 
         // Reset the state machine
         timer.schedule(new InitTask(), 0);
