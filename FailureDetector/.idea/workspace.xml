@@ -7,12 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a4c3144-807e-4fde-82a8-9f1f29109212" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgBase.java" afterPath="$PROJECT_DIR$/src/Msg/MsgBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" afterPath="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/MsgTask.java" afterPath="$PROJECT_DIR$/src/Task/MsgTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Record.java" afterPath="$PROJECT_DIR$/src/Record.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iLead.java" afterPath="$PROJECT_DIR$/src/iLead.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Task/GroupJoinTask.java" />
     </list>
     <ignored path="FailureDetector.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,6 +48,7 @@
     <file path="/iLead.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384610418252" ignored="false" />
     <file path="/MsgDuplicate.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384611714994" ignored="false" />
     <file path="/Record.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384610307476" ignored="false" />
+    <file path="/GroupJoinTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384617131513" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,13 +117,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MsgTask.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MsgTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Task/MsgTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="9" selection-start="860" selection-end="860" vertical-scroll-proportion="0.7153465">
+            <state line="26" column="9" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventInit.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Event/EventInit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InitTask.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Task/InitTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="13" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupJoinTask.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Task/GroupJoinTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="47" selection-start="51" selection-end="51" vertical-scroll-proportion="0.044386424">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -204,7 +227,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/failureServer.java" />
         <option value="$PROJECT_DIR$/src/State/ElectionStateBase.java" />
         <option value="$PROJECT_DIR$/src/Task/RmTask.java" />
         <option value="$PROJECT_DIR$/src/Task/InitTask.java" />
@@ -220,6 +242,7 @@
         <option value="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" />
         <option value="$PROJECT_DIR$/src/iLead.java" />
         <option value="$PROJECT_DIR$/src/Task/MsgTask.java" />
+        <option value="$PROJECT_DIR$/src/Task/GroupJoinTask.java" />
       </list>
     </option>
   </component>
@@ -748,25 +771,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="674" column="29" selection-start="25309" selection-end="25309" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/HeartBeatTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/ProcRestartTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="19" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
@@ -853,10 +857,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Task/MsgTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="9" selection-start="860" selection-end="860" vertical-scroll-proportion="0.7153465">
+        <state line="26" column="9" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Event/EventInit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Task/InitTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Task/GroupJoinTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="47" selection-start="51" selection-end="51" vertical-scroll-proportion="0.044386424">
+          <folding />
         </state>
       </provider>
     </entry>
