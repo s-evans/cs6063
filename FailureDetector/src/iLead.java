@@ -34,6 +34,8 @@ public class iLead {
 	public static int destPort = 9000;
 	public static int servPort = 9000;
 	public static int lossPct = 0;
+    public static int groupJoinTimeout = 1000;
+    public static int leaderElectionWait = 1500;
 
     // Startup config file name
     protected static final String STARTUP_FILE_NAME = "startup";
@@ -89,7 +91,11 @@ public class iLead {
     // Schedules a msg task to occur immediately
     public static void msgRecvd (MsgTask mt) {
         // Schedule the task
-        timer.schedule(mt, 0);
+        try {
+            timer.schedule(mt, 0);
+        } catch (IllegalStateException e) {
+            iLead.debugPrint("IllegalStateException...");
+        }
     }
 
     // Whether or not the current process is highest in the process list
@@ -219,10 +225,10 @@ public class iLead {
         timer.scheduleAtFixedRate(heartBeatTask, 0, period);
 
         // Grace period for looking for duplicate message
-        timer.schedule(new GroupJoinTask(), 2000);
+        timer.schedule(new GroupJoinTask(), groupJoinTimeout);
 
         // Reset the state machine
-        timer.schedule(new InitTask(), 0);
+        timer.schedule(new InitTask(), leaderElectionWait);
 
         // Start the server thread
         server.start();
@@ -364,14 +370,15 @@ public class iLead {
 	}
 
     public static void stopRunning() {
-        // Close the socket
-        socket.close();
+        // Stop the server
+        server.setStopped();
 
         // Stop the timer tasks
         timer.cancel();
 
-        // Stop the server
-        server.setStopped();
+        // Close the socket
+        socket.close();
+
     }
 
     public static void sendMsg (MsgBase msg) {

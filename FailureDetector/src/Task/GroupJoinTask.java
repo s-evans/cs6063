@@ -7,7 +7,7 @@ public class GroupJoinTask extends TimerTask {
 
     @Override
     public void run() {
-        iLead.debugPrint("GroupJoinTask");
         iLead.hasJoinedGroup = true;
+        iLead.debugPrint("Joined Group.");
     }
 }
