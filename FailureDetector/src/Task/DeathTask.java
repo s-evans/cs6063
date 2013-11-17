@@ -19,12 +19,7 @@ public class DeathTask extends TimerTask {
         System.err.printf("\nFailure detected;");
         System.err.printf("\n\tUUID: %s; ", uuid.toString());
 
-        // TODO: Add a similar class, ProcRestartTask, that doesn't remove from list, and prints something different
-
-        // Remove process from list
-        // iLead.remove(uuid);
-
-        // update the failed record to the failed state
+        // Update the failed record to the failed state
         iLead.updateAliveStatus(uuid, false);
 
         // Check if the failed client is the leader
