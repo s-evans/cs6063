@@ -27,7 +27,7 @@ public class ServerThread extends Thread {
 
     protected void main () {
         // Create packet
-        ByteBuffer bb = ByteBuffer.allocate(iLead.datagramSize);
+        ByteBuffer bb = ByteBuffer.allocate(MsgBase.maxDatagramSize);
         DatagramPacket p = new DatagramPacket(bb.array(), bb.array().length);
 
         // Debug
@@ -45,7 +45,7 @@ public class ServerThread extends Thread {
         iLead.debugPrint("\nGot packet");
 
         // Create an object based on the message
-        MsgBase msg = MsgBase.Factory(bb);
+        MsgBase msg = MsgBase.Factory(bb, p.getLength());
 
         // Create a timer task
         MsgTask mt = new MsgTask(msg);

@@ -2,6 +2,10 @@ import java.nio.ByteBuffer;
 import java.util.UUID;
 
 abstract class MsgBase {
+    // UUID + Type + Run ID + SSID
+    public static final int minDatagramSize = 16 + 4 + 4 + 4;
+    public static final int maxDatagramSize = minDatagramSize + 4;
+
     // List of supported messages types in the protocol
     enum Type {
         Unknown,
@@ -9,7 +13,8 @@ abstract class MsgBase {
         Election,
         Ok,
         Coordinator,
-        Duplicate
+        Duplicate,
+        Consensus
     }
 
     // Create a generic message object based on type
@@ -30,6 +35,9 @@ abstract class MsgBase {
             case Duplicate:
                 return new MsgDuplicate();
 
+            case Consensus:
+                return new MsgConsensus();
+
             default:
                 throw new RuntimeException("Invalid msg type");
         }
@@ -37,24 +45,18 @@ abstract class MsgBase {
     }
 
     // Create a message object from a byte buffer
-    public static MsgBase Factory( ByteBuffer bb ) {
-        // Validate the datagram length
-        if ( bb.array().length != iLead.datagramSize ) {
+    public static MsgBase Factory( ByteBuffer bb, int length ) {
+        // Validate the length of the packet
+        if ( length < MsgBase.minDatagramSize ) {
             System.out.print("\nDatagram length validation failed");
-            throw new RuntimeException();
+            throw new RuntimeException("\nDatagram length validation failed");
         }
 
-        // Get data from the packet
-        UUID uuid = new UUID(bb.getLong(), bb.getLong());
-        Type msgType = Type.values()[bb.getInt()];
-        int runId = bb.getInt();
-        int ssid = bb.getInt();
+        // Create the message object
+        MsgBase msg = Factory(Type.values()[bb.getInt()]);
 
-        // Create / modify object
-        MsgBase msg = Factory(msgType);
-        msg.uuid = uuid;
-        msg.runId = runId;
-        msg.ssid = ssid;
+        // Populate the message from the stream
+        msg.fromByteBuffer(bb, length);
 
         // Give it away now
         return msg;
@@ -74,15 +76,47 @@ abstract class MsgBase {
         this.ssid = iLead.getSsid();
     }
 
+    // Populate members from a byte buffer
+    public final void fromByteBuffer ( ByteBuffer bb, int length ) {
+        // Validate length of the message for the subclass
+        if ( length < getDatagramSize() ) {
+            throw new RuntimeException("\nDatagram length validation failed");
+        }
+
+        // Pull out base class information from the buffer
+        uuid = new UUID(bb.getLong(), bb.getLong());
+        runId = bb.getInt();
+        ssid = bb.getInt();
+
+        // Do any subclass initialization
+        fromByteBufferSub(bb);
+    }
+
+    protected void fromByteBufferSub ( ByteBuffer bb ) {
+        return;
+    }
+
     // Create a byte buffer from a message object
-    public ByteBuffer toByteBuffer () {
-        ByteBuffer bb = ByteBuffer.allocate(iLead.datagramSize);
+    public final ByteBuffer toByteBuffer () {
+        // Allocate enough space for the byte buffer in the subclasses
+        ByteBuffer bb = ByteBuffer.allocate(getDatagramSize());
+
+        // Populate standard fields
+        bb.putInt(type.ordinal());
         bb.putLong(uuid.getMostSignificantBits());
         bb.putLong(uuid.getLeastSignificantBits());
-        bb.putInt(type.ordinal());
         bb.putInt(runId);
         bb.putInt(ssid);
+
+        // Allow for subclass specialization
+        toByteBufferSub(bb);
+
+        // Return the buffer with the populated components
         return bb;
+    }
+
+    protected void toByteBufferSub(ByteBuffer bb) {
+        return;
     }
 
     // Get the UUID of the message
@@ -100,6 +134,10 @@ abstract class MsgBase {
 
     public int getSsid() {
         return ssid;
+    }
+
+    public int getDatagramSize () {
+        return minDatagramSize;
     }
 
     // Handle the message

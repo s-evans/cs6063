@@ -58,7 +58,7 @@ public class MsgTask extends TimerTask {
         DeathTask dt = new DeathTask(msg.getUuid());
 
         // Add/replace entry
-        Record newRcd = new Record(msg.getRunId(), dt, msg.getSsid(), true);
+        Record newRcd = new Record(msg.getRunId(), dt, msg.getSsid(), true, 0);
         iLead.processList.put(msg.getUuid(), newRcd);
 
         // Schedule the new death timeout event
