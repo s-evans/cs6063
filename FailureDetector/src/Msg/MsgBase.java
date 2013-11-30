@@ -2,8 +2,8 @@ import java.nio.ByteBuffer;
 import java.util.UUID;
 
 abstract class MsgBase {
-    // UUID + Type + Run ID + SSID
-    public static final int minDatagramSize = 16 + 4 + 4 + 4;
+    // UUID + Type + Run ID
+    public static final int minDatagramSize = 16 + 4 + 4;
     public static final int maxDatagramSize = minDatagramSize + 4;
 
     // List of supported messages types in the protocol
@@ -66,14 +66,12 @@ abstract class MsgBase {
     protected Type type;
     protected UUID uuid;
     protected int runId;
-    protected int ssid;
 
     // Default constructor
     protected MsgBase () {
         this.type = Type.Unknown;
         this.uuid = iLead.getSelf();
         this.runId = iLead.getInstanceNum();
-        this.ssid = iLead.getSsid();
     }
 
     // Populate members from a byte buffer
@@ -86,7 +84,6 @@ abstract class MsgBase {
         // Pull out base class information from the buffer
         uuid = new UUID(bb.getLong(), bb.getLong());
         runId = bb.getInt();
-        ssid = bb.getInt();
 
         // Do any subclass initialization
         fromByteBufferSub(bb);
@@ -106,7 +103,6 @@ abstract class MsgBase {
         bb.putLong(uuid.getMostSignificantBits());
         bb.putLong(uuid.getLeastSignificantBits());
         bb.putInt(runId);
-        bb.putInt(ssid);
 
         // Allow for subclass specialization
         toByteBufferSub(bb);
@@ -130,10 +126,6 @@ abstract class MsgBase {
 
     public int getRunId() {
         return runId;
-    }
-
-    public int getSsid() {
-        return ssid;
     }
 
     public int getDatagramSize () {

@@ -12,17 +12,26 @@ public class ElectionStateHaveLeader extends ElectionStateBase {
 
         // Set the new leader
         iLead.setLeader(uuid);
+
+        // If the current process is the leader
+        if ( iLead.isLeader() && iLead.quorumExists() ) {
+            // Start a consensus operation
+            iLead.getConsensusState().Handle(new EventConsensusRoundStart());
+        }
     }
 
     public void Handle ( EventLeaderDeath evt ) {
-        iLead.debugPrint("\nHandling EventLeaderDeath");
+        iLead.debugPrint("\nHandling " + evt.getClass());
 
         // Set state
         iLead.setElectionState(new ElectionStateNoLeader());
+
+        // Handle no leader
+        iLead.getConsensusState().Handle(new EventNoLeader());
     }
 
     public void Handle ( EventElectionMsgRecvd evt ) {
-        iLead.debugPrint("\nHandling EventElectionMsgRecvd");
+        iLead.debugPrint("\nHandling " + evt.getClass());
 
         // Validate UUID of the message
         if ( evt.getUuid().compareTo(iLead.getSelf()) == -1 ) {

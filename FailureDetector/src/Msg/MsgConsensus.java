@@ -1,26 +1,31 @@
 import java.nio.ByteBuffer;
 
 public class MsgConsensus extends MsgBase {
-    public int consensusValue;
+    protected int consensusValue;
 
     public MsgConsensus () {
         this.type = Type.Consensus;
-        this.consensusValue = 0;
-    }
-
-    public MsgConsensus ( int consensusValue ) {
-        // default construct
-        this();
-
-        // set members
-        this.consensusValue = consensusValue;
+        this.consensusValue = iLead.getConsensusValue();
     }
 
     public void Handle() {
+        // Ignore ourselves for now
+        if ( iLead.isSelf(uuid, runId) ) {
+            return;
+        }
+
         // Update the consensus value stated by the process
         iLead.updateConsensusValue(uuid, consensusValue);
 
-        // TODO: Check the list for consensus
+        // If the consensus message is from the leader
+        if ( iLead.isLeader(uuid) ) {
+
+            // Take the leader's value
+            iLead.setConsensusValue(consensusValue);
+
+            // Handle the event
+            iLead.getConsensusState().Handle(new EventConsensusRoundStart());
+        }
     }
 
     // Override the default implementation

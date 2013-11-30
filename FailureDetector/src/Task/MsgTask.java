@@ -20,7 +20,7 @@ public class MsgTask extends TimerTask {
            return;
         }
 
-        if (iLead.isSelf(msg.getUuid(), msg.getRunId(), msg.getSsid())) {
+        if (iLead.isSelf(msg.getUuid(), msg.getRunId())) {
             //System.out.println("\n\tReceived msg from self, not tracking...");
             return;
         }
@@ -29,11 +29,6 @@ public class MsgTask extends TimerTask {
         iLead.debugPrint("\n\tRecvd UUID = " + msg.getUuid().toString());
         iLead.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
         iLead.debugPrint("\n\tRecvd runId = " + msg.getRunId());
-        iLead.debugPrint("\n\tRecvd ssid = " + msg.getSsid());
-        iLead.debugPrint("Current List: ");
-        for (UUID uuid : iLead.processList.keySet()) {
-            iLead.debugPrint(uuid.toString());
-        }
 
         // Get this process's entry in the process list
         Record rcd = iLead.processList.get(msg.getUuid());
@@ -54,25 +49,28 @@ public class MsgTask extends TimerTask {
             rcd.deathTask.cancel();
         }
 
+        boolean pre = iLead.quorumExists();
+
         // Create a new death timeout task
         DeathTask dt = new DeathTask(msg.getUuid());
 
         // Add/replace entry
-        Record newRcd = new Record(msg.getRunId(), dt, msg.getSsid(), true, 0);
+        Record newRcd = new Record(msg.getRunId(), dt, true, 0);
         iLead.processList.put(msg.getUuid(), newRcd);
 
         // Schedule the new death timeout event
         iLead.setProcessDeathTimeout(dt);
+
+        // Check for freshly established quorum
+        if ( !pre && iLead.quorumExists() ) {
+            iLead.getConsensusState().Handle(new EventQuorumReached());
+        }
 
         // Handle the message
         msg.Handle();
     }
 
     public boolean isRestarted(MsgBase msg, Record existingRecord) {
-        if (msg.getSsid() != existingRecord.ssid) {
-            return false;
-        }
-
         if (msg.getRunId() > existingRecord.runId) {
             return true;
         } else {

@@ -9,9 +9,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Msg" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/State" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Task" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ConsensusState" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
   </component>
 </module>
 

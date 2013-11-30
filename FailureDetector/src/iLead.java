@@ -11,6 +11,7 @@ import java.util.*;
 public class iLead {
     // State
     private static ElectionStateBase electionState = new ElectionStateNoLeader();
+    private static ConsensusStateBase consensusState = new ConsensusStateUndecided();
 
     // Server thread
     private static ServerThread server;
@@ -29,7 +30,7 @@ public class iLead {
     public static boolean hasJoinedGroup = false;
 
     // Program parameters
-    public static int processCount = 12;    // TODO: Make configurable
+    public static int processCount = 4;    // TODO: Make configurable   // TODO: should be 12
     public static int period = 500;
     public static int timeout = 1250;
     public static int destPort = 9000;
@@ -43,30 +44,50 @@ public class iLead {
 
     // UUID of this process
     protected static UUID uuid = UUID.randomUUID();
-
-    // Instance number of this process
     protected static int instanceNum = 0;
-
-    // SSID of this process
-    protected static int ssid = new Random().nextInt();
-
-    // Currently elected leader
     protected static UUID leader = uuid;
-
-    // TODO: This may have to change
-    public static int consensusValue = 1;
+    protected static int consensusValue = new Random().nextInt();
 
     // Timer objects
     protected static Timer timer = new Timer();
-    protected static TimerTask curTask = new ElectionTimeoutTask();
+    protected static TimerTask electionTimeoutTask = new ElectionTimeoutTask();
+    protected static TimerTask consensusTimeoutTask = new ConsensusTimeoutTask();
     protected static TimerTask heartBeatTask = new HeartBeatTask();
 
     // Process list
     public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
 
+
+    public static int getConsensusValue() {
+        return consensusValue;
+    }
+
+    public static void setConsensusValue( int val ) {
+        consensusValue = val;
+    }
+
+    // Returns whether or not the current process is the leader
+    public static boolean isLeader () {
+        return isLeader(uuid);
+    }
+
+    // Returns whether or not the current process is the leader
+    public static boolean isLeader ( UUID uuid ) {
+        // Validate that there is a leader
+        if ( electionState.getClass() != ElectionStateHaveLeader.class ) {
+            return false;
+        }
+
+        // Check if the current process is the leader
+        if ( uuid.compareTo(leader) == 0 ) {
+            return true;
+        }
+
+        return false;
+    }
+
     // Returns the number of processes required to establish a byzantine tolerant quorum
     public static int getQuorumRequirement () {
-        // TODO: This may have to change if we are not counting ourselves in the process list
         return processCount * 2 / 3 + 1;
     }
 
@@ -84,11 +105,6 @@ public class iLead {
                 continue;
             }
 
-            // Check consensus value
-            if ( entry.getValue().consensusValue != consensusValue ) {
-                continue;
-            }
-
             count++;
         }
 
@@ -99,10 +115,35 @@ public class iLead {
 
     // Return whether or not a byzantine fault tolerant quorum exists
     public static boolean quorumExists () {
+        // Compare current number of processes with those required
         if ( getNonFailedProcessCount() >= getQuorumRequirement() ) {
             return true;
         }
+
         return false;
+    }
+
+    public static Integer getMajority() {
+        int [] array = new int [iLead.processList.size()];
+
+        // Iterate over the list
+        Iterator<Map.Entry<UUID, Record>> it = iLead.processList.entrySet().iterator();
+        for ( int i = 0 ; it.hasNext() ; i++ ) {
+            // Get entry
+            Map.Entry<UUID, Record> entry = it.next();
+
+            // Add to the array
+            array[i] = entry.getValue().consensusValue;
+        }
+
+        // Calculate the majority value
+        Integer maj = Majority.calc(array);
+
+        // Debug
+        iLead.debugPrint("\nMajority value: " + maj);
+
+        // Return
+        return maj;
     }
 
     // Print provided string to the console (only while in debug mode)
@@ -112,16 +153,27 @@ public class iLead {
         }
     }
 
+    public static void setConsensusRoundTimeout () {
+        // Cancel the currently scheduled timeout task
+        consensusTimeoutTask.cancel();
+
+        // Create a new task
+        consensusTimeoutTask = new ConsensusTimeoutTask();
+
+        // Schedule the task
+        timer.schedule(consensusTimeoutTask, timeout);
+    }
+
     // Set a timeout event to occur
     public static void setElectionMsgTimeout (int multi) {
         // Cancel the currently scheduled timeout task
-        curTask.cancel();
+        electionTimeoutTask.cancel();
 
         // Create a new task
-        curTask = new ElectionTimeoutTask();
+        electionTimeoutTask = new ElectionTimeoutTask();
 
         // Schedule the task
-        timer.schedule(curTask, multi * timeout);
+        timer.schedule(electionTimeoutTask, multi * timeout);
     }
 
     // Set a process death task to occur
@@ -158,19 +210,6 @@ public class iLead {
             // Do comparison
             int val = curListUuid.compareTo(iLead.getSelf());
 
-            String str;
-            if ( val == 0 ) {
-                str = "=";
-            } else if ( val == 1 ) {
-                str = ">";
-            } else if ( val == -1 ) {
-                str = "<";
-            } else {
-                str = "?";
-            }
-
-            iLead.debugPrint("\n\t" + curListUuid.toString() + str.toString() + iLead.getSelf().toString());
-
             // If list uuid > our uuid
             if ( val == 1 ) {
                 // We're not the highest
@@ -184,20 +223,15 @@ public class iLead {
         return highest;
     }
 
-    public static void remove (UUID uuid) {
-        // Remove the process from the list
-        iLead.processList.remove(uuid);
-    }
-
     public static void updateAliveStatus (UUID uuid, boolean alive) {
         Record currRcd = iLead.processList.get(uuid);
-        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, currRcd.ssid, alive, currRcd.consensusValue);
+        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, alive, currRcd.consensusValue);
         iLead.processList.put(uuid, newRcd);
     }
 
     public static void updateConsensusValue(UUID uuid, int consensusValue) {
         Record currRcd = iLead.processList.get(uuid);
-        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, currRcd.ssid, currRcd.alive, consensusValue);
+        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, currRcd.alive, consensusValue);
         iLead.processList.put(uuid, newRcd);
     }
 
@@ -218,8 +252,8 @@ public class iLead {
     }
 
     // Compare a msg against ourselves
-    public static boolean isSelf(UUID uuid, int runId, int ssid) {
-        if (getSelf().compareTo(uuid) == 0 && runId == getInstanceNum() && ssid == getSsid()) {
+    public static boolean isSelf(UUID uuid, int runId) {
+        if (getSelf().compareTo(uuid) == 0 && runId == getInstanceNum() ) {
             return true;
         } else {
             return false;
@@ -231,11 +265,6 @@ public class iLead {
         return instanceNum;
     }
 
-    // Retrieve the ssid of this process
-    public static int getSsid() {
-        return ssid;
-    }
-
     //Attempt to read the startup file and throw exception if it does not exist
     private static void readStartupFile() throws IOException {
         Path initPath = Paths.get(STARTUP_FILE_NAME);
@@ -244,20 +273,17 @@ public class iLead {
         String[] initInfo = firstLine.split(",");
         iLead.uuid = UUID.fromString(initInfo[0]);
         iLead.instanceNum = Integer.parseInt(initInfo[1]) + 1;
-        iLead.ssid = Integer.parseInt(initInfo[2]);
         fileParser.close();
     }
 
     //Attempt to recreate the startup file with a known uuid and instance number
-    private static void writeStartupFile(UUID id, int instanceNum, int ssid) throws IOException {
+    private static void writeStartupFile(UUID id, int instanceNum) throws IOException {
         File initFile = new File(STARTUP_FILE_NAME);
         initFile.delete();
         FileWriter startupFile = new FileWriter(STARTUP_FILE_NAME);
         startupFile.write(id.toString());
         startupFile.write(",");
         startupFile.write(Integer.toString(instanceNum));
-        startupFile.write(",");
-        startupFile.write(Integer.toString(ssid));
         startupFile.close();
     }
 
@@ -470,6 +496,20 @@ public class iLead {
     }
 
     // Accessor
+    public static ConsensusStateBase getConsensusState () {
+        return consensusState;
+    }
+
+    // Set the consensus state variable
+    public static void setConsensusState ( ConsensusStateBase state ) {
+        // Set the state
+        iLead.consensusState = state;
+
+        // Let the state run its thing
+        iLead.consensusState.Handle(new EventInit());
+    }
+
+    // Set the election state variable
     public static void setElectionState ( ElectionStateBase state ) {
         // Set the state
         iLead.electionState = state;
@@ -493,11 +533,10 @@ public class iLead {
             }
         }
 
-        writeStartupFile(iLead.uuid, iLead.instanceNum, iLead.ssid);
+        writeStartupFile(iLead.uuid, iLead.instanceNum);
 
         System.out.printf("\nUUID = %s", iLead.getSelf());
         System.out.println(" Instance Number = " + iLead.instanceNum);
-        System.out.println(" SSID: " + iLead.ssid);
 
         startRunning();
     }
