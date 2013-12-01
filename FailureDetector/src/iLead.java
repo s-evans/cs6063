@@ -1,3 +1,6 @@
+import Gui.UserInterface;
+
+import javax.swing.*;
 import java.io.*;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -6,6 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.Timer;
 
 
 public class iLead {
@@ -56,6 +60,8 @@ public class iLead {
 
     // Process list
     public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
+
+    // UI Thread
 
 
     public static int getConsensusValue() {
@@ -306,6 +312,14 @@ public class iLead {
 
         // Start the server thread
         server.start();
+
+        //TODO: Move GUI creation to seperate function
+        //TODO: Refactor this class
+        JFrame frame = new JFrame("UserInterface");
+        frame.setContentPane(new UserInterface().uiForm);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     private static void parseArgs(String[] args) throws Exception {
