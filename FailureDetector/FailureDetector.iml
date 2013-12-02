@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/State" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Task" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/ConsensusState" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Gui" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />

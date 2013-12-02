@@ -1,5 +1,3 @@
-import Gui.UserInterface;
-
 import javax.swing.*;
 import java.io.*;
 import java.net.DatagramPacket;
@@ -60,9 +58,6 @@ public class iLead {
 
     // Process list
     public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
-
-    // UI Thread
-
 
     public static int getConsensusValue() {
         return consensusValue;
