@@ -123,8 +123,20 @@ public class iLead {
         return false;
     }
 
+    public static Integer getLeaderConsensusValue() {
+        if ( isLeader() ) {
+            return consensusValue;
+        }
+
+        Record rcd = iLead.processList.get(iLead.getLeader());
+        if ( rcd != null ) {
+            return rcd.consensusValue;
+        }
+        return null;
+    }
+
     public static Integer getMajority() {
-        int [] array = new int [iLead.processList.size()];
+        Integer [] array = new Integer [iLead.processList.size()];
 
         // Iterate over the list
         Iterator<Map.Entry<UUID, Record>> it = iLead.processList.entrySet().iterator();
@@ -223,9 +235,15 @@ public class iLead {
         return highest;
     }
 
-    public static void updateAliveStatus (UUID uuid, boolean alive) {
+    public static void updateProcessRestart (UUID uuid) {
         Record currRcd = iLead.processList.get(uuid);
-        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, alive, currRcd.consensusValue);
+        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, true, null);
+        iLead.processList.put(uuid, newRcd);
+    }
+
+    public static void updateProcessDeath (UUID uuid) {
+        Record currRcd = iLead.processList.get(uuid);
+        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, false, null);
         iLead.processList.put(uuid, newRcd);
     }
 

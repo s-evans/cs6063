@@ -15,12 +15,23 @@ public class ElectionStateHaveLeader extends ElectionStateBase {
 
         // If the current process is the leader
         if ( iLead.isLeader() && iLead.quorumExists() ) {
+            System.out.print("\n\tStarting new round"); // TODO: Remove
             // Start a consensus operation
             iLead.getConsensusState().Handle(new EventConsensusRoundStart());
         }
     }
 
     public void Handle ( EventLeaderDeath evt ) {
+        iLead.debugPrint("\nHandling " + evt.getClass());
+
+        // Set state
+        iLead.setElectionState(new ElectionStateNoLeader());
+
+        // Handle no leader
+        iLead.getConsensusState().Handle(new EventNoLeader());
+    }
+
+    public void Handle ( EventByzantineLeader evt ) {
         iLead.debugPrint("\nHandling " + evt.getClass());
 
         // Set state

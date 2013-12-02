@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Majority {
-    public static Integer calc(int[] array) {
+    public static Integer calc(Integer [] array) {
         Map<Integer, Integer> count = new HashMap<Integer, Integer>();
 
         // Count the number of occurrences of each value in the array and populate map
-        for (int number : array) {
+        for (Integer number : array) {
             if (count.containsKey(number)) {
                 count.put(number, count.get(number) + 1);
             } else {
-                count.put(number, 1);
+                count.put(number, new Integer (1));
             }
         }
 

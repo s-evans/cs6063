@@ -32,6 +32,7 @@ public class MsgTask extends TimerTask {
 
         // Get this process's entry in the process list
         Record rcd = iLead.processList.get(msg.getUuid());
+        Integer consensusValue = null;
 
         // If exists
         if ( rcd != null ) {
@@ -47,6 +48,9 @@ public class MsgTask extends TimerTask {
 
             // Cancel the death task
             rcd.deathTask.cancel();
+
+            // Copy forward the consensus value from the record
+            consensusValue = rcd.consensusValue;
         }
 
         boolean pre = iLead.quorumExists();
@@ -55,7 +59,7 @@ public class MsgTask extends TimerTask {
         DeathTask dt = new DeathTask(msg.getUuid());
 
         // Add/replace entry
-        Record newRcd = new Record(msg.getRunId(), dt, true, 0);
+        Record newRcd = new Record(msg.getRunId(), dt, true, consensusValue);
         iLead.processList.put(msg.getUuid(), newRcd);
 
         // Schedule the new death timeout event

@@ -19,6 +19,8 @@ public class ProcRestartTask extends TimerTask {
         System.err.printf("\nRestart detected;");
         System.err.printf("\n\tUUID: %s; ", uuid.toString());
 
+        iLead.updateProcessRestart(uuid);
+
         // Check if the failed client is the leader
         if ( uuid.compareTo(iLead.getLeader()) == 0 ) {
             // Initiate a leader election, likely on a new thread

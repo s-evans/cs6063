@@ -22,7 +22,7 @@ public class DeathTask extends TimerTask {
         boolean pre = iLead.quorumExists();
 
         // Update the failed record to the failed state
-        iLead.updateAliveStatus(uuid, false);
+        iLead.updateProcessDeath(uuid);
 
         // Induce a quorum event
         if ( pre && !iLead.quorumExists() ) {

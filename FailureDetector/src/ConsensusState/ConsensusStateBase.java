@@ -8,10 +8,12 @@ abstract class ConsensusStateBase {
     abstract void Handle ( EventInit evt );
 
     final public void Handle ( EventQuorumLost evt ) {
+        System.out.print("\nConsensus state undecided: Quorum lost");
         iLead.setConsensusState(new ConsensusStateUndecided());
     }
 
     final public void Handle ( EventNoLeader evt ) {
+        System.out.print("\nConsensus state undecided: Leader lost");
         iLead.setConsensusState(new ConsensusStateUndecided());
     }
 

@@ -23,6 +23,10 @@ abstract class ElectionStateBase {
         iLead.debugPrint("\nIgnoring Leader Death Event");
     }
 
+    public void Handle ( EventByzantineLeader evt ) {
+        iLead.debugPrint("\nIgnoring Byzantine Leader Event");
+    }
+
     public void Handle ( EventNoMsgTimeout evt ) {
         iLead.debugPrint("\nIgnoring Msg Timeout Event");
     }
