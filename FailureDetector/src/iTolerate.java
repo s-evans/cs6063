@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.*;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -5,6 +6,7 @@ import java.net.UnknownHostException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.Timer;
 
 
 public class iTolerate {
@@ -55,7 +57,6 @@ public class iTolerate {
 
     // Process list
     public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
-
 
     public static int getConsensusValue() {
         return consensusValue;
@@ -323,6 +324,14 @@ public class iTolerate {
 
         // Start the server thread
         server.start();
+
+        //TODO: Move GUI creation to seperate function
+        //TODO: Refactor this class where needed to support GUI
+        JFrame frame = new JFrame("UserInterface");
+        frame.setContentPane(new UserInterface().uiForm);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     private static void parseArgs(String[] args) throws Exception {

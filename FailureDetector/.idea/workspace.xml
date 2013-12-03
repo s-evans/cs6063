@@ -7,42 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a4c3144-807e-4fde-82a8-9f1f29109212" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\david\development\dsuc\FailureDetector\.idea\artifacts\FailureDetector_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/iTolerate_jar.xml" />
-      <change type="MOVED" beforePath="C:\Users\david\development\dsuc\FailureDetector\src\iLead.java" afterPath="$PROJECT_DIR$/src/iTolerate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateBase.java" afterPath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java" afterPath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java" afterPath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/ConsensusTimeoutTask.java" afterPath="$PROJECT_DIR$/src/Task/ConsensusTimeoutTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/DeathTask.java" afterPath="$PROJECT_DIR$/src/Task/DeathTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/State/ElectionStateBase.java" afterPath="$PROJECT_DIR$/src/State/ElectionStateBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/State/ElectionStateElectionSent.java" afterPath="$PROJECT_DIR$/src/State/ElectionStateElectionSent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java" afterPath="$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/State/ElectionStateNoLeader.java" afterPath="$PROJECT_DIR$/src/State/ElectionStateNoLeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/State/ElectionStateOkRecvd.java" afterPath="$PROJECT_DIR$/src/State/ElectionStateOkRecvd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/State/ElectionStateOkSent.java" afterPath="$PROJECT_DIR$/src/State/ElectionStateOkSent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/ElectionTimeoutTask.java" afterPath="$PROJECT_DIR$/src/Task/ElectionTimeoutTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/GroupJoinTask.java" afterPath="$PROJECT_DIR$/src/Task/GroupJoinTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/HeartBeatTask.java" afterPath="$PROJECT_DIR$/src/Task/HeartBeatTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/InitTask.java" afterPath="$PROJECT_DIR$/src/Task/InitTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LossyDatagramSocket.java" afterPath="$PROJECT_DIR$/src/LossyDatagramSocket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgBase.java" afterPath="$PROJECT_DIR$/src/Msg/MsgBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgConsensus.java" afterPath="$PROJECT_DIR$/src/Msg/MsgConsensus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgCoordinator.java" afterPath="$PROJECT_DIR$/src/Msg/MsgCoordinator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" afterPath="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgElection.java" afterPath="$PROJECT_DIR$/src/Msg/MsgElection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgOk.java" afterPath="$PROJECT_DIR$/src/Msg/MsgOk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/MsgTask.java" afterPath="$PROJECT_DIR$/src/Task/MsgTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task/ProcRestartTask.java" afterPath="$PROJECT_DIR$/src/Task/ProcRestartTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ServerThread.java" afterPath="$PROJECT_DIR$/src/ServerThread.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/GroupTable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/UserInterface.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/UserInterface.java" />
+      <change type="DELETED" beforePath="C:\Working\dsuc\FailureDetector\doc\Lab 1 - Test Report.doc" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FailureDetector.iml" afterPath="$PROJECT_DIR$/FailureDetector.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iTolerate.java" afterPath="$PROJECT_DIR$/src/iTolerate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FailureDetector.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/main.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382214206639" ignored="false" />
     <file path="/failureDetector.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382143299536" ignored="false" />
-    <file path="/a.dummy" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385671961665" ignored="false" />
-    <file path="/fragment.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384621987275" ignored="false" />
+    <file path="/a.dummy" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386042150261" ignored="false" />
+    <file path="/fragment.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386042203997" ignored="false" />
     <file path="/failureClient.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382142075749" ignored="false" />
     <file path="/failureServer.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382145701046" ignored="false" />
     <file path="/Election.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381889509002" ignored="false" />
@@ -52,14 +30,14 @@
     <file path="/MsgHeartBeat.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1381974004689" ignored="false" />
     <file path="/MsgOk.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063936952" ignored="false" />
     <file path="/failureBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382144444728" ignored="false" />
-    <file path="/*.regexp" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385945630111" ignored="false" />
+    <file path="/*.regexp" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385853994929" ignored="false" />
     <file path="/ElectionStateBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385791633313" ignored="false" />
     <file path="/ElectionStateNoLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385664270885" ignored="false" />
     <file path="/EventInit.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382057535584" ignored="false" />
     <file path="/EventElectionMsgRecvd.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063876833" ignored="false" />
     <file path="/ElectionStateOkSent.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382190985412" ignored="false" />
     <file path="/ElectionStateElectionRecvd.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382066164785" ignored="false" />
-    <file path="/ElectionStateHaveLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385945346469" ignored="false" />
+    <file path="/ElectionStateHaveLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385852668305" ignored="false" />
     <file path="/ElectionStateOkRecvd.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382214227733" ignored="false" />
     <file path="/ElectionStateElectionSent.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382207987502" ignored="false" />
     <file path="/EventCoordinatorMsg.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382063684325" ignored="false" />
@@ -69,29 +47,30 @@
     <file path="/HeartBeatTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382142795514" ignored="false" />
     <file path="/DeathTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385852860630" ignored="false" />
     <file path="/ServerThread.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385657052778" ignored="false" />
-    <file path="/Dummy.txt" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386031125058" ignored="false" />
-    <file path="/MsgTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385943698161" ignored="false" />
+    <file path="/Dummy.txt" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386042072388" ignored="false" />
+    <file path="/MsgTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385852620947" ignored="false" />
     <file path="/RmTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382192709774" ignored="false" />
     <file path="/InitTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1382194089737" ignored="false" />
-    <file path="/iLead.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385945099837" ignored="false" />
+    <file path="/iLead.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386041455224" ignored="false" />
     <file path="/MsgDuplicate.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384611714994" ignored="false" />
-    <file path="/Record.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385943443475" ignored="false" />
+    <file path="/Record.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385672183959" ignored="false" />
     <file path="/GroupJoinTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384622050168" ignored="false" />
     <file path="/ConsensusMsg.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385653445930" ignored="false" />
     <file path="/MsgConsensus.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385854631454" ignored="false" />
     <file path="/EventQuorumLost.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385769643732" ignored="false" />
     <file path="/EventQuorumReached.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385769655310" ignored="false" />
-    <file path="/ConsensusStateBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385943322533" ignored="false" />
-    <file path="/ConsensusStateDecided.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385945671020" ignored="false" />
+    <file path="/ConsensusStateBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385782293274" ignored="false" />
+    <file path="/ConsensusStateDecided.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385782339236" ignored="false" />
     <file path="/ConsensusStateNull.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385769837066" ignored="false" />
     <file path="/EventConsensusRoundEnd.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385770931774" ignored="false" />
     <file path="/EventConsensusRoundStart.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385770894979" ignored="false" />
     <file path="/ConsensusTimeoutTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385771170540" ignored="false" />
-    <file path="/EventByzantineLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385944893731" ignored="false" />
-    <file path="/ConsensusStateUndecided.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385945877309" ignored="false" />
-    <file path="/Majority.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385943962364" ignored="false" />
+    <file path="/EventByzantineLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385773133246" ignored="false" />
+    <file path="/ConsensusStateUndecided.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385793804497" ignored="false" />
+    <file path="/Majority.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385777874092" ignored="false" />
     <file path="/EventNoLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385781438945" ignored="false" />
-    <file path="/ProcRestartTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385943871859" ignored="false" />
+    <file path="/UserInterface.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386040948893" ignored="false" />
+    <file path="/GroupTable.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386042126830" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +93,8 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -150,8 +130,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -161,93 +139,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="iTolerate.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iTolerate.java">
+      <file leaf-file-name="Record.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Record.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="0" selection-start="4005" selection-end="4005" vertical-scroll-proportion="0.0">
+            <state line="6" column="59" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LossyDatagramSocket.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
+      <file leaf-file-name="UserInterface.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
+            <state line="20" column="32" selection-start="733" selection-end="733" vertical-scroll-proportion="0.1550152">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServerThread.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ServerThread.java">
+      <file leaf-file-name="GroupTable.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/GroupTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
+            <state line="22" column="35" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsensusStateUndecided.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="9" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgConsensus.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Msg/MsgConsensus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="43" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElectionStateHaveLeader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="52" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsensusStateDecided.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="5" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeathTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="43" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventInit.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Event/EventInit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="startup" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/startup">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
+      <file leaf-file-name="UserInterface.form" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -269,22 +191,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Event/EventNoLeader.java" />
-        <option value="$PROJECT_DIR$/src/Msg/MsgCoordinator.java" />
-        <option value="$PROJECT_DIR$/src/Task/ConsensusTimeoutTask.java" />
-        <option value="$PROJECT_DIR$/src/Msg/MsgConsensus.java" />
-        <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateBase.java" />
-        <option value="$PROJECT_DIR$/src/Record.java" />
-        <option value="$PROJECT_DIR$/src/Task/DeathTask.java" />
-        <option value="$PROJECT_DIR$/src/Task/MsgTask.java" />
-        <option value="$PROJECT_DIR$/src/Task/ProcRestartTask.java" />
         <option value="$PROJECT_DIR$/src/Majority.java" />
-        <option value="$PROJECT_DIR$/src/Event/EventByzantineLeader.java" />
-        <option value="$PROJECT_DIR$/src/State/ElectionStateBase.java" />
-        <option value="$PROJECT_DIR$/src/iLead.java" />
-        <option value="$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java" />
+        <option value="$PROJECT_DIR$/src/Event/EventNoLeader.java" />
         <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java" />
+        <option value="$PROJECT_DIR$/src/Msg/MsgCoordinator.java" />
+        <option value="$PROJECT_DIR$/src/State/ElectionStateBase.java" />
+        <option value="$PROJECT_DIR$/src/Task/MsgTask.java" />
+        <option value="$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java" />
         <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java" />
+        <option value="$PROJECT_DIR$/src/Task/ConsensusTimeoutTask.java" />
+        <option value="$PROJECT_DIR$/src/Task/DeathTask.java" />
+        <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateBase.java" />
+        <option value="$PROJECT_DIR$/src/Msg/MsgConsensus.java" />
+        <option value="$PROJECT_DIR$/src/Gui/UserInterface.form" />
+        <option value="$PROJECT_DIR$/src/iLead.java" />
+        <option value="$PROJECT_DIR$/src/Gui/GroupTable.java" />
+        <option value="$PROJECT_DIR$/src/Gui/UserInterface.java" />
       </list>
     </option>
   </component>
@@ -294,8 +216,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -391,7 +313,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -424,60 +345,68 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="136" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.updates" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
     <property name="recentsLimit" value="5" />
-    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
-    <property name="project.structure.side.proportion" value="0.20000002" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="failuredetector" />
-    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="160" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="832" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="840" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="153" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="147" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="preferences.updates" />
+    <property name="project.structure.side.proportion" value="0.20000002" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.iTolerate">
-    <configuration default="false" name="iTolerate" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="iTolerate" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="FailureDetector" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -490,19 +419,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -531,6 +447,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -585,20 +514,37 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="iTolerate" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="iTolerate" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="FailureDetector" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.iTolerate" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.iTolerate" />
-      </list>
-    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -654,31 +600,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18712121" sideWeight="0.60306644" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37726787" sideWeight="0.67112595" order="9" side_tool="false" content_ui="tabs" x="0" y="447" width="1314" height="236" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.6081772" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37727273" sideWeight="0.6081772" order="9" side_tool="false" content_ui="tabs" x="0" y="447" width="1314" height="236" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39804772" sideWeight="0.4824962" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984" sideWeight="0.4824962" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984" sideWeight="0.5175038" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.392" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33049405" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39182281" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1872" sideWeight="0.4824962" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.67112595" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.9778535" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.7552" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21611527" sideWeight="0.67112595" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32887402" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21515152" sideWeight="0.60477" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39523" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.6208" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -750,114 +697,96 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="12" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/MsgTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/ProcRestartTask.java">
+    <entry file="file://$PROJECT_DIR$/src/Msg/MsgBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="127" column="0" selection-start="3424" selection-end="3424" vertical-scroll-proportion="3.5795455" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Majority.java">
+    <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="9" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/State/ElectionStateBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="5" selection-start="920" selection-end="920" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Event/EventByzantineLeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="70" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Msg/MsgConsensus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="43" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="52" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="5" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
+        <state line="8" column="53" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/awt/Container.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="9" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0">
+        <state line="1089" column="0" selection-start="43080" selection-end="43080" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/javax/swing/JRootPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="619" column="0" selection-start="22779" selection-end="22779" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/javax/swing/JFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="692" column="0" selection-start="24310" selection-end="24310" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/javax/swing/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="202" column="11" selection-start="7200" selection-end="7200" vertical-scroll-proportion="0.04607046">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iTolerate.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/javax/swing/table/DefaultTableColumnModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="0" selection-start="4005" selection-end="4005" vertical-scroll-proportion="0.0">
+        <state line="293" column="0" selection-start="10006" selection-end="10006" vertical-scroll-proportion="0.04607046" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="469" column="0" selection-start="17804" selection-end="17804" vertical-scroll-proportion="0.04607046" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/javax/swing/JTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="683" column="119" selection-start="25301" selection-end="25301" vertical-scroll-proportion="0.04607046">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LossyDatagramSocket.java">
+    <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/GroupTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
+        <state line="22" column="35" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerThread.java">
+    <entry file="file://$PROJECT_DIR$/src/Record.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
+        <state line="6" column="59" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
+    <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="43" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Event/EventInit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/startup">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="20" column="32" selection-start="733" selection-end="733" vertical-scroll-proportion="0.1550152">
           <folding />
         </state>
       </provider>
@@ -868,7 +797,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>iTolerate:jar</last-edited>
+          <last-edited>FailureDetector:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -885,7 +814,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.20000002" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -945,7 +874,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.20000002" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
