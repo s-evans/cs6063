@@ -7,11 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a4c3144-807e-4fde-82a8-9f1f29109212" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/GroupTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/UserInterface.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/UserInterface.java" />
-      <change type="DELETED" beforePath="C:\Working\dsuc\FailureDetector\doc\Lab 1 - Test Report.doc" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FailureDetector.iml" afterPath="$PROJECT_DIR$/FailureDetector.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java" afterPath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java" afterPath="$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/UserInterface.java" afterPath="$PROJECT_DIR$/src/Gui/UserInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iTolerate.java" afterPath="$PROJECT_DIR$/src/iTolerate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -66,11 +64,12 @@
     <file path="/EventConsensusRoundStart.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385770894979" ignored="false" />
     <file path="/ConsensusTimeoutTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385771170540" ignored="false" />
     <file path="/EventByzantineLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385773133246" ignored="false" />
-    <file path="/ConsensusStateUndecided.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385793804497" ignored="false" />
+    <file path="/ConsensusStateUndecided.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386043086775" ignored="false" />
     <file path="/Majority.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385777874092" ignored="false" />
     <file path="/EventNoLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385781438945" ignored="false" />
-    <file path="/UserInterface.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386040948893" ignored="false" />
+    <file path="/UserInterface.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386043590937" ignored="false" />
     <file path="/GroupTable.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386042126830" ignored="false" />
+    <file path="/iTolerate.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386043435687" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +138,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="iTolerate.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iTolerate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="551" column="48" selection-start="17869" selection-end="17869" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsensusStateBase.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="15" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Record.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Record.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -148,10 +165,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ConsensusStateUndecided.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="3" selection-start="2199" selection-end="2274" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserInterface.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="32" selection-start="733" selection-end="733" vertical-scroll-proportion="0.1550152">
+            <state line="36" column="45" selection-start="1382" selection-end="1382" vertical-scroll-proportion="1.6534954">
               <folding />
             </state>
           </provider>
@@ -161,6 +187,15 @@
         <entry file="file://$PROJECT_DIR$/src/Gui/GroupTable.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="22" column="35" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsensusStateDecided.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="23" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -191,14 +226,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Majority.java" />
         <option value="$PROJECT_DIR$/src/Event/EventNoLeader.java" />
-        <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java" />
         <option value="$PROJECT_DIR$/src/Msg/MsgCoordinator.java" />
         <option value="$PROJECT_DIR$/src/State/ElectionStateBase.java" />
         <option value="$PROJECT_DIR$/src/Task/MsgTask.java" />
         <option value="$PROJECT_DIR$/src/State/ElectionStateHaveLeader.java" />
-        <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java" />
         <option value="$PROJECT_DIR$/src/Task/ConsensusTimeoutTask.java" />
         <option value="$PROJECT_DIR$/src/Task/DeathTask.java" />
         <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateBase.java" />
@@ -206,6 +238,9 @@
         <option value="$PROJECT_DIR$/src/Gui/UserInterface.form" />
         <option value="$PROJECT_DIR$/src/iLead.java" />
         <option value="$PROJECT_DIR$/src/Gui/GroupTable.java" />
+        <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java" />
+        <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java" />
+        <option value="$PROJECT_DIR$/src/iTolerate.java" />
         <option value="$PROJECT_DIR$/src/Gui/UserInterface.java" />
       </list>
     </option>
@@ -360,6 +395,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FailureDetector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ConsensusState" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -603,10 +656,10 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18712121" sideWeight="0.60306644" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18712121" sideWeight="0.60477" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.6081772" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.60477" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37727273" sideWeight="0.6081772" order="9" side_tool="false" content_ui="tabs" x="0" y="447" width="1314" height="236" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984" sideWeight="0.4824962" order="2" side_tool="false" content_ui="tabs" />
@@ -618,7 +671,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.9778535" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.7552" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21515152" sideWeight="0.60477" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27878788" sideWeight="0.60477" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39523" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -697,31 +750,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Msg/MsgBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="0" selection-start="3424" selection-end="3424" vertical-scroll-proportion="3.5795455" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Task/DeathTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="53" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -765,11 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/GroupTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="35" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
@@ -784,9 +810,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="15" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="3" selection-start="2199" selection-end="2274" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConsensusState/ConsensusStateDecided.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="23" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iTolerate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="551" column="48" selection-start="17869" selection-end="17869" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="32" selection-start="733" selection-end="733" vertical-scroll-proportion="0.1550152">
+        <state line="36" column="45" selection-start="1382" selection-end="1382" vertical-scroll-proportion="1.6534954">
           <folding />
         </state>
       </provider>

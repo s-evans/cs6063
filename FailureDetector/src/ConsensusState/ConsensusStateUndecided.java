@@ -68,4 +68,9 @@ public class ConsensusStateUndecided extends ConsensusStateBase {
         iTolerate.setConsensusState(new ConsensusStateDecided());
     }
 
+    @Override
+    public String toString() {
+        return "Undecided";
+    }
+
 }

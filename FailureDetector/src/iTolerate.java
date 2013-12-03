@@ -544,6 +544,16 @@ public class iTolerate {
         iTolerate.electionState.Handle(new EventInit());
     }
 
+    // Cause this node to exhibit a byzantine failure
+    public static void startByzantineFailure() {
+        //TODO: Exhibit Byzantine Failure Behavior
+    }
+
+    // Repair this node from a byzantine failure
+    public static void repairNode() {
+        //TODO: Resume normal behavior, stop byzantine failure
+    }
+
     // Application entry point
     public static void main(String[] args) throws Exception {
         System.out.print("iTolerate V1.0 (c) 2013");

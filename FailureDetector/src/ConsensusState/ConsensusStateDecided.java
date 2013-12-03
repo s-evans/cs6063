@@ -17,6 +17,11 @@ public class ConsensusStateDecided extends ConsensusStateBase {
         iTolerate.getConsensusState().Handle(evt);
     }
 
+    @Override
+    public String toString() {
+        return "Decided";
+    }
+
     // TODO: Periodically send out consensus messages?
 
 }
