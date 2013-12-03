@@ -10,9 +10,13 @@ public class UserInterface implements ActionListener {
     private JButton byzantineFailureButton;
     private JButton repairButton;
     public JPanel uiForm;
-    private JScrollPane groupPane;
     private JToolBar buttonBar;
     private JScrollPane nodeStatus;
+    private JTabbedPane tabbedPane1;
+    private JScrollPane groupPane;
+    private JPanel statusPane;
+    private JPanel logPane;
+    private JTextArea textArea1;
     private Timer peerUpdateTimer;
 
     private final String[] NODE_STATUS_COLUMNS = {"UUID", "Leader", "Consensus Value", "Consensus State"};
@@ -37,6 +41,10 @@ public class UserInterface implements ActionListener {
                 repairButton.setEnabled(false);
             }
         });
+    }
+
+    public void updateLogPanel(String message) {
+        textArea1.append(message);
     }
 
     private void createUIComponents() {

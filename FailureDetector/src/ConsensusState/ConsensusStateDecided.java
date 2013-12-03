@@ -6,7 +6,7 @@ public class ConsensusStateDecided extends ConsensusStateBase {
     }
 
     public void Handle ( EventInit evt ) {
-        System.out.print("\nConsensus reached! Value = " + iTolerate.getConsensusValue());
+        iTolerate.logToGui("\nConsensus reached! Value = " + iTolerate.getConsensusValue());
     }
 
     public void Handle ( EventConsensusRoundStart evt ) {

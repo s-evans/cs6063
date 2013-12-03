@@ -15,7 +15,7 @@ public class ElectionStateHaveLeader extends ElectionStateBase {
 
         // If the current process is the leader
         if ( iTolerate.isLeader() && iTolerate.quorumExists() ) {
-            System.out.print("\n\tStarting new round"); // TODO: Remove
+            iTolerate.logToGui("\n\tStarting new round"); // TODO: Remove
             // Start a consensus operation
             iTolerate.getConsensusState().Handle(new EventConsensusRoundStart());
         }

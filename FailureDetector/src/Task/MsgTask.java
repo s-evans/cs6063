@@ -20,7 +20,7 @@ public class MsgTask extends TimerTask {
         }
 
         if (iTolerate.isSelf(msg.getUuid(), msg.getRunId())) {
-            //System.out.println("\n\tReceived msg from self, not tracking...");
+            //iTolerate.logToGui("\n\tReceived msg from self, not tracking...");
             return;
         }
 

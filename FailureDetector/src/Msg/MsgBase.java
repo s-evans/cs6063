@@ -48,7 +48,7 @@ abstract class MsgBase {
     public static MsgBase Factory( ByteBuffer bb, int length ) {
         // Validate the length of the packet
         if ( length < MsgBase.minDatagramSize ) {
-            System.out.print("\nDatagram length validation failed");
+            iTolerate.logToGui("\nDatagram length validation failed");
             throw new RuntimeException("\nDatagram length validation failed");
         }
 

@@ -6,7 +6,7 @@ public class MsgDuplicate extends MsgBase {
 
     public void Handle() {
         if ( iTolerate.getSelf().compareTo(uuid) == 0 )  {
-            System.out.println("Cannot join group, process with uuid: " + uuid.toString() + " already exists");
+            iTolerate.logToGui("Cannot join group, process with uuid: " + uuid.toString() + " already exists");
             iTolerate.stopRunning();
         }
     }

@@ -33,7 +33,7 @@ public class ConsensusStateUndecided extends ConsensusStateBase {
     public void Handle ( EventConsensusRoundEnd evt ) {
         // Validate that quorum still exists
         if ( !iTolerate.quorumExists() ) {
-            System.out.print("\nQuorum does not exist");
+            iTolerate.logToGui("\nQuorum does not exist");
             return;
         }
 
@@ -43,7 +43,7 @@ public class ConsensusStateUndecided extends ConsensusStateBase {
         // Check majority operation output
         if ( maj == null ) {
             // Announce
-            System.out.print("\nFailed to find majority value at consensus timeout");
+            iTolerate.logToGui("\nFailed to find majority value at consensus timeout");
 
             // Handle the event
             Handle(new EventQuorumReached());
@@ -55,8 +55,8 @@ public class ConsensusStateUndecided extends ConsensusStateBase {
         Integer leaderVal = iTolerate.getLeaderConsensusValue();
         if ( leaderVal != null && maj.compareTo(leaderVal) != 0 ) {
             // Announce
-            System.out.print("\nByzantine leader detected!");
-            System.out.print("\n\tmajority = " + maj + "; leader = " + iTolerate.getLeaderConsensusValue());   //TOdo: REMOVE
+            iTolerate.logToGui("\nByzantine leader detected!");
+            iTolerate.logToGui("\n\tmajority = " + maj + "; leader = " + iTolerate.getLeaderConsensusValue());   //TOdo: REMOVE
 
             // Handle the event
             iTolerate.getElectionState().Handle(new EventByzantineLeader());

@@ -55,6 +55,9 @@ public class iTolerate {
     protected static TimerTask consensusTimeoutTask = new ConsensusTimeoutTask();
     protected static TimerTask heartBeatTask = new HeartBeatTask();
 
+    //GUI
+    public static UserInterface gui;
+
     // Process list
     public static HashMap<UUID, Record> processList = new HashMap<UUID, Record>();
 
@@ -161,7 +164,7 @@ public class iTolerate {
     // Print provided string to the console (only while in debug mode)
     public static void debugPrint (String str) {
         if ( bDebug ) {
-            System.out.print(str);
+            iTolerate.logToGui(str);
         }
     }
 
@@ -260,7 +263,7 @@ public class iTolerate {
 
     // Accessor
     public static void setLeader(UUID newLeader) {
-        System.out.printf("\nNew leader established: %s", newLeader.toString());
+        iTolerate.logToGui("\nNew leader established: " + newLeader.toString());
         leader = newLeader;
     }
 
@@ -328,7 +331,8 @@ public class iTolerate {
         //TODO: Move GUI creation to seperate function
         //TODO: Refactor this class where needed to support GUI
         JFrame frame = new JFrame("UserInterface");
-        frame.setContentPane(new UserInterface().uiForm);
+        gui = new UserInterface();
+        frame.setContentPane(gui.uiForm);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -338,15 +342,15 @@ public class iTolerate {
         // Iterate over arguments
         for ( int i = 0 ; i < args.length ; i++ ) {
             if ( args[i].equals("-h") ) {
-                System.out.print("\nThis program detects failures in like processes on the subnet");
-                System.out.print("\n\t-h = print this help message;");
-                System.out.print("\n\t-D = debug;");
-                System.out.print("\n\t-l = lossy;");
-                System.out.print("\n\t-p = period (milliseconds);");
-                System.out.print("\n\t-t = timeout (milliseconds);");
-                System.out.print("\n\t-d = destination port; default = 9000;");
-                System.out.print("\n\t-s = server port; default = 9001;");
-                System.out.print("\n\t-i = identifier (16bytes); default = random");
+                iTolerate.logToGui("\nThis program detects failures in like processes on the subnet");
+                iTolerate.logToGui("\n\t-h = print this help message;");
+                iTolerate.logToGui("\n\t-D = debug;");
+                iTolerate.logToGui("\n\t-l = lossy;");
+                iTolerate.logToGui("\n\t-p = period (milliseconds);");
+                iTolerate.logToGui("\n\t-t = timeout (milliseconds);");
+                iTolerate.logToGui("\n\t-d = destination port; default = 9000;");
+                iTolerate.logToGui("\n\t-s = server port; default = 9001;");
+                iTolerate.logToGui("\n\t-i = identifier (16bytes); default = random");
                 throw new Exception();
             }
             
@@ -494,10 +498,10 @@ public class iTolerate {
             p.setPort(iTolerate.destPort);
             socket.send(p);
         } catch (UnknownHostException e1) {
-            System.out.print("\nFailed to resolve host");
+            iTolerate.logToGui("\nFailed to resolve host");
             e1.printStackTrace();
         } catch (IOException e) {
-            System.out.print("\nFailed to send");
+            iTolerate.logToGui("\nFailed to send");
             e.printStackTrace();
         }
     }
@@ -512,7 +516,7 @@ public class iTolerate {
             // Send it
             sendMsg(msg);
         } catch ( Exception e ) {
-            System.out.printf("\nFailed to send message");
+            iTolerate.logToGui("\nFailed to send message");
         }
     }
 
@@ -554,9 +558,13 @@ public class iTolerate {
         //TODO: Resume normal behavior, stop byzantine failure
     }
 
+    public static void logToGui(String message) {
+        gui.updateLogPanel(message);
+    }
+
     // Application entry point
     public static void main(String[] args) throws Exception {
-        System.out.print("iTolerate V1.0 (c) 2013");
+        System.out.println("iTolerate V1.0 (c) 2013");
 
         parseArgs(args);
 
@@ -571,8 +579,8 @@ public class iTolerate {
 
         writeStartupFile(iTolerate.uuid, iTolerate.instanceNum);
 
-        System.out.printf("\nUUID = %s", iTolerate.getSelf());
-        System.out.println(" Instance Number = " + iTolerate.instanceNum);
+        System.out.print("\nUUID = " + iTolerate.getSelf());
+        System.out.print(" Instance Number = " + iTolerate.instanceNum);
 
         startRunning();
     }
