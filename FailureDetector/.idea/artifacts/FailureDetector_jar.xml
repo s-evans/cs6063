@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="FailureDetector:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/FailureDetector_jar</output-path>
-    <root id="archive" name="FailureDetector.jar">
-      <element id="module-output" name="FailureDetector" />
-    </root>
-  </artifact>
-</component>

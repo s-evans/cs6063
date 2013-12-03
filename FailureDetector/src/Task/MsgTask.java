@@ -1,5 +1,4 @@
 import java.util.TimerTask;
-import java.util.UUID;
 
 public class MsgTask extends TimerTask {
     protected MsgBase msg;
@@ -12,34 +11,34 @@ public class MsgTask extends TimerTask {
 
         // In grace period allowing duplicate message to be handled
         // allows real duplicate process to fail
-        if(msg.type == MsgBase.Type.Duplicate && !iLead.hasJoinedGroup) {
+        if(msg.type == MsgBase.Type.Duplicate && !iTolerate.hasJoinedGroup) {
            msg.Handle();
            return;
-        }  else if (!iLead.hasJoinedGroup) {
-            iLead.debugPrint("Still in hasJoinedGroup wait...");
+        }  else if (!iTolerate.hasJoinedGroup) {
+            iTolerate.debugPrint("Still in hasJoinedGroup wait...");
            return;
         }
 
-        if (iLead.isSelf(msg.getUuid(), msg.getRunId())) {
+        if (iTolerate.isSelf(msg.getUuid(), msg.getRunId())) {
             //System.out.println("\n\tReceived msg from self, not tracking...");
             return;
         }
 
         // Debug
-        iLead.debugPrint("\n\tRecvd UUID = " + msg.getUuid().toString());
-        iLead.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
-        iLead.debugPrint("\n\tRecvd runId = " + msg.getRunId());
+        iTolerate.debugPrint("\n\tRecvd UUID = " + msg.getUuid().toString());
+        iTolerate.debugPrint("\n\tRecvd type = " + msg.getType().ordinal());
+        iTolerate.debugPrint("\n\tRecvd runId = " + msg.getRunId());
 
         // Get this process's entry in the process list
-        Record rcd = iLead.processList.get(msg.getUuid());
+        Record rcd = iTolerate.processList.get(msg.getUuid());
         Integer consensusValue = null;
 
         // If exists
         if ( rcd != null ) {
 
             if ( isDuplicate(msg) ) {
-                iLead.debugPrint("Sending duplicate msg");
-                iLead.sendMsg(MsgBase.Type.Duplicate);
+                iTolerate.debugPrint("Sending duplicate msg");
+                iTolerate.sendMsg(MsgBase.Type.Duplicate);
                 return;
             } else if ( isRestarted(msg, rcd) ) {
                 ProcRestartTask restartTask = new ProcRestartTask(msg.getUuid());
@@ -53,21 +52,21 @@ public class MsgTask extends TimerTask {
             consensusValue = rcd.consensusValue;
         }
 
-        boolean pre = iLead.quorumExists();
+        boolean pre = iTolerate.quorumExists();
 
         // Create a new death timeout task
         DeathTask dt = new DeathTask(msg.getUuid());
 
         // Add/replace entry
         Record newRcd = new Record(msg.getRunId(), dt, true, consensusValue);
-        iLead.processList.put(msg.getUuid(), newRcd);
+        iTolerate.processList.put(msg.getUuid(), newRcd);
 
         // Schedule the new death timeout event
-        iLead.setProcessDeathTimeout(dt);
+        iTolerate.setProcessDeathTimeout(dt);
 
         // Check for freshly established quorum
-        if ( !pre && iLead.quorumExists() ) {
-            iLead.getConsensusState().Handle(new EventQuorumReached());
+        if ( !pre && iTolerate.quorumExists() ) {
+            iTolerate.getConsensusState().Handle(new EventQuorumReached());
         }
 
         // Handle the message
@@ -83,7 +82,7 @@ public class MsgTask extends TimerTask {
     }
 
     public boolean isDuplicate(MsgBase msg) {
-        if (msg.getUuid().compareTo(iLead.getSelf()) == 0) {
+        if (msg.getUuid().compareTo(iTolerate.getSelf()) == 0) {
             return true;
         } else {
             return false;

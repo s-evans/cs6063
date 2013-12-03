@@ -5,26 +5,26 @@ public class MsgConsensus extends MsgBase {
 
     public MsgConsensus () {
         this.type = Type.Consensus;
-        this.consensusValue = iLead.getConsensusValue();
+        this.consensusValue = iTolerate.getConsensusValue();
     }
 
     public void Handle() {
         // Ignore ourselves for now
-        if ( iLead.isSelf(uuid, runId) ) {
+        if ( iTolerate.isSelf(uuid, runId) ) {
             return;
         }
 
         // Update the consensus value stated by the process
-        iLead.updateConsensusValue(uuid, consensusValue);
+        iTolerate.updateConsensusValue(uuid, consensusValue);
 
         // If the consensus message is from the leader
-        if ( iLead.isLeader(uuid) ) {
+        if ( iTolerate.isLeader(uuid) ) {
 
             // Take the leader's value
-            iLead.setConsensusValue(consensusValue);
+            iTolerate.setConsensusValue(consensusValue);
 
             // Handle the event
-            iLead.getConsensusState().Handle(new EventConsensusRoundStart());
+            iTolerate.getConsensusState().Handle(new EventConsensusRoundStart());
         }
     }
 

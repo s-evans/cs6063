@@ -2,13 +2,12 @@ import java.io.*;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
 
-public class iLead {
+public class iTolerate {
     // State
     private static ElectionStateBase electionState = new ElectionStateNoLeader();
     private static ConsensusStateBase consensusState = new ConsensusStateUndecided();
@@ -95,7 +94,7 @@ public class iLead {
     public static int getNonFailedProcessCount() {
         // Iterate over the list and count those processes that are not failed
         int count = 0;
-        Iterator<Map.Entry<UUID, Record>> it = iLead.processList.entrySet().iterator();
+        Iterator<Map.Entry<UUID, Record>> it = iTolerate.processList.entrySet().iterator();
         while ( it.hasNext() ) {
             // Get entry
             Map.Entry<UUID, Record> entry = it.next();
@@ -108,7 +107,7 @@ public class iLead {
             count++;
         }
 
-        iLead.debugPrint("\nNumber of non-failed process: " + count);
+        iTolerate.debugPrint("\nNumber of non-failed process: " + count);
 
         return count;
     }
@@ -128,7 +127,7 @@ public class iLead {
             return consensusValue;
         }
 
-        Record rcd = iLead.processList.get(iLead.getLeader());
+        Record rcd = iTolerate.processList.get(iTolerate.getLeader());
         if ( rcd != null ) {
             return rcd.consensusValue;
         }
@@ -136,10 +135,10 @@ public class iLead {
     }
 
     public static Integer getMajority() {
-        Integer [] array = new Integer [iLead.processList.size()];
+        Integer [] array = new Integer [iTolerate.processList.size()];
 
         // Iterate over the list
-        Iterator<Map.Entry<UUID, Record>> it = iLead.processList.entrySet().iterator();
+        Iterator<Map.Entry<UUID, Record>> it = iTolerate.processList.entrySet().iterator();
         for ( int i = 0 ; it.hasNext() ; i++ ) {
             // Get entry
             Map.Entry<UUID, Record> entry = it.next();
@@ -152,7 +151,7 @@ public class iLead {
         Integer maj = Majority.calc(array);
 
         // Debug
-        iLead.debugPrint("\nMajority value: " + maj);
+        iTolerate.debugPrint("\nMajority value: " + maj);
 
         // Return
         return maj;
@@ -200,7 +199,7 @@ public class iLead {
         try {
             timer.schedule(mt, 0);
         } catch (IllegalStateException e) {
-            iLead.debugPrint("IllegalStateException...");
+            iTolerate.debugPrint("IllegalStateException...");
         }
     }
 
@@ -208,7 +207,7 @@ public class iLead {
     public static boolean isHighest() {
         // Iterate over the list searching for a higher uuid
         boolean highest = true;
-        Iterator<Map.Entry<UUID, Record>> it = iLead.processList.entrySet().iterator();
+        Iterator<Map.Entry<UUID, Record>> it = iTolerate.processList.entrySet().iterator();
         while ( it.hasNext() ) {
             // Get UUID from the list iterator
             Map.Entry<UUID, Record> entry = it.next();
@@ -220,7 +219,7 @@ public class iLead {
             }
 
             // Do comparison
-            int val = curListUuid.compareTo(iLead.getSelf());
+            int val = curListUuid.compareTo(iTolerate.getSelf());
 
             // If list uuid > our uuid
             if ( val == 1 ) {
@@ -230,27 +229,27 @@ public class iLead {
             }
         }
 
-        iLead.debugPrint("\nAm I Highest? " + highest);
+        iTolerate.debugPrint("\nAm I Highest? " + highest);
 
         return highest;
     }
 
     public static void updateProcessRestart (UUID uuid) {
-        Record currRcd = iLead.processList.get(uuid);
+        Record currRcd = iTolerate.processList.get(uuid);
         Record newRcd = new Record(currRcd.runId, currRcd.deathTask, true, null);
-        iLead.processList.put(uuid, newRcd);
+        iTolerate.processList.put(uuid, newRcd);
     }
 
     public static void updateProcessDeath (UUID uuid) {
-        Record currRcd = iLead.processList.get(uuid);
+        Record currRcd = iTolerate.processList.get(uuid);
         Record newRcd = new Record(currRcd.runId, currRcd.deathTask, false, null);
-        iLead.processList.put(uuid, newRcd);
+        iTolerate.processList.put(uuid, newRcd);
     }
 
     public static void updateConsensusValue(UUID uuid, int consensusValue) {
-        Record currRcd = iLead.processList.get(uuid);
+        Record currRcd = iTolerate.processList.get(uuid);
         Record newRcd = new Record(currRcd.runId, currRcd.deathTask, currRcd.alive, consensusValue);
-        iLead.processList.put(uuid, newRcd);
+        iTolerate.processList.put(uuid, newRcd);
     }
 
     // Accessor
@@ -278,7 +277,7 @@ public class iLead {
         }
     }
 
-    // Retrieve this iLead process instance number
+    // Retrieve this iTolerate process instance number
     public static int getInstanceNum() {
         return instanceNum;
     }
@@ -289,8 +288,8 @@ public class iLead {
         Scanner fileParser = new Scanner(initPath);
         String firstLine = fileParser.nextLine();
         String[] initInfo = firstLine.split(",");
-        iLead.uuid = UUID.fromString(initInfo[0]);
-        iLead.instanceNum = Integer.parseInt(initInfo[1]) + 1;
+        iTolerate.uuid = UUID.fromString(initInfo[0]);
+        iTolerate.instanceNum = Integer.parseInt(initInfo[1]) + 1;
         fileParser.close();
     }
 
@@ -307,7 +306,7 @@ public class iLead {
 
     private static void startRunning () throws Exception {
         // Create a socket
-        socket = new LossyDatagramSocket(iLead.lossPct);
+        socket = new LossyDatagramSocket(iTolerate.lossPct);
         socket.setBroadcast(true);
 
         // Create thread object
@@ -483,7 +482,7 @@ public class iLead {
         // Send
         try {
             p.setAddress(InetAddress.getByName("255.255.255.255"));
-            p.setPort(iLead.destPort);
+            p.setPort(iTolerate.destPort);
             socket.send(p);
         } catch (UnknownHostException e1) {
             System.out.print("\nFailed to resolve host");
@@ -495,7 +494,7 @@ public class iLead {
     }
 
     public static void sendMsg (MsgBase.Type msgType) {
-        iLead.debugPrint("\nSending Message Type " + msgType.ordinal());
+        iTolerate.debugPrint("\nSending Message Type " + msgType.ordinal());
 
         try {
             // Create a message
@@ -521,24 +520,24 @@ public class iLead {
     // Set the consensus state variable
     public static void setConsensusState ( ConsensusStateBase state ) {
         // Set the state
-        iLead.consensusState = state;
+        iTolerate.consensusState = state;
 
         // Let the state run its thing
-        iLead.consensusState.Handle(new EventInit());
+        iTolerate.consensusState.Handle(new EventInit());
     }
 
     // Set the election state variable
     public static void setElectionState ( ElectionStateBase state ) {
         // Set the state
-        iLead.electionState = state;
+        iTolerate.electionState = state;
 
         // Let the state run its thing
-        iLead.electionState.Handle(new EventInit());
+        iTolerate.electionState.Handle(new EventInit());
     }
 
     // Application entry point
     public static void main(String[] args) throws Exception {
-        System.out.print("iLead V1.0 (c) 2013");
+        System.out.print("iTolerate V1.0 (c) 2013");
 
         parseArgs(args);
 
@@ -551,10 +550,10 @@ public class iLead {
             }
         }
 
-        writeStartupFile(iLead.uuid, iLead.instanceNum);
+        writeStartupFile(iTolerate.uuid, iTolerate.instanceNum);
 
-        System.out.printf("\nUUID = %s", iLead.getSelf());
-        System.out.println(" Instance Number = " + iLead.instanceNum);
+        System.out.printf("\nUUID = %s", iTolerate.getSelf());
+        System.out.println(" Instance Number = " + iTolerate.instanceNum);
 
         startRunning();
     }

@@ -2,9 +2,9 @@
 public class ElectionStateNoLeader extends ElectionStateBase {
     public void Handle ( EventInit evt ) {
         // Debug
-        iLead.debugPrint("\nState = ElectionStateNoLeader");
+        iTolerate.debugPrint("\nState = ElectionStateNoLeader");
 
         // Change state
-        iLead.setElectionState(new ElectionStateElectionSent());
+        iTolerate.setElectionState(new ElectionStateElectionSent());
     }
 }

@@ -1,12 +1,12 @@
 
 public class ElectionStateOkSent extends ElectionStateBase {
     public void Handle ( EventInit evt ) {
-        iLead.debugPrint("\nState = ElectionStateOkSent");
+        iTolerate.debugPrint("\nState = ElectionStateOkSent");
 
         // Send Ok message
-        iLead.sendMsg(MsgBase.Type.Ok);
+        iTolerate.sendMsg(MsgBase.Type.Ok);
 
         // Send election message
-        iLead.setElectionState(new ElectionStateElectionSent());
+        iTolerate.setElectionState(new ElectionStateElectionSent());
     }
 }

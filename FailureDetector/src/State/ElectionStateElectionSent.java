@@ -1,50 +1,50 @@
 public class ElectionStateElectionSent extends ElectionStateBase {
     public void Handle ( EventInit evt ) {
-        iLead.debugPrint("\nState = ElectionStateElectionSent");
+        iTolerate.debugPrint("\nState = ElectionStateElectionSent");
 
         // Send election message
-        iLead.sendMsg(MsgBase.Type.Election);
+        iTolerate.sendMsg(MsgBase.Type.Election);
 
         // Set up a timeout event to occur
-        iLead.setElectionMsgTimeout(1);
+        iTolerate.setElectionMsgTimeout(1);
     }
 
     public void Handle ( EventNoMsgTimeout evt ) {
-        iLead.debugPrint("\nHandling EventNoMsgTimeout");
+        iTolerate.debugPrint("\nHandling EventNoMsgTimeout");
 
-        if ( iLead.isHighest() ) {
+        if ( iTolerate.isHighest() ) {
             // Send coordinator message
-            iLead.sendMsg(MsgBase.Type.Coordinator);
+            iTolerate.sendMsg(MsgBase.Type.Coordinator);
 
             // Set state
-            iLead.setElectionState(new ElectionStateHaveLeader(iLead.getSelf()));
+            iTolerate.setElectionState(new ElectionStateHaveLeader(iTolerate.getSelf()));
         } else {
             // Send election message
-            iLead.setElectionState(new ElectionStateElectionSent());
+            iTolerate.setElectionState(new ElectionStateElectionSent());
         }
     }
 
     public void Handle ( EventElectionMsgRecvd evt ) {
-        iLead.debugPrint("\nHandling EventElectionMsgRecvd");
+        iTolerate.debugPrint("\nHandling EventElectionMsgRecvd");
 
         // Validate UUID of the message
-        if ( evt.getUuid().compareTo(iLead.getSelf()) == -1 ) {
+        if ( evt.getUuid().compareTo(iTolerate.getSelf()) == -1 ) {
             // Set state
-            iLead.setElectionState(new ElectionStateOkSent());
+            iTolerate.setElectionState(new ElectionStateOkSent());
         }
     }
 
     public void Handle ( EventOkMsgRecvd evt ) {
-        iLead.debugPrint("\nHandling EventOkMsgRecvd");
+        iTolerate.debugPrint("\nHandling EventOkMsgRecvd");
 
         // Validate uuid
-        if ( evt.getUuid().compareTo(iLead.getSelf()) != 1 ) {
+        if ( evt.getUuid().compareTo(iTolerate.getSelf()) != 1 ) {
              // Ignore OK msgs UUID's from those below us
-            iLead.debugPrint("\nIgnoring EventOkMsgRecvd from not higher UUID");
+            iTolerate.debugPrint("\nIgnoring EventOkMsgRecvd from not higher UUID");
             return;
         }
 
         // Change state
-        iLead.setElectionState(new ElectionStateOkRecvd());
+        iTolerate.setElectionState(new ElectionStateOkRecvd());
     }
 }

@@ -5,6 +5,6 @@ public class MsgElection extends MsgBase {
 
     public void Handle() {
         // Pass this off to the state machine
-        iLead.getElectionState().Handle(new EventElectionMsgRecvd(uuid));
+        iTolerate.getElectionState().Handle(new EventElectionMsgRecvd(uuid));
     }
 }

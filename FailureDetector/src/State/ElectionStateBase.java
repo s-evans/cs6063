@@ -9,42 +9,42 @@ abstract class ElectionStateBase {
     // Subclasses all must handle a new coordinator. No special handling.
     public final void Handle ( EventCoordinatorMsg evt ) {
         // Validate uuid against our own
-        if ( evt.getUuid().compareTo(iLead.getSelf()) == 0 ) {
+        if ( evt.getUuid().compareTo(iTolerate.getSelf()) == 0 ) {
             // Ignore our own coordinator message
             return;
         }
 
         // Set state
-        iLead.setElectionState(new ElectionStateHaveLeader(evt.getUuid()));
+        iTolerate.setElectionState(new ElectionStateHaveLeader(evt.getUuid()));
     }
 
     // All events are ignored by default unless overridden in subclasses
     public void Handle ( EventLeaderDeath evt ) {
-        iLead.debugPrint("\nIgnoring Leader Death Event");
+        iTolerate.debugPrint("\nIgnoring Leader Death Event");
     }
 
     public void Handle ( EventByzantineLeader evt ) {
-        iLead.debugPrint("\nIgnoring Byzantine Leader Event");
+        iTolerate.debugPrint("\nIgnoring Byzantine Leader Event");
     }
 
     public void Handle ( EventNoMsgTimeout evt ) {
-        iLead.debugPrint("\nIgnoring Msg Timeout Event");
+        iTolerate.debugPrint("\nIgnoring Msg Timeout Event");
     }
 
     public void Handle ( EventElectionMsgRecvd evt ) {
-        iLead.debugPrint("\nIgnoring Election Msg Recvd Event");
+        iTolerate.debugPrint("\nIgnoring Election Msg Recvd Event");
     }
 
     public void Handle ( EventElectionMsgSent evt ) {
-        iLead.debugPrint("\nIgnoring Election Msg Sent Event");
+        iTolerate.debugPrint("\nIgnoring Election Msg Sent Event");
     }
 
     public void Handle ( EventOkMsgRecvd evt ) {
-        iLead.debugPrint("\nIgnoring Ok Msg Recvd Event");
+        iTolerate.debugPrint("\nIgnoring Ok Msg Recvd Event");
     }
 
     public void Handle ( EventOkMsgSent evt ) {
-        iLead.debugPrint("\nIgnoring Ok Msg Sent Event");
+        iTolerate.debugPrint("\nIgnoring Ok Msg Sent Event");
     }
 
 }

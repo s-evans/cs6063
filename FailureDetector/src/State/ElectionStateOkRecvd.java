@@ -1,29 +1,29 @@
 public class ElectionStateOkRecvd extends ElectionStateBase {
     public void Handle ( EventInit evt ) {
-        iLead.debugPrint("\nState = ElectionStateOkRecvd");
+        iTolerate.debugPrint("\nState = ElectionStateOkRecvd");
 
         // Set up a timeout event to occur
-        iLead.setElectionMsgTimeout(2);
+        iTolerate.setElectionMsgTimeout(2);
     }
 
     public void Handle ( EventNoMsgTimeout evt ) {
-        iLead.debugPrint("\nHandling EventNoMsgTimeout");
+        iTolerate.debugPrint("\nHandling EventNoMsgTimeout");
 
         // Set state
-        iLead.setElectionState(new ElectionStateNoLeader());
+        iTolerate.setElectionState(new ElectionStateNoLeader());
     }
 
     public void Handle ( EventOkMsgRecvd evt ) {
-        iLead.debugPrint("\nHandling EventOkMsgRecvd");
+        iTolerate.debugPrint("\nHandling EventOkMsgRecvd");
 
         // Validate uuid
-        if ( evt.getUuid().compareTo(iLead.getSelf()) != 1 ) {
+        if ( evt.getUuid().compareTo(iTolerate.getSelf()) != 1 ) {
             // Ignore OK msgs UUID's from those below us
-            iLead.debugPrint("\nIgnoring EventOkMsgRecvd from not higher UUID");
+            iTolerate.debugPrint("\nIgnoring EventOkMsgRecvd from not higher UUID");
             return;
         }
 
         // Change state
-        iLead.setElectionState(new ElectionStateOkRecvd());
+        iTolerate.setElectionState(new ElectionStateOkRecvd());
     }
 }

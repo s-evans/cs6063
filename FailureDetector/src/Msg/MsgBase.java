@@ -70,8 +70,8 @@ abstract class MsgBase {
     // Default constructor
     protected MsgBase () {
         this.type = Type.Unknown;
-        this.uuid = iLead.getSelf();
-        this.runId = iLead.getInstanceNum();
+        this.uuid = iTolerate.getSelf();
+        this.runId = iTolerate.getInstanceNum();
     }
 
     // Populate members from a byte buffer
