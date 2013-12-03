@@ -309,7 +309,7 @@ public class iLead {
         server.start();
 
         //TODO: Move GUI creation to seperate function
-        //TODO: Refactor this class
+        //TODO: Refactor this class where needed to support GUI
         JFrame frame = new JFrame("UserInterface");
         frame.setContentPane(new UserInterface().uiForm);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

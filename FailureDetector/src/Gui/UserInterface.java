@@ -21,7 +21,9 @@ public class UserInterface implements ActionListener {
         Object[][] nodeData = {{iLead.getSelf(), iLead.getLeader(), iLead.getConsensusValue()}};
         this.nodeStatusTable = new JTable(nodeData, NODE_STATUS_COLUMNS);
 
-        this.peerStatusTable = new GroupTable(iLead.processList);
+        this.peerStatusTable = new JTable(null, GroupTable.columnNames);
+
+        this.peerStatusTable.setModel(new GroupTable(iLead.processList));
 
         //Periodically update the peer table
         peerUpdateTimer = new Timer(PEER_TABLE_UPDATE_RATE, this);
@@ -36,6 +38,7 @@ public class UserInterface implements ActionListener {
         this.nodeStatusTable.setValueAt(iLead.getLeader(), 0, 1);
         this.nodeStatusTable.setValueAt(iLead.getConsensusValue(), 0, 2);
 
-        this.peerStatusTable.setModel(new GroupTable(iLead.processList));
+        GroupTable peerTableModel = (GroupTable) this.peerStatusTable.getModel();
+        peerTableModel.updateGroupList(iLead.processList);
     }
 }

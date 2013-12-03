@@ -15,7 +15,7 @@
         <properties/>
         <border type="none" title="Group Staus"/>
         <children>
-          <component id="e83a2" class="javax.swing.JTable" binding="peerStatusTable">
+          <component id="e83a2" class="javax.swing.JTable" binding="peerStatusTable" custom-create="true">
             <constraints/>
             <properties/>
           </component>

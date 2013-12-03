@@ -6,11 +6,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class GroupTable extends JTable implements TableModel {
-    private final String[] columnNames = {"UUID", "Instance Number", "Alive", "Consensus Value"};
+public class GroupTable extends AbstractTableModel {
+    public final static String[] columnNames = {"UUID", "Instance Number", "Alive", "Consensus Value"};
     private Object[][] data;
 
     public GroupTable(HashMap<UUID, Record> processList) {
+        setTableData(processList);
+    }
+
+    public void updateGroupList(HashMap<UUID, Record> processList) {
+        setTableData(processList);
+        fireTableDataChanged();
+    }
+
+    private void setTableData(HashMap<UUID, Record> processList) {
         data = new Object[iLead.processList.size()][columnNames.length];
         int entryPos = 0;
         for (Map.Entry<UUID, Record> entry : processList.entrySet()) {
@@ -23,18 +32,9 @@ public class GroupTable extends JTable implements TableModel {
         }
     }
 
+    @Override
     public void setValueAt(Object value, int row, int col) {
         data[row][col] = value;
-    }
-
-    @Override
-    public void addTableModelListener(TableModelListener l) {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    @Override
-    public void removeTableModelListener(TableModelListener l) {
-        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
@@ -50,5 +50,10 @@ public class GroupTable extends JTable implements TableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         return data[rowIndex][columnIndex];
+    }
+
+    @Override
+    public String getColumnName(int columnIndex) {
+        return columnNames[columnIndex];
     }
 }
