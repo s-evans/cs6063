@@ -54,6 +54,7 @@ public class iTolerate {
     protected static TimerTask electionTimeoutTask = new ElectionTimeoutTask();
     protected static TimerTask consensusTimeoutTask = new ConsensusTimeoutTask();
     protected static TimerTask heartBeatTask = new HeartBeatTask();
+    protected static TimerTask byzantineFailureTask = new ByzantineFailureTask();
 
     //GUI
     public static UserInterface gui;
@@ -550,12 +551,21 @@ public class iTolerate {
 
     // Cause this node to exhibit a byzantine failure
     public static void startByzantineFailure() {
-        //TODO: Exhibit Byzantine Failure Behavior
+        iTolerate.logToGui("\nByzantine Failure " +  iTolerate.getSelf());
+        // Cancel the currently scheduled timeout task
+        byzantineFailureTask.cancel();
+
+        // Create a new task
+        byzantineFailureTask = new ByzantineFailureTask();
+
+        // Schedule the task
+        timer.schedule(byzantineFailureTask, timeout);
     }
 
     // Repair this node from a byzantine failure
     public static void repairNode() {
-        //TODO: Resume normal behavior, stop byzantine failure
+        iTolerate.logToGui("\nRepair Byzantine Failure " + iTolerate.getSelf());
+        byzantineFailureTask.cancel();
     }
 
     public static void logToGui(String message) {
