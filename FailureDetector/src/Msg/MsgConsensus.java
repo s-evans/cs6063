@@ -1,4 +1,5 @@
 import java.nio.ByteBuffer;
+import java.util.Random;
 
 public class MsgConsensus extends MsgBase {
     protected int consensusValue;
@@ -20,8 +21,13 @@ public class MsgConsensus extends MsgBase {
         // If the consensus message is from the leader
         if ( iTolerate.isLeader(uuid) ) {
 
-            // Take the leader's value
-            iTolerate.setConsensusValue(consensusValue);
+            if ( iTolerate.isByzantineFailure ) {
+                // lie
+                iTolerate.setConsensusValue(new Random().nextInt());
+            } else {
+                // Take the leader's value
+                iTolerate.setConsensusValue(consensusValue);
+            }
 
             // Handle the event
             iTolerate.getConsensusState().Handle(new EventConsensusRoundStart());

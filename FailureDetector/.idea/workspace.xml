@@ -7,7 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a4c3144-807e-4fde-82a8-9f1f29109212" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgByzantineFailure.java" afterPath="$PROJECT_DIR$/src/Msg/MsgByzantineFailure.java" />
+      <change type="DELETED" beforePath="C:\Users\david\development\dsuc\FailureDetector\src\Msg\MsgByzantineFailure.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\david\development\dsuc\FailureDetector\src\Task\ByzantineFailureTask.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgBase.java" afterPath="$PROJECT_DIR$/src/Msg/MsgBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Msg/MsgConsensus.java" afterPath="$PROJECT_DIR$/src/Msg/MsgConsensus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iTolerate.java" afterPath="$PROJECT_DIR$/src/iTolerate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FailureDetector.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +55,7 @@
     <file path="/Record.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385672183959" ignored="false" />
     <file path="/GroupJoinTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1384622050168" ignored="false" />
     <file path="/ConsensusMsg.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385653445930" ignored="false" />
-    <file path="/MsgConsensus.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385854631454" ignored="false" />
+    <file path="/MsgConsensus.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386203997731" ignored="false" />
     <file path="/EventQuorumLost.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385769643732" ignored="false" />
     <file path="/EventQuorumReached.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385769655310" ignored="false" />
     <file path="/ConsensusStateBase.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385782293274" ignored="false" />
@@ -65,7 +70,7 @@
     <file path="/EventNoLeader.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1385781438945" ignored="false" />
     <file path="/UserInterface.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386046016145" ignored="false" />
     <file path="/GroupTable.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386042126830" ignored="false" />
-    <file path="/iTolerate.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386126029687" ignored="false" />
+    <file path="/iTolerate.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386203763843" ignored="false" />
     <file path="/MsgByzantineFailure.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386128729915" ignored="false" />
     <file path="/ByzantineFailureTask.java" changelist="0a4c3144-807e-4fde-82a8-9f1f29109212" time="1386125980786" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -140,25 +145,7 @@
       <file leaf-file-name="iTolerate.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iTolerate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="40" selection-start="2360" selection-end="2377" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ByzantineFailureTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Task/ByzantineFailureTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="94" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgByzantineFailure.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Msg/MsgByzantineFailure.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="38" selection-start="523" selection-end="523" vertical-scroll-proportion="0.54025424">
+            <state line="68" column="35" selection-start="2332" selection-end="2349" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -167,17 +154,19 @@
       <file leaf-file-name="MsgBase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Msg/MsgBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.0">
+            <state line="40" column="0" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MsgConsensus.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MsgConsensus.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Msg/MsgConsensus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="4" selection-start="77" selection-end="106" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="18" column="59" selection-start="526" selection-end="526" vertical-scroll-proportion="0.34979424">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -247,7 +236,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/Task/ConsensusTimeoutTask.java" />
         <option value="$PROJECT_DIR$/src/Task/DeathTask.java" />
-        <option value="$PROJECT_DIR$/src/Msg/MsgConsensus.java" />
         <option value="$PROJECT_DIR$/src/iLead.java" />
         <option value="$PROJECT_DIR$/src/Gui/GroupTable.java" />
         <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateUndecided.java" />
@@ -257,10 +245,11 @@
         <option value="$PROJECT_DIR$/src/Msg/MsgDuplicate.java" />
         <option value="$PROJECT_DIR$/src/ConsensusState/ConsensusStateBase.java" />
         <option value="$PROJECT_DIR$/src/Task/HeartBeatTask.java" />
-        <option value="$PROJECT_DIR$/src/Msg/MsgBase.java" />
         <option value="$PROJECT_DIR$/src/Task/ByzantineFailureTask.java" />
-        <option value="$PROJECT_DIR$/src/iTolerate.java" />
         <option value="$PROJECT_DIR$/src/Msg/MsgByzantineFailure.java" />
+        <option value="$PROJECT_DIR$/src/iTolerate.java" />
+        <option value="$PROJECT_DIR$/src/Msg/MsgBase.java" />
+        <option value="$PROJECT_DIR$/src/Msg/MsgConsensus.java" />
       </list>
     </option>
   </component>
@@ -432,61 +421,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="State" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Msg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Event" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FailureDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ConsensusState" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -739,10 +674,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.9335605" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37726787" sideWeight="0.6020067" order="9" side_tool="false" content_ui="tabs" x="0" y="447" width="1314" height="236" />
+      <window_info id="Find" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37726787" sideWeight="0.5942029" order="9" side_tool="false" content_ui="tabs" x="0" y="447" width="1314" height="236" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3979933" sideWeight="0.4824962" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3979933" sideWeight="0.4824962" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984" sideWeight="0.5175038" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -755,8 +690,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.7552" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17022412" sideWeight="0.6020067" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4057971" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17022412" sideWeight="0.5942029" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4057971" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.6208" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -878,13 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iTolerate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="40" selection-start="2360" selection-end="2377" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Event/EventCoordinatorMsg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="13" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
@@ -913,31 +841,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Msg/MsgConsensus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="4" selection-start="77" selection-end="106" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task/ByzantineFailureTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="94" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Msg/MsgBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.0">
+        <state line="40" column="0" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Msg/MsgByzantineFailure.java">
+    <entry file="file://$PROJECT_DIR$/src/iTolerate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="38" selection-start="523" selection-end="523" vertical-scroll-proportion="0.54025424">
+        <state line="68" column="35" selection-start="2332" selection-end="2349" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Msg/MsgConsensus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="59" selection-start="526" selection-end="526" vertical-scroll-proportion="0.34979424">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

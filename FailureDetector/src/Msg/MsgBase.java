@@ -39,9 +39,6 @@ abstract class MsgBase {
             case Consensus:
                 return new MsgConsensus();
 
-            case ByzantineFailure:
-                return new MsgByzantineFailure();
-
             default:
                 throw new RuntimeException("Invalid msg type");
         }

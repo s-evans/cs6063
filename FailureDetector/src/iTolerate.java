@@ -29,6 +29,7 @@ public class iTolerate {
     public static boolean bDebug = false;
     private static boolean idOverride = false;
     public static boolean hasJoinedGroup = false;
+    public static boolean isByzantineFailure = false;
 
     // Program parameters
     public static int processCount = 4;    // TODO: Make configurable   // TODO: should be 12
@@ -54,7 +55,6 @@ public class iTolerate {
     protected static TimerTask electionTimeoutTask = new ElectionTimeoutTask();
     protected static TimerTask consensusTimeoutTask = new ConsensusTimeoutTask();
     protected static TimerTask heartBeatTask = new HeartBeatTask();
-    protected static TimerTask byzantineFailureTask = new ByzantineFailureTask();
 
     //GUI
     public static UserInterface gui;
@@ -553,19 +553,13 @@ public class iTolerate {
     public static void startByzantineFailure() {
         iTolerate.logToGui("\nByzantine Failure " +  iTolerate.getSelf());
         // Cancel the currently scheduled timeout task
-        byzantineFailureTask.cancel();
-
-        // Create a new task
-        byzantineFailureTask = new ByzantineFailureTask();
-
-        // Schedule the task
-        timer.schedule(byzantineFailureTask, timeout);
+        isByzantineFailure = true;
     }
 
     // Repair this node from a byzantine failure
     public static void repairNode() {
         iTolerate.logToGui("\nRepair Byzantine Failure " + iTolerate.getSelf());
-        byzantineFailureTask.cancel();
+        isByzantineFailure = false;
     }
 
     public static void logToGui(String message) {
