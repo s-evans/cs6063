@@ -48,8 +48,8 @@ public class UserInterface implements ActionListener {
     }
 
     private void createUIComponents() {
-        Object[][] nodeData = {{iTolerate.getSelf(), iTolerate.getLeader(), iTolerate.getConsensusValue(),
-                iTolerate.getConsensusState()}};
+        Object[][] nodeData = {{iTolerate.getSelf(), iTolerate.getLeader(), iTolerate.getConsensusValue(), iTolerate.majorityValue}};
+
         this.nodeStatusTable = new JTable(nodeData, NODE_STATUS_COLUMNS);
 
         this.peerStatusTable = new JTable();
@@ -67,7 +67,7 @@ public class UserInterface implements ActionListener {
         this.nodeStatusTable.setValueAt(iTolerate.getSelf(), 0, 0);
         this.nodeStatusTable.setValueAt(iTolerate.getLeader(), 0, 1);
         this.nodeStatusTable.setValueAt(iTolerate.getConsensusValue(), 0, 2);
-        this.nodeStatusTable.setValueAt(iTolerate.getConsensusState(), 0, 3);
+        this.nodeStatusTable.setValueAt(iTolerate.majorityValue, 0, 3);
 
         GroupTable peerTableModel = (GroupTable) this.peerStatusTable.getModel();
         peerTableModel.updateGroupList(iTolerate.processList);

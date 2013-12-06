@@ -10,4 +10,4 @@ public class MsgDuplicate extends MsgBase {
             iTolerate.stopRunning();
         }
     }
-}
+    }

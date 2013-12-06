@@ -19,15 +19,8 @@ public class DeathTask extends TimerTask {
         System.err.printf("\nFailure detected;");
         System.err.printf("\n\tUUID: %s; ", uuid.toString());
 
-        boolean pre = iTolerate.quorumExists();
-
         // Update the failed record to the failed state
         iTolerate.updateProcessDeath(uuid);
-
-        // Induce a quorum event
-        if ( pre && !iTolerate.quorumExists() ) {
-            iTolerate.getConsensusState().Handle(new EventQuorumLost());
-        }
 
         // Check if the failed client is the leader
         if ( uuid.compareTo(iTolerate.getLeader()) == 0 ) {

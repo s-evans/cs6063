@@ -12,7 +12,6 @@ import java.util.Timer;
 public class iTolerate {
     // State
     private static ElectionStateBase electionState = new ElectionStateNoLeader();
-    private static ConsensusStateBase consensusState = new ConsensusStateUndecided();
 
     // Server thread
     private static ServerThread server;
@@ -29,7 +28,6 @@ public class iTolerate {
     public static boolean bDebug = false;
     private static boolean idOverride = false;
     public static boolean hasJoinedGroup = false;
-    public static boolean isByzantineFailure = false;
 
     // Program parameters
     public static int processCount = 4;    // TODO: Make configurable   // TODO: should be 12
@@ -48,12 +46,12 @@ public class iTolerate {
     protected static UUID uuid = UUID.randomUUID();
     protected static int instanceNum = 0;
     protected static UUID leader = uuid;
-    protected static int consensusValue = new Random().nextInt();
+    protected static Integer consensusValue = new Integer(12);
+    protected static Integer majorityValue = null;
 
     // Timer objects
     protected static Timer timer = new Timer();
     protected static TimerTask electionTimeoutTask = new ElectionTimeoutTask();
-    protected static TimerTask consensusTimeoutTask = new ConsensusTimeoutTask();
     protected static TimerTask heartBeatTask = new HeartBeatTask();
 
     //GUI
@@ -66,10 +64,6 @@ public class iTolerate {
         return consensusValue;
     }
 
-    public static void setConsensusValue( int val ) {
-        consensusValue = val;
-    }
-
     // Returns whether or not the current process is the leader
     public static boolean isLeader () {
         return isLeader(uuid);
@@ -78,7 +72,7 @@ public class iTolerate {
     // Returns whether or not the current process is the leader
     public static boolean isLeader ( UUID uuid ) {
         // Validate that there is a leader
-        if ( electionState.getClass() != ElectionStateHaveLeader.class ) {
+        if ( !(electionState instanceof ElectionStateHaveLeader) ) {
             return false;
         }
 
@@ -90,42 +84,6 @@ public class iTolerate {
         return false;
     }
 
-    // Returns the number of processes required to establish a byzantine tolerant quorum
-    public static int getQuorumRequirement () {
-        return processCount * 2 / 3 + 1;
-    }
-
-    // Returns the number of non failed processes
-    public static int getNonFailedProcessCount() {
-        // Iterate over the list and count those processes that are not failed
-        int count = 0;
-        Iterator<Map.Entry<UUID, Record>> it = iTolerate.processList.entrySet().iterator();
-        while ( it.hasNext() ) {
-            // Get entry
-            Map.Entry<UUID, Record> entry = it.next();
-
-            // Check is the process is alive
-            if ( !entry.getValue().alive ) {
-                continue;
-            }
-
-            count++;
-        }
-
-        iTolerate.debugPrint("\nNumber of non-failed process: " + count);
-
-        return count;
-    }
-
-    // Return whether or not a byzantine fault tolerant quorum exists
-    public static boolean quorumExists () {
-        // Compare current number of processes with those required
-        if ( getNonFailedProcessCount() >= getQuorumRequirement() ) {
-            return true;
-        }
-
-        return false;
-    }
 
     public static Integer getLeaderConsensusValue() {
         if ( isLeader() ) {
@@ -136,6 +94,7 @@ public class iTolerate {
         if ( rcd != null ) {
             return rcd.consensusValue;
         }
+
         return null;
     }
 
@@ -167,17 +126,6 @@ public class iTolerate {
         if ( bDebug ) {
             iTolerate.logToGui(str);
         }
-    }
-
-    public static void setConsensusRoundTimeout () {
-        // Cancel the currently scheduled timeout task
-        consensusTimeoutTask.cancel();
-
-        // Create a new task
-        consensusTimeoutTask = new ConsensusTimeoutTask();
-
-        // Schedule the task
-        timer.schedule(consensusTimeoutTask, timeout);
     }
 
     // Set a timeout event to occur
@@ -223,6 +171,13 @@ public class iTolerate {
                 continue;
             }
 
+            // check if the process is byzantine
+            if ( iTolerate.majorityValue != null &&
+                    entry.getValue().consensusValue != null &&
+                    entry.getValue().consensusValue.compareTo(iTolerate.majorityValue) != 0 ) {
+                continue;
+            }
+
             // Do comparison
             int val = curListUuid.compareTo(iTolerate.getSelf());
 
@@ -248,12 +203,6 @@ public class iTolerate {
     public static void updateProcessDeath (UUID uuid) {
         Record currRcd = iTolerate.processList.get(uuid);
         Record newRcd = new Record(currRcd.runId, currRcd.deathTask, false, null);
-        iTolerate.processList.put(uuid, newRcd);
-    }
-
-    public static void updateConsensusValue(UUID uuid, int consensusValue) {
-        Record currRcd = iTolerate.processList.get(uuid);
-        Record newRcd = new Record(currRcd.runId, currRcd.deathTask, currRcd.alive, consensusValue);
         iTolerate.processList.put(uuid, newRcd);
     }
 
@@ -310,6 +259,16 @@ public class iTolerate {
     }
 
     private static void startRunning () throws Exception {
+
+        //TODO: Move GUI creation to seperate function
+        //TODO: Refactor this class where needed to support GUI
+        JFrame frame = new JFrame("UserInterface");
+        gui = new UserInterface();
+        frame.setContentPane(gui.uiForm);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
         // Create a socket
         socket = new LossyDatagramSocket(iTolerate.lossPct);
         socket.setBroadcast(true);
@@ -328,15 +287,6 @@ public class iTolerate {
 
         // Start the server thread
         server.start();
-
-        //TODO: Move GUI creation to seperate function
-        //TODO: Refactor this class where needed to support GUI
-        JFrame frame = new JFrame("UserInterface");
-        gui = new UserInterface();
-        frame.setContentPane(gui.uiForm);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
     }
 
     private static void parseArgs(String[] args) throws Exception {
@@ -526,20 +476,6 @@ public class iTolerate {
         return electionState;
     }
 
-    // Accessor
-    public static ConsensusStateBase getConsensusState () {
-        return consensusState;
-    }
-
-    // Set the consensus state variable
-    public static void setConsensusState ( ConsensusStateBase state ) {
-        // Set the state
-        iTolerate.consensusState = state;
-
-        // Let the state run its thing
-        iTolerate.consensusState.Handle(new EventInit());
-    }
-
     // Set the election state variable
     public static void setElectionState ( ElectionStateBase state ) {
         // Set the state
@@ -553,13 +489,13 @@ public class iTolerate {
     public static void startByzantineFailure() {
         iTolerate.logToGui("\nByzantine Failure " +  iTolerate.getSelf());
         // Cancel the currently scheduled timeout task
-        isByzantineFailure = true;
+        consensusValue = new Random().nextInt();
     }
 
     // Repair this node from a byzantine failure
     public static void repairNode() {
         iTolerate.logToGui("\nRepair Byzantine Failure " + iTolerate.getSelf());
-        isByzantineFailure = false;
+        consensusValue = 12;
     }
 
     public static void logToGui(String message) {

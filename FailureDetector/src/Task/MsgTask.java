@@ -31,7 +31,6 @@ public class MsgTask extends TimerTask {
 
         // Get this process's entry in the process list
         Record rcd = iTolerate.processList.get(msg.getUuid());
-        Integer consensusValue = null;
 
         // If exists
         if ( rcd != null ) {
@@ -47,26 +46,31 @@ public class MsgTask extends TimerTask {
 
             // Cancel the death task
             rcd.deathTask.cancel();
-
-            // Copy forward the consensus value from the record
-            consensusValue = rcd.consensusValue;
         }
-
-        boolean pre = iTolerate.quorumExists();
 
         // Create a new death timeout task
         DeathTask dt = new DeathTask(msg.getUuid());
 
         // Add/replace entry
-        Record newRcd = new Record(msg.getRunId(), dt, true, consensusValue);
+        Record newRcd = new Record(msg.getRunId(), dt, true, msg.consensusValue);
         iTolerate.processList.put(msg.getUuid(), newRcd);
 
         // Schedule the new death timeout event
         iTolerate.setProcessDeathTimeout(dt);
 
-        // Check for freshly established quorum
-        if ( !pre && iTolerate.quorumExists() ) {
-            iTolerate.getConsensusState().Handle(new EventQuorumReached());
+        // Calculate majority value
+        iTolerate.majorityValue = iTolerate.getMajority();
+
+        if ( iTolerate.majorityValue != null ) {
+            if ( iTolerate.majorityValue.compareTo(msg.consensusValue) != 0 ) {
+                // Check for byzantine leader
+                if ( iTolerate.isLeader(msg.uuid) ) {
+                    iTolerate.getElectionState().Handle(new EventByzantineLeader());
+                }
+
+                // Don't handle messages from non-agreeing processes
+                return;
+            }
         }
 
         // Handle the message

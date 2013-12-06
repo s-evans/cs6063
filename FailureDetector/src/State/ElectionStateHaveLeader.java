@@ -12,13 +12,6 @@ public class ElectionStateHaveLeader extends ElectionStateBase {
 
         // Set the new leader
         iTolerate.setLeader(uuid);
-
-        // If the current process is the leader
-        if ( iTolerate.isLeader() && iTolerate.quorumExists() ) {
-            iTolerate.logToGui("\n\tStarting new round"); // TODO: Remove
-            // Start a consensus operation
-            iTolerate.getConsensusState().Handle(new EventConsensusRoundStart());
-        }
     }
 
     public void Handle ( EventLeaderDeath evt ) {
@@ -26,9 +19,6 @@ public class ElectionStateHaveLeader extends ElectionStateBase {
 
         // Set state
         iTolerate.setElectionState(new ElectionStateNoLeader());
-
-        // Handle no leader
-        iTolerate.getConsensusState().Handle(new EventNoLeader());
     }
 
     public void Handle ( EventByzantineLeader evt ) {
@@ -36,9 +26,6 @@ public class ElectionStateHaveLeader extends ElectionStateBase {
 
         // Set state
         iTolerate.setElectionState(new ElectionStateNoLeader());
-
-        // Handle no leader
-        iTolerate.getConsensusState().Handle(new EventNoLeader());
     }
 
     public void Handle ( EventElectionMsgRecvd evt ) {

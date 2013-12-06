@@ -1,10 +1,11 @@
 import java.nio.ByteBuffer;
+import java.util.Random;
 import java.util.UUID;
 
 abstract class MsgBase {
     // UUID + Type + Run ID
-    public static final int minDatagramSize = 16 + 4 + 4;
-    public static final int maxDatagramSize = minDatagramSize + 4;
+    public static final int minDatagramSize = 16 + 4 + 4 + 4;
+    public static final int maxDatagramSize = minDatagramSize;
 
     // List of supported messages types in the protocol
     enum Type {
@@ -14,8 +15,6 @@ abstract class MsgBase {
         Ok,
         Coordinator,
         Duplicate,
-        Consensus,
-        ByzantineFailure
     }
 
     // Create a generic message object based on type
@@ -35,9 +34,6 @@ abstract class MsgBase {
 
             case Duplicate:
                 return new MsgDuplicate();
-
-            case Consensus:
-                return new MsgConsensus();
 
             default:
                 throw new RuntimeException("Invalid msg type");
@@ -67,12 +63,14 @@ abstract class MsgBase {
     protected Type type;
     protected UUID uuid;
     protected int runId;
+    protected int consensusValue;
 
     // Default constructor
     protected MsgBase () {
         this.type = Type.Unknown;
         this.uuid = iTolerate.getSelf();
         this.runId = iTolerate.getInstanceNum();
+        this.consensusValue = iTolerate.getConsensusValue();
     }
 
     // Populate members from a byte buffer
@@ -85,6 +83,7 @@ abstract class MsgBase {
         // Pull out base class information from the buffer
         uuid = new UUID(bb.getLong(), bb.getLong());
         runId = bb.getInt();
+        consensusValue = bb.getInt();
 
         // Do any subclass initialization
         fromByteBufferSub(bb);
@@ -104,6 +103,7 @@ abstract class MsgBase {
         bb.putLong(uuid.getMostSignificantBits());
         bb.putLong(uuid.getLeastSignificantBits());
         bb.putInt(runId);
+        bb.putInt(consensusValue);
 
         // Allow for subclass specialization
         toByteBufferSub(bb);
