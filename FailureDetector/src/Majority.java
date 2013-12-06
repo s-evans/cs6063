@@ -17,7 +17,7 @@ public class Majority {
         // Find the majority value
         Integer majority = null;
         for (Integer key : count.keySet()) {
-            if (count.get(key) > array.length / 2) {
+            if (count.get(key) >= iTolerate.processCount * 2 / 3) {
                 majority = key;
                 break;
             }
