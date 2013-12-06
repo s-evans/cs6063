@@ -19,7 +19,7 @@ public class UserInterface implements ActionListener {
     private JTextArea textArea1;
     private Timer peerUpdateTimer;
 
-    private final String[] NODE_STATUS_COLUMNS = {"UUID", "Leader", "Consensus Value", "Consensus State"};
+    private final String[] NODE_STATUS_COLUMNS = {"UUID", "Leader", "Proposed Consensus Value", "Group Consensus Majority"};
     private final int PEER_TABLE_UPDATE_RATE = 500;
     private final int PEER_TABLE_UPDATE_DELAY = 1000;
 

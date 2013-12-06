@@ -3,18 +3,23 @@
   <grid id="27dc6" binding="uiForm" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="11" width="500" height="409"/>
+      <xy x="20" y="11" width="800" height="610"/>
     </constraints>
-    <properties/>
-    <border type="none"/>
+    <properties>
+      <minimumSize width="800" height="300"/>
+      <preferredSize width="1000" height="300"/>
+    </properties>
+    <border type="bevel-lowered"/>
     <children>
       <toolbar id="ce582" binding="buttonBar">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="-1" height="20"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <floatable value="false"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="caf6e" class="javax.swing.JButton" binding="byzantineFailureButton" default-binding="true">
@@ -41,7 +46,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="b2fa" binding="statusPane" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="b2fa" binding="statusPane" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Status"/>
@@ -51,7 +56,7 @@
             <children>
               <scrollpane id="81c8a" binding="nodeStatus">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="460" height="103"/>
                   </grid>
                 </constraints>
@@ -69,7 +74,7 @@
               </scrollpane>
               <scrollpane id="18ea6" binding="groupPane">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="2" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
                 <border type="none" title="Group Staus"/>

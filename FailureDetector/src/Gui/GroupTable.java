@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.UUID;
 
 public class GroupTable extends AbstractTableModel {
-    public final static String[] columnNames = {"UUID", "Instance Number", "Alive", "Consensus Value"};
+    public final static String[] columnNames = {"UUID", "Instance Number", "Alive", "Proposed Consensus Value"};
     private Object[][] data;
 
     public GroupTable(HashMap<UUID, Record> processList) {
