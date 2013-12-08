@@ -30,7 +30,7 @@ public class iTolerate {
     public static boolean hasJoinedGroup = false;
 
     // Program parameters
-    public static int processCount = 4;    // TODO: Make configurable   // TODO: should be 12
+    public static int processCount = 12;
     public static int period = 500;
     public static int timeout = 1250;
     public static int destPort = 9000;
